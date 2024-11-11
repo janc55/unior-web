@@ -1,0 +1,123 @@
+---
+// src/components/CareerShowcase.astro
+import { Icon } from 'astro-icon/components';
+
+const careers = [
+  {
+    title: "Medicina",
+    description: "Forma profesionales en el campo de la salud con un enfoque integral y humanista.",
+    icon: "medical-icon",
+    duration: "6 años",
+    degree: "Licenciatura",
+    modality: "Presencial",
+    image: "/placeholder.svg?height=400&width=600",
+    video: "https://example.com/medicina-video.mp4",
+    highlights: ["Prácticas en hospitales de renombre", "Investigación de vanguardia", "Intercambios internacionales"],
+    slug: "medicina"
+  },
+  {
+    title: "Ingeniería de Sistemas",
+    description: "Desarrolla soluciones tecnológicas innovadoras para los desafíos del mundo moderno.",
+    icon: "computer-icon",
+    duration: "5 años",
+    degree: "Licenciatura",
+    modality: "Presencial y Semipresencial",
+    image: "/placeholder.svg?height=400&width=600",
+    highlights: ["Laboratorios de última generación", "Proyectos con empresas tech", "Certificaciones internacionales"],
+    slug: "ingenieria-de-sistemas"
+  },
+  {
+    title: "Administración de Empresas",
+    description: "Forma líderes capaces de gestionar organizaciones en un entorno global y competitivo.",
+    icon: "business-icon",
+    duration: "4 años",
+    degree: "Licenciatura",
+    modality: "Presencial y Virtual",
+    image: "/placeholder.svg?height=400&width=600",
+    highlights: ["Programa de emprendimiento", "Pasantías en empresas líderes", "Simuladores de negocios"],
+    slug: "administracion-de-empresas"
+  },
+  // Add more careers as needed
+];
+---
+
+<section class="bg-gray-900 py-16 text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="mb-12 text-center text-4xl font-bold text-[#fdc300]">Nuestras Carreras</h2>
+    
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {careers.map((career) => (
+        <div class="group relative overflow-hidden rounded-2xl bg-gray-800 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="relative h-64 w-full overflow-hidden">
+            <img 
+              src={career.image} 
+              alt={`Imagen de ${career.title}`} 
+              class="h-full w-full object-cover transition-all duration-300 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-black/50 transition-all duration-300 group-hover:bg-black/30"></div>
+            <div class="absolute bottom-4 left-4 flex items-center space-x-2">
+              <Icon name={career.icon} class="h-8 w-8 text-[#fdc300]" />
+              <h3 class="text-2xl font-bold text-white">{career.title}</h3>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <p class="mb-4 text-gray-300">{career.description}</p>
+            <ul class="mb-6 space-y-2">
+              <li class="flex items-center space-x-2">
+                <Icon name="clock-icon" class="h-5 w-5 text-[#fdc300]" />
+                <span>{career.duration}</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <Icon name="graduation-cap-icon" class="h-5 w-5 text-[#fdc300]" />
+                <span>{career.degree}</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <Icon name="building-icon" class="h-5 w-5 text-[#fdc300]" />
+                <span>{career.modality}</span>
+              </li>
+            </ul>
+            
+            <h4 class="mb-2 text-lg font-semibold text-[#fdc300]">Destacados:</h4>
+            <ul class="mb-6 list-inside list-disc space-y-1 text-gray-300">
+              {career.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+            
+            <a 
+              href={`/carreras/${career.slug}`}
+              class="inline-block rounded-full bg-[#ff0003] px-6 py-2 text-white transition-all duration-300 hover:bg-[#ff0003]/80"
+            >
+              Explorar Carrera
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  [astro-icon] {
+    color: #fdc300;
+    /* Ensures icons are the right size */
+    width: 1em;
+    height: 1em;
+  }
+</style>
+
+<script>
+  // Add any interactive features here
+  document.addEventListener('astro:page-load', () => {
+    const careerCards = document.querySelectorAll('.group');
+    careerCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('shadow-glow');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.classList.remove('shadow-glow');
+      });
+    });
+  });
+</script>

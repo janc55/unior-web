@@ -1,0 +1,21 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#ff0003] py-8 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center justify-between md:flex-row">
+      <div class="mb-4 md:mb-0">
+        <img src="/logo-unior-white.webp" alt="Logo UNIOR" class="h-20 w-auto" />
+      </div>
+      <div  class="flex flex-wrap justify-center space-x-6 md:order-2">
+        <a href="/terminos-y-condiciones" class="hover:text-[#fdc300]">Términos y Condiciones</a>
+        <a href="/politica-de-privacidad" class="hover:text-[#fdc300]">Política de Privacidad</a>
+        <a href="/mapa-del-sitio" class="hover:text-[#fdc300]">Mapa del Sitio</a>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-white/10 pt-8 text-center">
+      <p>&copy; {currentYear} Universidad Privada de Oruro. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

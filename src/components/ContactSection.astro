@@ -1,0 +1,64 @@
+---
+// Contact Section Component
+---
+
+<section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid gap-12 md:grid-cols-2">
+        <div>
+          <h2 class="mb-6 text-4xl font-bold text-black">Contáctanos</h2>
+          <form class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Nombre</label>
+              <input 
+                type="text" 
+                class="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:border-[#ff0003] focus:outline-none focus:ring-2 focus:ring-[#ff0003]/20"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Email</label>
+              <input 
+                type="email" 
+                class="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:border-[#ff0003] focus:outline-none focus:ring-2 focus:ring-[#ff0003]/20"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Mensaje</label>
+              <textarea 
+                class="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:border-[#ff0003] focus:outline-none focus:ring-2 focus:ring-[#ff0003]/20"
+                rows="4"
+              ></textarea>
+            </div>
+            <button 
+              type="submit" 
+              class="w-full rounded-lg bg-[#ff0003] py-3 text-white transition hover:bg-[#ff0003]/90"
+            >
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="h-[400px] overflow-hidden rounded-lg">
+            <!-- Replace with actual map embed -->
+            <div class="h-full w-full bg-gray-200"></div>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-lg font-semibold text-black">Dirección</h3>
+              <p class="text-gray-600">Av. Principal #123, Oruro, Bolivia</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-black">Teléfono</h3>
+              <p class="text-gray-600">+591 2 1234567</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-black">Email</h3>
+              <p class="text-gray-600">info@unior.edu.bo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
