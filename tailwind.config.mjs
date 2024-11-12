@@ -10,15 +10,17 @@ export default {
 					light: '#fdc300', // Amarillo UNIOR
 				  },
 				  background: {
-					light: '#ffffff', // Fondo claro
-					dark: '#000000', // Fondo oscuro
+					light: '#fff', // Fondo claro
+					dark: '#1B1B1D', // Fondo oscuro
 				  },
 				  text: {
 					light: '#000000', // Texto en modo claro
 					dark: '#ffffff', // Texto en modo oscuro
 				  },
 				  accent: {
-					dark: '#141414', // Color de acento para elementos en modo oscuro
+					dark: '#2A2A2D', // Color de acento para elementos en modo oscuro
+					light: '#3A3A3D',
+					lightner: '#504F51'
 				  },
 			  },
 			  fontFamily: {
