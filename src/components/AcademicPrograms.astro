@@ -13,6 +13,7 @@ const programs = [
   },
   // Add more programs...
 ];
+import { careers } from '../data/carreras/index.js';
 ---
 
 <section class="bg-gray-50 py-20">
@@ -20,20 +21,23 @@ const programs = [
     <h2 class="mb-12 text-center text-4xl font-bold text-black">Oferta Académica</h2>
     
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {programs.map(program => (
-        <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl">
-          <div class="mb-4 text-4xl">{program.icon}</div>
-          <h3 class="mb-2 text-xl font-bold text-black">{program.title}</h3>
-          <p class="text-gray-600">{program.description}</p>
-          <div class="mt-4 h-1 w-12 bg-[#ff0003] transition-all group-hover:w-full group-hover:bg-[#fdc300]"></div>
-        </div>
+      {careers.map(carrera => (
+        <a 
+          href={`/carreras/${carrera.slug}`} 
+          class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+        >
+          <div class="mb-4 text-4xl">{carrera.icon}</div>
+          <h3 class="mb-2 text-xl font-bold text-black">{carrera.title}</h3>
+          <p class="text-accent-light">{carrera.description}</p>
+          <div class="mt-4 h-1 w-12 bg-primary transition-all group-hover:w-full group-hover:bg-primary-light"></div>
+        </a>
       ))}
     </div>
     
     <div class="mt-12 text-center">
       <a 
         href="/carreras" 
-        class="inline-flex items-center rounded-full bg-[#ff0003] px-8 py-3 text-lg font-semibold text-white transition hover:bg-[#ff0003]/90"
+        class="inline-flex items-center rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white transition hover:bg-primary/90"
       >
         Ver todas las carreras
         <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
