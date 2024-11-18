@@ -1,0 +1,446 @@
+---
+import { Image } from "astro:assets";
+
+interface NewsItem {
+    id: number;
+    category: "Noticia" | "Eventos";
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    date: string;
+}
+
+const newsItems: NewsItem[] = [
+    {
+        id: 1,
+        category: "Noticia",
+        title: "UNIOR celebra su 25° aniversario con ceremonia especial",
+        description:
+            "La Universidad Privada de Oruro celebró sus 25 años de excelencia académica con una ceremonia que reunió a estudiantes, docentes y autoridades...",
+        image: "/image1.jpeg?height=400&width=600",
+        link: "/noticias/25-aniversario",
+        date: "2024-02-15",
+    },
+    {
+        id: 2,
+        category: "Eventos",
+        title: "Feria de Innovación Tecnológica 2024",
+        description:
+            "Estudiantes de diferentes carreras presentaron sus proyectos innovadores en la feria anual de tecnología, demostrando el talento y creatividad...",
+        image: "/image2.jpeg?height=400&width=600",
+        link: "/eventos/feria-tecnologia-2024",
+        date: "2024-02-10",
+    },
+    {
+        id: 3,
+        category: "Eventos",
+        title: "Seminario Internacional de Ingeniería",
+        description:
+            "Expertos internacionales compartieron sus conocimientos en el seminario anual de ingeniería, abordando temas de vanguardia...",
+        image: "/image1.jpeg?height=400&width=600",
+        link: "/eventos/seminario-ingenieria",
+        date: "2024-02-05",
+    },
+    {
+        id: 4,
+        category: "Eventos",
+        title: "Conferencia de Tecnologías Emergentes",
+        description:
+            "Líderes de la industria presentaron las últimas tendencias en inteligencia artificial, blockchain y computación cuántica...",
+        image: "/placeholder.svg?height=400&width=600",
+        link: "/eventos/conferencia-tecnologias-emergentes",
+        date: "2024-03-15",
+    },
+    {
+        id: 5,
+        category: "Noticia",
+        title: "UNIOR firma convenio con empresa líder en tecnología",
+        description:
+            "La universidad establece una alianza estratégica para ofrecer prácticas profesionales y oportunidades laborales a sus estudiantes...",
+        image: "/placeholder.svg?height=400&width=600",
+        link: "/noticias/convenio-empresa-tecnologia",
+        date: "2024-03-01",
+    },
+];
+
+// Calcular el número total de slides
+const totalSlides = newsItems.length;
+---
+
+<section class="py-16">
+    <div class="container max-w-[1440px] mx-auto px-4">
+        <div class="mb-12 text-center">
+            <h2 class="mb-2 text-4xl font-bold text-primary-light">
+                Noticias y Eventos
+            </h2>
+            <p class="text-xl text-accent-light">
+                No te pierdas las últimas actualizaciones sobre la universidad
+            </p>
+        </div>
+
+        <div class="relative">
+            <!-- Carousel Container -->
+            <div class="relative overflow-hidden">
+                <div
+                    class="slider-container flex transition-transform duration-500 ease-in-out"
+                    style="width: 100%"
+                >
+                    {
+                        newsItems.map((item) => (
+                            <div class="news-slider w-full flex-none px-4 md:w-1/2 lg:w-1/3">
+                                <article class="h-full overflow-hidden rounded-2xl bg-gray-50 shadow-lg transition-all duration-300 hover:shadow-2xl hover:shadow-primary-light/20">
+                                    <div class="relative">
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            width={600}
+                                            height={400}
+                                            class="h-48 w-full object-cover lazyload"
+                                        />
+                                        <div class="absolute left-4 top-4">
+                                            <span
+                                                class={`rounded-full px-3 py-1 text-sm font-semibold ${
+                                                    item.category === "Noticia"
+                                                        ? "bg-primary text-white"
+                                                        : "bg-primary-light text-black"
+                                                }`}
+                                            >
+                                                {item.category}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-6">
+                                        <h3 class="mb-2 text-xl font-bold text-text-light">
+                                            {item.title}
+                                        </h3>
+                                        <p class="mb-4 text-accent-light">
+                                            {item.description}
+                                        </p>
+                                        <div class="flex items-center justify-between">
+                                            <time
+                                                class="text-sm text-accent-light"
+                                                datetime={item.date}
+                                            >
+                                                {new Date(
+                                                    item.date,
+                                                ).toLocaleDateString("es-ES", {
+                                                    year: "numeric",
+                                                    month: "long",
+                                                    day: "numeric",
+                                                })}
+                                            </time>
+                                            <a
+                                                href={item.link}
+                                                class="inline-flex items-center text-primary-light hover:text-primary-light/80"
+                                                aria-label={`Leer más sobre ${item.title}`}
+                                            >
+                                                Ver más
+                                                <svg
+                                                    class="ml-2 h-4 w-4"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 5l7 7-7 7"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg z-10 ml-2 prev-btn opacity-50"
+                aria-label="Slide anterior"
+            >
+                <svg
+                    class="w-6 h-6 text-gray-800"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+
+            <button
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg z-10 mr-2 next-btn"
+                aria-label="Siguiente slide"
+            >
+                <svg
+                    class="w-6 h-6 text-gray-800"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Dots -->
+            <div
+                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 dots-container"
+                role="navigation"
+                aria-label="Controles de navegación de slides"
+            >
+                {
+                    Array.from({ length: newsItems.length }).map((_, index) => (
+                        <button
+                            class="w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors duration-200 dot-indicator"
+                            data-index={index}
+                            aria-label={`Slide ${index + 1}`}
+                            role="button"
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Definir tipos
+    interface CarouselControls {
+        slider: HTMLElement | null;
+        slides: NodeListOf<Element>;
+        prevBtn: HTMLButtonElement | null;
+        nextBtn: HTMLButtonElement | null;
+        dots: NodeListOf<Element>;
+    }
+
+    // Obtener elementos del DOM con tipos correctos
+    const controls: CarouselControls = {
+        slider: document.querySelector(".slider-container"),
+        slides: document.querySelectorAll(".news-slider"),
+        prevBtn: document.getElementById("prevBtn") as HTMLButtonElement | null,
+        nextBtn: document.getElementById("nextBtn") as HTMLButtonElement | null,
+        dots: document.querySelectorAll(".dot-indicator"),
+    };
+
+    let currentSlide = 0;
+    const totalSlides = controls.slides.length;
+    let slidesToShow = getSlidesToShow();
+    let autoSlideInterval: ReturnType<typeof setInterval>;
+
+    function getSlidesToShow(): number {
+        if (window.innerWidth >= 1024) return 3; // Desktop
+        if (window.innerWidth >= 768) return 2; // Tablet
+        return 1; // Mobile
+    }
+
+    function updateSliderPosition() {
+        if (!controls.slider) return;
+
+        slidesToShow = getSlidesToShow();
+        const slideWidth = 100 / slidesToShow;
+        const maxSlides = totalSlides - slidesToShow;
+
+        // Asegurar que currentSlide no exceda el máximo
+        if (currentSlide > maxSlides) {
+            currentSlide = maxSlides;
+        }
+
+        const offset = currentSlide * slideWidth;
+        controls.slider.style.transform = `translateX(-${offset}%)`;
+
+        // Actualizar dots
+        controls.dots.forEach((dot: Element, index) => {
+            const dotElement = dot as HTMLElement;
+            if (index <= maxSlides) {
+                dotElement.style.display = "block";
+                const isActive = index === currentSlide;
+                dot.classList.remove(
+                    "bg-primary",
+                    "bg-gray-300",
+                    "bg-primary-light",
+                );
+                dot.classList.add(isActive ? "bg-primary" : "bg-gray-300");
+            } else {
+                dotElement.style.display = "none";
+            }
+        });
+
+        // Actualizar estado de los botones
+        if (controls.prevBtn && controls.nextBtn) {
+            controls.prevBtn.disabled = currentSlide === 0;
+            controls.nextBtn.disabled = currentSlide === maxSlides;
+
+            // Actualizar estilos visuales
+            controls.prevBtn.classList.toggle("opacity-50", currentSlide === 0);
+            controls.nextBtn.classList.toggle(
+                "opacity-50",
+                currentSlide === maxSlides,
+            );
+        }
+    }
+
+    function nextSlide() {
+        const maxSlides = totalSlides - slidesToShow;
+        if (currentSlide < maxSlides) {
+            currentSlide++;
+            updateSliderPosition();
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSliderPosition();
+        }
+    }
+
+    // Event listeners
+    controls.prevBtn?.addEventListener("click", () => {
+        prevSlide();
+        resetAutoSlide();
+    });
+
+    controls.nextBtn?.addEventListener("click", () => {
+        nextSlide();
+        resetAutoSlide();
+    });
+
+    // Dots event listeners
+    controls.dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            const maxSlides = totalSlides - slidesToShow;
+            if (index <= maxSlides) {
+                currentSlide = index;
+                updateSliderPosition();
+                resetAutoSlide();
+            }
+        });
+    });
+
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(() => {
+            const maxSlides = totalSlides - slidesToShow;
+            if (currentSlide >= maxSlides) {
+                currentSlide = 0;
+            } else {
+                currentSlide++;
+            }
+            updateSliderPosition();
+        }, 5000);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+
+    function resetAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
+
+    // Touch events
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isTouching = false;
+
+    controls.slider?.addEventListener(
+        "touchstart",
+        (e: TouchEvent) => {
+            isTouching = true;
+            touchStartX = e.touches[0].clientX;
+            stopAutoSlide();
+        },
+        { passive: true },
+    );
+
+    controls.slider?.addEventListener(
+        "touchmove",
+        (e: TouchEvent) => {
+            if (!isTouching || !controls.slider) return;
+
+            const currentX = e.touches[0].clientX;
+            const diff = touchStartX - currentX;
+            const slideWidth = controls.slider.offsetWidth / slidesToShow;
+
+            // Calcular el nuevo offset con límites
+            const maxOffset = (totalSlides - slidesToShow) * slideWidth;
+            const currentOffset = currentSlide * slideWidth + diff;
+
+            // Aplicar transformación con resistencia en los extremos
+            if (currentOffset > maxOffset || currentOffset < 0) {
+                const resistance = 0.25;
+                controls.slider.style.transform = `translateX(${-currentOffset * resistance}px)`;
+            } else {
+                controls.slider.style.transform = `translateX(${-currentOffset}px)`;
+            }
+        },
+        { passive: true },
+    );
+
+    controls.slider?.addEventListener("touchend", (e: TouchEvent) => {
+        isTouching = false;
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+        startAutoSlide();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0 && currentSlide < totalSlides - slidesToShow) {
+                nextSlide();
+            } else if (diff < 0 && currentSlide > 0) {
+                prevSlide();
+            }
+        }
+
+        updateSliderPosition();
+    }
+
+    // Responsive behavior
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const newSlidesToShow = getSlidesToShow();
+            if (slidesToShow !== newSlidesToShow) {
+                slidesToShow = newSlidesToShow;
+                const maxSlides = totalSlides - slidesToShow;
+                if (currentSlide > maxSlides) {
+                    currentSlide = maxSlides;
+                }
+                updateSliderPosition();
+            }
+        }, 250);
+    });
+
+    // Hover events
+    controls.slider?.addEventListener("mouseenter", stopAutoSlide);
+    controls.slider?.addEventListener("mouseleave", startAutoSlide);
+
+    // Initialize
+    document.addEventListener("DOMContentLoaded", () => {
+        updateSliderPosition();
+        startAutoSlide();
+    });
+</script>

@@ -3,36 +3,39 @@
 ---
 
 <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="mb-12 text-center text-4xl font-bold text-black">Descubre UNIOR</h2>
+  <div class="mx-auto max-w-7xl px-4">
+    <h2 class="mb-12 text-center text-4xl font-bold text-black">Descubre UNIOR</h2>
+    
+    <!-- Cambiamos a 1 columna en móvil, y a 3 columnas/2 filas en pantallas medianas -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2">
       
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
-        <!-- Noticias -->
-        <div class="group relative col-span-2 row-span-2 overflow-hidden rounded-3xl bg-primary p-8 transition-all hover:scale-[1.02]">
-          <h3 class="mb-4 text-2xl font-bold text-white">Últimas Noticias</h3>
-          <div class="space-y-4">
-            <a href="#" class="block text-white/90 hover:text-white">
-              Nuevo programa de intercambio internacional
-            </a>
-            <a href="#" class="block text-white/90 hover:text-white">
-              UNIOR recibe acreditación internacional
-            </a>
-          </div>
-        </div>
-        
-        <!-- Eventos -->
-        <div class="group overflow-hidden rounded-3xl bg-primary-light p-8 transition-all hover:scale-[1.02]">
-          <h3 class="mb-4 text-xl font-bold text-black">Próximos Eventos</h3>
-          <p class="text-black/80">Feria de Carreras 2024</p>
-        </div>
-        
-        <!-- Admisiones -->
-        <div class="group overflow-hidden rounded-3xl bg-black p-8 transition-all hover:scale-[1.02]">
-          <h3 class="mb-4 text-xl font-bold text-white">Proceso de Admisión</h3>
-          <a href="/admisiones" class="text-white/90 hover:text-white">
-            Conoce los requisitos →
+      <!-- Noticias -->
+      <div class="group relative col-span-1 md:col-span-2 md:row-span-2 overflow-hidden rounded-3xl bg-primary p-8 transition-all hover:scale-[1.02]">
+        <h3 class="mb-4 text-2xl font-bold text-white">Últimas Noticias</h3>
+        <div class="space-y-4">
+          <a href="#" class="block text-white/90 hover:text-white">
+            Nuevo programa de intercambio internacional
+          </a>
+          <a href="#" class="block text-white/90 hover:text-white">
+            UNIOR recibe acreditación internacional
           </a>
         </div>
       </div>
+      
+      <!-- Eventos -->
+      <div class="group overflow-hidden rounded-3xl bg-primary-light p-8 transition-all hover:scale-[1.02]">
+        <h3 class="mb-4 text-xl font-bold text-black">Próximos Eventos</h3>
+        <p class="text-black/80">Feria de Carreras 2024</p>
+      </div>
+      
+      <!-- Admisiones -->
+      <div class="group overflow-hidden rounded-3xl bg-black p-8 transition-all hover:scale-[1.02]">
+        <h3 class="mb-4 text-xl font-bold text-white">Proceso de Admisión</h3>
+        <a href="/admisiones" class="text-white/90 hover:text-white">
+          Conoce los requisitos →
+        </a>
+      </div>
+      
     </div>
-  </section>
+  </div>
+</section>

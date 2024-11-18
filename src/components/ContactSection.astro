@@ -3,62 +3,73 @@
 ---
 
 <section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="grid gap-12 md:grid-cols-2">
-        <div>
-          <h2 class="mb-6 text-4xl font-bold text-black">Contáctanos</h2>
-          <form class="space-y-6">
-            <div>
-              <label class="block text-sm font-medium text-accent-dark">Nombre</label>
-              <input 
-                type="text" 
-                class="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-accent-dark">Email</label>
-              <input 
-                type="email" 
-                class="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-accent-dark">Mensaje</label>
-              <textarea 
-                class="mt-1 w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                rows="4"
-              ></textarea>
-            </div>
-            <button 
-              type="submit" 
-              class="w-full rounded-lg bg-primary py-3 text-white transition hover:bg-primary/90"
-            >
-              Enviar Mensaje
-            </button>
-          </form>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-2">
+      <div>
+        <h2 class="mb-6 text-4xl font-bold text-black">Contáctanos</h2>
+        <form class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-accent-dark">Nombre</label>
+            <input 
+              type="text" 
+              class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-accent-dark">Email</label>
+            <input 
+              type="email" 
+              class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-accent-dark">Mensaje</label>
+            <textarea 
+              class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              rows="4"
+            ></textarea>
+          </div>
+          <button 
+            type="submit" 
+            class="w-full max-w-full rounded-lg bg-primary py-3 text-white transition hover:bg-primary/90"
+          >
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="h-[400px] overflow-hidden rounded-lg">
+          <!-- Replace with actual map embed -->
+          <div class="h-full w-full max-w-full bg-gray-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d335.4343363369635!2d-67.11091144650658!3d-17.969257242385176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e2b0bb92f976d3%3A0xbfaa7ce3bf9d58b1!2sUniversidad%20Privada%20de%20Oruro%20-%20UNIOR!5e0!3m2!1ses-419!2sbo!4v1731894711837!5m2!1ses-419!2sbo"
+              width="600" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full max-w-full"
+            ></iframe>
+          </div>
         </div>
         
-        <div class="space-y-6">
-          <div class="h-[400px] overflow-hidden rounded-lg">
-            <!-- Replace with actual map embed -->
-            <div class="h-full w-full bg-gray-200"></div>
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-semibold text-black">Dirección</h3>
+            <p class="text-accent-light">C. Junín #348, Oruro, Bolivia</p>
           </div>
-          
-          <div class="space-y-4">
-            <div>
-              <h3 class="text-lg font-semibold text-black">Dirección</h3>
-              <p class="text-accent-light">C. Junín #348, Oruro, Bolivia</p>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-black">Teléfono</h3>
-              <p class="text-accent-light">+591 25273780</p>
-            </div>
-            <div>
-              <h3 class="text-lg font-semibold text-black">Email</h3>
-              <p class="text-accent-light">info@unior.edu.bo</p>
-            </div>
+          <div>
+            <h3 class="text-lg font-semibold text-black">Teléfono</h3>
+            <p class="text-accent-light">+591 25273780</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-black">Email</h3>
+            <p class="text-accent-light">info@unior.edu.bo</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
