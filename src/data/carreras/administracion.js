@@ -11,13 +11,17 @@ export const careerDetails = {
     accreditation: "Acreditada por CEUB",
     image: "/placeholder.svg?height=600&width=800",
     video: "/video_unior2.mp4",
-    icon: "⚡",
+    icon: "💼",
     curriculum: [
-      { year: "Primer Año", courses: ["Introducción a la Programación", "Matemáticas Discretas", "Álgebra Lineal", "Cálculo I", "Física I"] },
-      { year: "Segundo Año", courses: ["Estructuras de Datos", "Programación Orientada a Objetos", "Bases de Datos", "Arquitectura de Computadoras", "Cálculo II"] },
-      { year: "Tercer Año", courses: ["Ingeniería de Software", "Redes de Computadoras", "Sistemas Operativos", "Inteligencia Artificial", "Estadística y Probabilidad"] },
-      { year: "Cuarto Año", courses: ["Desarrollo Web", "Seguridad Informática", "Computación en la Nube", "Gestión de Proyectos", "Minería de Datos"] },
-      { year: "Quinto Año", courses: ["Sistemas Distribuidos", "Ética en la Informática", "Emprendimiento Tecnológico", "Práctica Profesional", "Proyecto de Grado"] },
+      { year: "Primer Semestre", courses: ["Introducción a la Programación", "Matemáticas Discretas", "Álgebra Lineal", "Cálculo I", "Física I"] },
+      { year: "Segundo Semestre", courses: ["Estructuras de Datos", "Programación Orientada a Objetos", "Bases de Datos", "Arquitectura de Computadoras", "Cálculo II"] },
+      { year: "Tercer Semestre", courses: ["Ingeniería de Software", "Redes de Computadoras", "Sistemas Operativos", "Inteligencia Artificial", "Estadística y Probabilidad"] },
+      { year: "Cuarto Semestre", courses: ["Desarrollo Web", "Seguridad Informática", "Computación en la Nube", "Gestión de Proyectos", "Minería de Datos"] },
+      { year: "Quinto Semestre", courses: ["Sistemas Distribuidos", "Ética en la Informática", "Emprendimiento Tecnológico", "Práctica Profesional", "Proyecto de Grado"] },
+      { year: "Sexto Semestre", courses: ["Sistemas Distribuidos", "Ética en la Informática", "Emprendimiento Tecnológico", "Práctica Profesional", "Proyecto de Grado"] },
+      { year: "Séptimo Semestre", courses: ["Sistemas Distribuidos", "Ética en la Informática", "Emprendimiento Tecnológico", "Práctica Profesional", "Proyecto de Grado"] },
+      { year: "Octavo Semestre", courses: ["Sistemas Distribuidos", "Ética en la Informática", "Emprendimiento Tecnológico", "Práctica Profesional", "Proyecto de Grado"] },
+      
     ],
     jobOpportunities: [
       "Desarrollador de Software",

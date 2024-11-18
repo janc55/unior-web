@@ -2,7 +2,7 @@
 // src/pages/carreras/[slug].astro
 
 // Asegúrate de tener el adaptador correcto si usas uno
-import HeaderCarreras from '../../components/HeaderCarreras.astro';
+import Header from '../../components/Header.astro';
 import { careers } from '../../data/carreras/index.js';
 import Layout from '../../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
@@ -29,9 +29,9 @@ if (!career) {
 
 <Layout title={`${career.title} - Universidad Privada de Oruro`}>
     <main class="text-text-light">
-      <HeaderCarreras/>
+      <Header isHero={true}/>
       <!-- Hero Section -->
-      <section class="relative h-[80vh] overflow-hidden">
+      <section class="relative h-screen overflow-hidden">
         <div class="absolute inset-0 z-0">
           <div class="relative h-full w-full">
             <video 

@@ -11,7 +11,7 @@ export const careerDetails = {
     accreditation: "Acreditada por CEUB",
     image: "/placeholder.svg?height=600&width=800",
     video: "/video_unior2.mp4",
-    icon: "⚡",
+    icon: "📊",
     curriculum: [
       { year: "Primer Año", courses: ["Introducción a la Programación", "Matemáticas Discretas", "Álgebra Lineal", "Cálculo I", "Física I"] },
       { year: "Segundo Año", courses: ["Estructuras de Datos", "Programación Orientada a Objetos", "Bases de Datos", "Arquitectura de Computadoras", "Cálculo II"] },
