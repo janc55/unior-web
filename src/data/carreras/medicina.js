@@ -12,12 +12,15 @@ export const careerDetails = {
     video: "/video_unior2.mp4",
     icon: "🩺",
     curriculum: [
-      { year: "Primer Año", courses: ["Anatomía Humana", "Biología Celular", "Histología", "Química General", "Introducción a la Medicina"] },
-      { year: "Segundo Año", courses: ["Fisiología", "Bioquímica", "Microbiología", "Patología General", "Embriología"] },
-      { year: "Tercer Año", courses: ["Farmacología", "Patología Especial", "Medicina Interna I", "Pediatría I", "Ginecología y Obstetricia"] },
-      { year: "Cuarto Año", courses: ["Cirugía General", "Psiquiatría", "Medicina Interna II", "Pediatría II", "Salud Pública"] },
-      { year: "Quinto Año", courses: ["Medicina de Urgencias", "Medicina Familiar", "Internado Rotatorio", "Práctica Clínica Supervisada", "Proyecto de Grado"] },
-    ],
+      { year: "Primer Semestre", courses: ["Anatomía Humana I", "Informática", "Genética", "Histología I", "Metodología de la Investigación", "Soporte Básico de Vida", "Quechua I"] },
+      { year: "Segundo Semestre", courses: ["Anatomía Humana II", "Bioestadística", "Embriología", "Histología II", "Biofísica", "Quechua II"] },
+      { year: "Tercer Semestre", courses: ["Fisiología Humana I", "Salud Pública", "Parasitología I", "Bioquímica I", "Microbiología", "Patología General", "Inglés I"] },
+      { year: "Cuarto Semestre", courses: ["Fisiología Humana II", "Psicología Médica", "Ética Médica", "Bioquímica II", "Patología Clínica", "Inglés II", "Optativa Básica I"] },
+      { year: "Quinto Semestre", courses: ["Fisiopatología I", "Semiología I", "Farmacología y Terapéutica I", "Imagenología I", "Patología Especial I", "Inmunología"] },
+      { year: "Sexto Semestre", courses: ["Fisiopatología II", "Semiología II", "Técnica Quirúrgica", "Farmacología y Terapéutica II", "Imagenología II", "Patología Especial II", "Epidemiología", "Optativa Preclínica I"] },
+      { year: "Séptimo Semestre", courses: ["Ginecología y Obstetricia I", "Cardiología", "Cirugía Cabeza y Cuello", "Neumología", "Oftalmología", "Otorrinolaringología", "Traumatología y Ortopedia I", "Anestesiología I"] },
+      { year: "Octavo Semestre", courses: ["Ginecología y Obstetricia II", "Reumatología", "Cirugía de Tórax", "Nefrología", "Dermatología", "Urología"] }
+  ],
     jobOpportunities: [
       "Médico General",
       "Especialista en Cirugía",

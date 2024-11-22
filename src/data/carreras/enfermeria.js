@@ -12,11 +12,13 @@ export const careerDetails = {
     video: "/video_unior2.mp4",
     icon: "🩹",
     curriculum: [
-      { year: "Primer Año", courses: ["Anatomía Humana", "Fisiología", "Introducción a la Enfermería", "Química Básica", "Salud Pública"] },
-      { year: "Segundo Año", courses: ["Microbiología", "Enfermería Básica", "Nutrición", "Psicología", "Farmacología"] },
-      { year: "Tercer Año", courses: ["Enfermería Médico-Quirúrgica", "Salud Materno Infantil", "Enfermería en Urgencias", "Ética y Bioética", "Estadística"] },
-      { year: "Cuarto Año", courses: ["Enfermería Comunitaria", "Enfermería Geriátrica", "Gestión en Salud", "Práctica Profesional Supervisada", "Seminario de Titulación"] },
-    ],
+      { year: "Primer Semestre", courses: ["Anatomía Humana I", "Biología y Genética", "Bioquímica", "Fisiología", "Microbiología y Parasitología"] },
+      { year: "Segundo Semestre", courses: ["Anatomía Humana II", "Bioestadística y Demografía", "Epidemiología", "Enfermería de Salud Comunitaria I", "Fundamentos de Enfermería"] },
+      { year: "Tercer Semestre", courses: ["Nutrición y Dietética", "Farmacología I", "Enfermería Médico Quirúrgico I", "Enfermería de Salud Comunitaria II", "Psicología General"] },
+      { year: "Cuarto Semestre", courses: ["Curso Electivo (Aymara - Quechua)", "Farmacología II", "Enfermería Médico Quirúrgico II", "Metodología de la Investigación", "Psicología Evolutiva"] },
+      { year: "Quinto Semestre", courses: ["Curso Electivo II", "Enfermería Pediátrica", "Enfermería Materno Infantil", "Ética Profesional", "Psicología Social"] },
+      { year: "Sexto Semestre", courses: ["Enfermería Médico Quirúrgico (Internado)", "Enfermería en Salud de la Mujer y Niño (Internado)"] }
+  ],
     jobOpportunities: [
       "Enfermero Clínico",
       "Enfermero de Urgencias",

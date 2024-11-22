@@ -1,0 +1,58 @@
+---
+const { targetDate } = Astro.props;
+---
+
+<div class="countdown text-2xl font-bold mb-8" data-target={targetDate}>
+  <div class="flex justify-center space-x-4">
+    <div class="flex flex-col items-center">
+      <span class="days bg-primary text-white p-2 rounded">00</span>
+      <span class="text-sm mt-1">Días</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span class="hours bg-primary text-white p-2 rounded">00</span>
+      <span class="text-sm mt-1">Horas</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span class="minutes bg-primary text-white p-2 rounded">00</span>
+      <span class="text-sm mt-1">Minutos</span>
+    </div>
+    <div class="flex flex-col items-center">
+      <span class="seconds bg-primary text-white p-2 rounded">00</span>
+      <span class="text-sm mt-1">Segundos</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function updateCountdown() {
+  const countdownElement = document.querySelector('.countdown') as HTMLElement; // Aseguramos el tipo
+  const targetDate = new Date(countdownElement.dataset.target!).getTime(); // Usamos "!" para indicar que no es null o undefined
+
+  const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownElement.querySelector('.days')!.textContent = days.toString().padStart(2, '0');
+    countdownElement.querySelector('.hours')!.textContent = hours.toString().padStart(2, '0');
+    countdownElement.querySelector('.minutes')!.textContent = minutes.toString().padStart(2, '0');
+    countdownElement.querySelector('.seconds')!.textContent = seconds.toString().padStart(2, '0');
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      countdownElement.innerHTML = "¡El Black Friday ha terminado!";
+    }
+  }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', updateCountdown);
+
+</script>
+
+
+
+

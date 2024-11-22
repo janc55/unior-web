@@ -6,17 +6,22 @@ export const careerDetails = {
     degree: "Licenciatura",
     modality: "Semestral",
     credits: 300,
-    coordinator: "Lic. María Jiménez",
-    accreditation: "Acreditada por CEUB",
-    image: "/placeholder.svg?height=600&width=800",
-    video: "/video_unior2.mp4",
+    coordinator: "Ing. José Negretti",
+    accreditation: "R.M. 1234/2018",
+    image: "/carreras/gth.webp?height=600&width=800",
+    video: "/carreras/gth.mp4",
     icon: "🍽️",
     curriculum: [
-      { year: "Primer Año", courses: ["Introducción al Turismo", "Historia de la Gastronomía", "Cocina Básica", "Administración de Empresas Turísticas", "Nutrición y Dietética"] },
-      { year: "Segundo Año", courses: ["Cocina Internacional", "Gestión Hotelera", "Patrimonio Turístico", "Cultura y Turismo", "Contabilidad General"] },
-      { year: "Tercer Año", courses: ["Gestión de Eventos", "Bebidas y Coctelería", "Marketing Turístico", "Planificación Turística", "Cocina de Alta Gama"] },
-      { year: "Cuarto Año", courses: ["Desarrollo Sostenible del Turismo", "Técnicas de Servicio", "Gestión de Restaurantes", "Práctica Profesional", "Seminario de Titulación"] },
-    ],
+      { year: "Primer Semestre", courses: ["Gestión Turística", "Dirección de Empresas", "Técnicas de Aprendizaje", "Higiene y Conservación de Alimentos", "Técnicas Culinarias I", "Panadería y Pastelería"] },
+      { year: "Segundo Semestre", courses: ["Historia de Bolivia", "Atención al Cliente y Relaciones Públicas", "Recepción Hotelera y Reservas", "Inglés I", "Técnicas Culinarias II", "Panadería Nacional"] },
+      { year: "Tercer Semestre", courses: ["Historia Universal", "Arqueología y Museología", "Alimentos y Bebidas", "Inglés II", "Panadería Internacional", "Cocina Nacional I"] },
+      { year: "Cuarto Semestre", courses: ["Geografía Turística", "Dirección de Marketing", "Housekeeping", "Gestión de Almacenes", "Cocina Nacional II", "Gastronomía Americana"] },
+      { year: "Quinto Semestre", courses: ["Dirección del Talento Humano", "Gestión Hotelera", "Nutrición y Dietética", "Pastelería", "Gastronomía Europea y Mediterránea", "Práctica I"] },
+      { year: "Sexto Semestre", courses: ["Turismo y Desarrollo Sostenible", "Guiaje Turístico", "Gestión de Costos", "Gestión de Eventos", "Gastronomía Asiática", "Enología y Maridaje"] },
+      { year: "Séptimo Semestre", courses: ["Turismo Internacional", "Legislación Turística y Hotelera", "Categorización de Establecimientos Hoteleros", "Gastronomía Tradicional Oruro", "Alta Pastelería y Repostería", "Práctica II"] },
+      { year: "Octavo Semestre", courses: ["Sistemas de Gestión de Calidad", "Etiqueta y Protocolo", "Producción Alimenticia", "Gastronomía Saludable", "Nuevas Tendencias Culinarias", "Metodología de la Investigación"] },
+      { year: "Taller de Grado", courses: ["Práctica Final", "Taller de trabajo de grado"] }
+  ],
     jobOpportunities: [
       "Chef Ejecutivo",
       "Gerente de Hotel",
@@ -24,7 +29,19 @@ export const careerDetails = {
       "Consultor Gastronómico",
       "Administrador de Restaurantes",
       "Guía Turístico",
-      "Docente Universitario en Turismo y Gastronomía",
+      "Docente Universitario",
+    ],
+    studentTestimonials: [
+      {
+        name: "María González",
+        position: "Auditor Interno en XYZ Corp.",
+        quote: "La carrera de Auditoría me proporcionó las herramientas necesarias para analizar y mejorar los procesos internos de mi empresa. Los profesores son expertos en su campo y siempre están dispuestos a ayudar."
+      },
+      {
+        name: "Carlos Ramírez",
+        position: "Consultor de Auditoría en ABC Consulting",
+        quote: "Gracias a la formación integral en Auditoría, pude desarrollar habilidades analíticas y de gestión que han sido fundamentales en mi carrera profesional. Recomiendo esta carrera a cualquiera que quiera tener un impacto real en las organizaciones."
+      },
     ],
   };
   

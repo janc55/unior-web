@@ -76,16 +76,12 @@ if (!career) {
                   <span><strong>Modalidad:</strong> {career.modality}</span>
                 </li>
                 <li class="flex items-center space-x-2">
-                  <Icon name="mdi:certificate-outline" class="h-6 w-6 text-primary-light" />
-                  <span><strong>Créditos:</strong> {career.credits}</span>
-                </li>
-                <li class="flex items-center space-x-2">
                   <Icon name="mdi:account-tie-outline" class="h-6 w-6 text-primary-light" />
-                  <span><strong>Coordinador:</strong> {career.coordinator}</span>
+                  <span><strong>Director de Carrera:</strong> {career.coordinator}</span>
                 </li>
                 <li class="flex items-center space-x-2">
                   <Icon name="mdi:shield-check-outline" class="h-6 w-6 text-primary-light" />
-                  <span><strong>Acreditación:</strong> {career.accreditation}</span>
+                  <span><strong>Resolución Ministerial:</strong> {career.accreditation}</span>
                 </li>
               </ul>
             </div>
@@ -140,18 +136,20 @@ if (!career) {
       <section class=" bg-neutral-50 py-16">
         <div class="container mx-auto max-w-[1440px] px-4">
           <h2 class="mb-8 text-center text-3xl font-bold text-accent-dark">Lo que dicen nuestros estudiantes</h2>
-          <div class="mx-auto max-w-3xl rounded-xl bg-neutral-50 p-8 shadow-lg">
+          {career.studentTestimonials.map((testimonial) => (
+            <div class="mx-auto mt-2 max-w-3xl rounded-xl bg-neutral-50 p-8 shadow-lg">
             <blockquote class="mb-4 text-lg italic">
-              "Estudiar Ingeniería de Sistemas en UNIOR ha sido una experiencia transformadora. Los profesores son expertos en sus campos y el plan de estudios está siempre actualizado con las últimas tecnologías."
+              {testimonial.quote}
             </blockquote>
             <div class="flex items-center">
-              <img src="/placeholder.svg?height=50&width=50" alt="Foto de estudiante" class="mr-4 h-12 w-12 rounded-full" />
+              <img src={testimonial.image} alt="Foto de estudiante" class="mr-4 h-12 w-12 rounded-full" />
               <div>
-                <p class="font-semibold">María Gómez</p>
-                <p class="text-sm text-gray-400">Estudiante de 4to año</p>
+                <p class="font-semibold">{testimonial.name}</p>
+                <p class="text-sm text-gray-400">{testimonial.position}</p>
               </div>
             </div>
           </div>
+          ))}
         </div>
       </section>
   

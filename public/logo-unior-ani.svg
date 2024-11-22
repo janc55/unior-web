@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 859.65 478.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        font-family: Chairdrobe-Bold, Chairdrobe;
+        font-size: 400px;
+        font-weight: 700;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+        stroke-dasharray: 2500;
+        stroke-dashoffset: 2500;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(68.4 379.51)">
+    <tspan x="0" y="0">UNIOR</tspan>
+    <animate attributeName="stroke-dashoffset" from="2500" to="0" dur="5s" fill="freeze" />
+  </text>
+</svg>
