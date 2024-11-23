@@ -7,9 +7,9 @@ export const careerDetails = {
     modality: "Semestral",
     credits: 400,
     coordinator: "Dr. Juan Morales",
-    accreditation: "Acreditada por CEUB",
+    accreditation: "R.M. Nro 093/09",
     image: "/placeholder.svg?height=600&width=800",
-    video: "/video_unior2.mp4",
+    video: "/carreras/med.mp4",
     icon: "🩺",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Informática", "Genética", "Histología I", "Metodología de la Investigación", "Soporte Básico de Vida", "Quechua I"] },

@@ -7,7 +7,7 @@ export const careerDetails = {
     modality: "Presencial (Modalidad Anual)",
     credits: 350,
     coordinator: "Dr. Samuel Tapia",
-    accreditation: "R.M. 464/99",
+    accreditation: "R.M. Nro 095/99",
     image: "/carreras/der.webp?height=600&width=800",
     video: "/carreras/der.mp4",
     icon: "⚖️",

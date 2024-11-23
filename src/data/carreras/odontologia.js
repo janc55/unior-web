@@ -9,7 +9,7 @@ export const careerDetails = {
     coordinator: "Dra. Claudia Rivera",
     accreditation: "Acreditada a la Mercosur, Mercosur Educativo",
     image: "/image2.jpeg?height=600&width=800",
-    video: "/video_unior2.mp4",
+    video: "/carreras/odo.mp4",
     icon: "🦷",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Histología I", "Genética y Embriología", "Bioquímica", "Inglés I", "Quechua I"] },

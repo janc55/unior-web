@@ -7,9 +7,9 @@ export const careerDetails = {
     modality: "Semestral",
     credits: 300,
     coordinator: "Lic. Carmen López",
-    accreditation: "Acreditada por CEUB",
+    accreditation: "R.M. Nro 0226/2019",
     image: "/placeholder.svg?height=600&width=800",
-    video: "/video_unior2.mp4",
+    video: "/carreras/enf.mp4",
     icon: "🩹",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Biología y Genética", "Bioquímica", "Fisiología", "Microbiología y Parasitología"] },

@@ -8,7 +8,7 @@ export const careerDetails = {
     modality: "Presencial y Semipresencial",
     credits: 300,
     coordinator: "Lic. Alisabel Durán",
-    accreditation: "R.M. 456/99",
+    accreditation: "R.M. Nro 095/99",
     image: "/carreras/aud.webp?height=600&width=800",
     video: "/carreras/aud.mp4",
     icon: "📊",

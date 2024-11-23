@@ -8,9 +8,9 @@ export const careerDetails = {
     modality: "Presencial",
     credits: 300,
     coordinator: "Lic. Alisabel Durán",
-    accreditation: "Acreditada por CEUB",
+    accreditation: "R.M. Nro 095/99",
     image: "/carreras/adm.webp?height=600&width=800",
-    video: "/video_unior2.mp4",
+    video: "/carreras/adm.mp4",
     icon: "💼",
     curriculum: [
       { year: "Primer Semestre", courses: ["Administración I", "Contabilidad Básica", "Introducción a la Economía", "Análisis Matemático I", "Computación", "Realidad Económica Social de Bolivia", "Optativa Área Básica"] },

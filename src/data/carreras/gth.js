@@ -7,7 +7,7 @@ export const careerDetails = {
     modality: "Semestral",
     credits: 300,
     coordinator: "Ing. José Negretti",
-    accreditation: "R.M. 1234/2018",
+    accreditation: "R.M. Nro 814/2018",
     image: "/carreras/gth.webp?height=600&width=800",
     video: "/carreras/gth.mp4",
     icon: "🍽️",

@@ -8,9 +8,9 @@ export const careerDetails = {
     modality: "Presencial",
     credits: 300,
     coordinator: "Lic. Alisabel Durán",
-    accreditation: "R.M. 4561/04",
+    accreditation: "R.M. Nro 095/99",
     image: "/placeholder.svg?height=600&width=800",
-    video: "/video_unior2.mp4",
+    video: "/carreras/sis.mp4",
     icon: "💻",
     curriculum: [
       { year: "Primer Semestre", courses: ["Informática I", "Administración I", "Ingeniería de Sistemas en las Organizaciones", "Álgebra y Lógica Formal", "Cálculo I", "Inglés I"] },

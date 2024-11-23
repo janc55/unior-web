@@ -8,33 +8,91 @@ import Footer from '../components/Footer.astro';
 
 const mision = "Nuestro principal objetivo es formar profesionales competitivos con alta calidad académica, que tengan cualidades y atributos de liderazgo, sólidos principios y valores; promoviendo la investigación científica y logrando una profunda interacción social sustentada en los valores étnico culturales, contribuyendo a la conservación del medio ambiente, desarrollo social y económico del país.";
 
-const vision = "Ser una universidad líder a nivel nacional e internacional, reconocida por su excelencia académica, investigación de impacto y compromiso con el desarrollo sostenible, formando profesionales que transforman positivamente su entorno.";
+const vision = "Ser la universidad más importante y representativa a nivel nacional, con gran capacidad de liderazgo, reconocida y enraizada en la sociedad orureña por su contribución en la formación de profesionales competitivos, capaces de participar en forma activa y decisiva en el desarrollo científico, tecnológico, económico y cultural.";
 
-const filosofia = "En UNIOR creemos en el poder transformador de la educación y en el potencial ilimitado de cada estudiante. Nos guiamos por los principios de excelencia, innovación, ética y responsabilidad social, fomentando un ambiente de aprendizaje inclusivo y colaborativo.";
+const filosofia = "La filosofía de la universidad se basa en los principios del conocimiento científico, la justicia la disciplina, como valores institucionales; la lealtad, el amor y el respeto a la institución como valores humanos.";
 
 const valoresInstitucionales = [
-  { nombre: "Excelencia", descripcion: "Buscamos la máxima calidad en todo lo que hacemos.", icono: "mdi:star" },
-  { nombre: "Innovación", descripcion: "Fomentamos la creatividad y el pensamiento disruptivo.", icono: "mdi:lightbulb" },
   { nombre: "Ética", descripcion: "Actuamos con integridad y transparencia.", icono: "mdi:hand-heart" },
-  { nombre: "Compromiso Social", descripcion: "Trabajamos por el bienestar de nuestra comunidad.", icono: "mdi:account-group" },
-  { nombre: "Sostenibilidad", descripcion: "Promovemos el desarrollo responsable y sostenible.", icono: "mdi:leaf" }
+  { nombre: "Responsabilidad", descripcion: "Asumimos nuestras acciones y cumplimos con nuestros compromisos.", icono: "mdi:check-circle" },
+  { nombre: "Honestidad", descripcion: "Nos conducimos con verdad y rectitud en todo momento.", icono: "mdi:shield-check" },
+  { nombre: "Proactividad", descripcion: "Tomamos la iniciativa para alcanzar objetivos con eficiencia.", icono: "mdi:run" },
+  { nombre: "Equidad", descripcion: "Promovemos la justicia e igualdad de oportunidades para todos.", icono: "mdi:scale-balance" },
+  { nombre: "Respeto", descripcion: "Valoramos y reconocemos la dignidad de todas las personas.", icono: "mdi:handshake" },
+  { nombre: "Solidaridad", descripcion: "Apoyamos a nuestra comunidad y fomentamos el trabajo conjunto.", icono: "mdi:account-heart" },
+  { nombre: "Excelencia Académica", descripcion: "Aspiramos a lograr los más altos estándares en formación educativa.", icono: "mdi:school" }
 ];
 
 const mensajeRectora = {
-  nombre: "Dra. María González",
+  nombre: "Ph.D. María del Carmen Böhrt Cortés",
   cargo: "Rectora de la Universidad Privada de Oruro",
   mensaje: "En UNIOR, estamos comprometidos con la formación integral de nuestros estudiantes, preparándolos no solo académicamente, sino también como ciudadanos éticos y líderes innovadores. Nuestra visión es ser catalizadores del cambio positivo en nuestra sociedad, a través de la educación de calidad, la investigación de vanguardia y el compromiso con nuestra comunidad. Los invito a ser parte de esta emocionante jornada de crecimiento y descubrimiento en UNIOR.",
-  imagen: "/rectora-unior.jpg"
+  imagen: "/rectora-unior.webp"
 };
 
 const historia = [
-  { year: "1995", event: "Fundación de la Universidad Privada de Oruro" },
-  { year: "2000", event: "Apertura de las primeras facultades de Ingeniería y Ciencias Económicas" },
-  { year: "2010", event: "Inauguración del nuevo campus universitario" },
-  { year: "2015", event: "Acreditación internacional de programas académicos" },
-  { year: "2020", event: "Lanzamiento de programas de posgrado y doctorado" },
-  { year: "2024", event: "Celebración del 29º aniversario y expansión de la infraestructura" }
+  {
+    year: "1999",
+    event: "Fundación de la Universidad Privada de Oruro.",
+    description: "Se funda la Universidad Privada de Oruro con el objetivo de ofrecer educación de calidad y formar profesionales con valores éticos, excelencia académica e innovación, contribuyendo al desarrollo de la región."
+  },
+  {
+    year: "2000",
+    event: "Inicio académico de Administración de Empresas, Auditoría, Ingeniería de Sistemas y Derecho.",
+    description: "Comienza el primer ciclo académico con las carreras pioneras, marcando el inicio de un camino educativo enfocado en formar líderes en el ámbito empresarial, tecnológico y jurídico."
+  },
+  {
+    year: "2003",
+    event: "Apertura de la carrera de Odontología.",
+    description: "Se inaugura la carrera de Odontología, equipada con tecnología moderna y un enfoque integral para formar profesionales altamente capacitados en el área de la salud dental."
+  },
+  {
+    year: "2003",
+    event: "Primera versión del Premio Orgullo Orureño.",
+    description: "La Universidad lanza el Premio Orgullo Orureño, reconociendo a personas e instituciones destacadas que han contribuido al desarrollo cultural, social y académico de Oruro."
+  },
+  {
+    year: "2009",
+    event: "Inicio de las carreras de Medicina y Enfermería (TS).",
+    description: "Se abren las carreras de Medicina y Enfermería (Técnico Superior), enfocadas en satisfacer la creciente demanda de profesionales en el área de la salud en la región y el país."
+  },
+  {
+    year: "2009",
+    event: "Reconocimiento 'Mérito Educativo' por entidades municipales y educativas de Oruro.",
+    description: "La Universidad recibe un reconocimiento por su aporte significativo a la educación y su compromiso con el desarrollo académico y social en la región."
+  },
+  {
+    year: "2009",
+    event: "Certificado por su aporte a la cultura otorgado por instituciones culturales y turísticas.",
+    description: "Se otorga un certificado destacando el impacto cultural de la universidad en Oruro, a través de iniciativas que promueven la identidad y el patrimonio local."
+  },
+  {
+    year: "2016",
+    event: "Inauguración del segundo edificio UNIOR.",
+    description: "Con el fin de expandir su infraestructura y mejorar las condiciones académicas, se inaugura el segundo edificio, proporcionando instalaciones modernas y espacios óptimos para el aprendizaje."
+  },
+  {
+    year: "2018",
+    event: "Inicio académico de Gastronomía, Turismo y Hotelería.",
+    description: "La Universidad introduce esta carrera, dirigida a formar profesionales en sectores clave para el desarrollo económico y cultural de la región y del país."
+  },
+  {
+    year: "2019",
+    event: "Inicio de la Licenciatura en Enfermería.",
+    description: "La Licenciatura en Enfermería comienza a ofrecerse, fortaleciendo la formación de profesionales de la salud con un enfoque humanista y ético."
+  },
+  {
+    year: "2023",
+    event: "Acreditación al Mercosur Educativo (Odontología).",
+    description: "La carrera de Odontología alcanza la acreditación al Mercosur Educativo, garantizando estándares internacionales de calidad en la formación de sus estudiantes."
+  },
+  {
+    year: "2024",
+    event: "Celebración del 25º aniversario de la Universidad Privada de Oruro.",
+    description: "Este año celebramos con orgullo 25 años de trayectoria formando profesionales éticos, innovadores y comprometidos con el desarrollo de la sociedad. Un cuarto de siglo que refleja nuestra dedicación a la excelencia educativa."
+  }
 ];
+
 ---
 
 <Layout title="Sobre UNIOR - Universidad Privada de Oruro">
@@ -175,28 +233,34 @@ const historia = [
 
     <!-- Historia Timeline -->
     <section class="py-16">
-      <div class="container max-w-[1440px] mx-auto px-4">
+      <div class="container max-w-[1080px] mx-auto px-4">
         <h2 class="mb-12 text-center text-3xl font-bold text-primary animate-fade-in-down">Nuestra Historia</h2>
         <div class="relative">
+          <!-- Línea central -->
           <div class="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-primary"></div>
           <div class="space-y-12">
             {historia.map((item, index) => (
-              <div class={`relative ${index % 2 === 0 ? 'animate-fade-in-left' : 'animate-fade-in-right'}`} style={`animation-delay: ${index * 200}ms`}>
-                <div class="flex items-center">
-                  <div class={`flex w-1/2 ${index % 2 === 0 ? 'justify-end pr-8' : 'justify-start pl-8'}`}>
-                    <div class="rounded-lg bg-white p-4 shadow-lg">
-                      <h3 class="text-xl font-semibold text-primary">{item.year}</h3>
-                      <p class="text-gray-700">{item.event}</p>
-                    </div>
+              <div
+                class={`relative flex items-center ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'} animate-fade-in`}
+                style={`animation-delay: ${index * 200}ms`}
+              >
+                <!-- Contenedor del contenido -->
+                <div class="w-1/2 px-8">
+                  <div class="rounded-lg bg-white p-4 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-primary">{item.year}</h3>
+                    <p class="text-xl text-gray-700">{item.event}</p>
+                    <p class="text-gray-500">{item.description}</p>
                   </div>
-                  <div class="absolute left-1/2 -ml-1 h-4 w-4 -translate-x-1/2 transform rounded-full bg-primary"></div>
                 </div>
+                <!-- Punto central -->
+                <div class="absolute left-1/2 -ml-2 h-4 w-4 -translate-x-1/2 transform rounded-full bg-primary"></div>
               </div>
             ))}
           </div>
         </div>
       </div>
     </section>
+
   </main>
   <Footer/>
 </Layout>
