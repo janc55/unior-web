@@ -11,7 +11,7 @@ const admissionSteps = [
   },
   {
     title: "Prepara tus documentos",
-    description: "Reúne los documentos necesarios: certificado de bachiller, documento de identidad, fotografías, etc.",
+    description: "Reúne los documentos necesarios: fotocopia legalizada del título de bachiller, documento de identidad, fotografías, etc.",
     icon: "mdi:file-document-multiple"
   },
   {
@@ -34,11 +34,11 @@ const admissionSteps = [
 const faqs = [
   {
     question: "¿Cuándo comienzan las inscripciones?",
-    answer: "Las inscripciones para el próximo semestre comienzan el 1 de julio y finalizan el 15 de agosto."
+    answer: "Las inscripciones para el próximo semestre comienzan el 29 de noviembre y finalizan el 24 de febrero."
   },
   {
     question: "¿Qué documentos necesito para inscribirme?",
-    answer: "Necesitarás tu certificado de bachiller, documento de identidad, 4 fotografías tamaño carnet, y el comprobante de pago de la matrícula."
+    answer: "Necesitarás una fotocopia legalizada de tu título de bachiller, certificado de nacimiento, fotocopia simple de tu cédula de identidad, 2 fotografías tamaño carnet, 2 fotgrafias 4x4 en fondo rojo y el comprobante de pago de la matrícula."
   },
   {
     question: "¿Ofrecen becas o ayuda financiera?",
@@ -52,10 +52,11 @@ const faqs = [
 ---
 
 <Layout title="Admisiones - Universidad Privada de Oruro">
-    <Header isHero={true}/>
+    <Header isHero={false}/>
     <main >
 
-    <!-- Proceso de Admisión -->
+    
+      <!-- Proceso de Admisión -->
     <section class="py-4">
       <div class="container max-w-[1200px] mx-auto px-4">
         <h2 class="mb-12 text-center text-3xl font-bold text-primary animate-fade-in-down">Proceso de Admisión</h2>
@@ -114,7 +115,7 @@ const faqs = [
             <p class="text-gray-600">Nuestro equipo de admisiones está aquí para ayudarte en cada paso del proceso.</p>
           </div>
           <div class="md:w-1/3 md:text-right">
-            <a href="#" class="inline-flex items-center rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-primary-dark">
+            <a href="https://wa.link/bdiw3q" class="inline-flex items-center rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-primary-dark">
               <Icon name="mdi:phone" class="mr-2 h-5 w-5" />
               Contáctanos
             </a>

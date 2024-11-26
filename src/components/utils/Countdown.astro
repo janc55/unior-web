@@ -42,11 +42,18 @@ const { targetDate } = Astro.props;
     countdownElement.querySelector('.minutes')!.textContent = minutes.toString().padStart(2, '0');
     countdownElement.querySelector('.seconds')!.textContent = seconds.toString().padStart(2, '0');
 
+    // Si el tiempo ha llegado a 0, cambia el contenido
     if (distance < 0) {
-      clearInterval(countdown);
-      countdownElement.innerHTML = "¡El Black Friday ha terminado!";
-    }
-  }, 1000);
+        clearInterval(countdown);
+
+        // Cambia el contenido del countdown a un botón
+        countdownElement.innerHTML = `
+          <a href="https://example.com/formulario" 
+             class="bg-primary text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-red-700 transition duration-300 inline-block">
+            ¡Accede al Formulario!
+          </a>`;
+      }
+    }, 1000);
 }
 
 document.addEventListener('DOMContentLoaded', updateCountdown);

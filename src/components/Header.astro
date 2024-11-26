@@ -28,18 +28,59 @@ const { isHero } = Astro.props;
       </div>
       <nav class="hidden lg:flex">
         <ul class="flex space-x-4">
-          {
-            navItems.map((item) => (
-              <li>
+          {navItems.map((item) => (
+            <li class="relative group">
+              {item.name === "Carreras" ? (
+                <>
+                  <a
+                    href={item.href}
+                    class={`rounded-md px-3 py-2 text-sm font-medium transition ${
+                      isHero
+                        ? "text-white hover:bg-gray-200 hover:text-text-light"
+                        : "text-black hover:bg-gray-200 hover:text-primary"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                  <!-- Submenú -->
+                  <ul
+                    class="absolute left-0 hidden w-48 bg-white shadow-lg group-hover:block"
+                  >
+                    {[
+                      { name: "Ingeniería de Sistemas", href: "/carreras/ingenieria-de-sistemas" },
+                      { name: "Auditoria", href: "/carreras/auditoria" },
+                      { name: "Administración de Empresas", href: "/carreras/administracion-de-empresas" },
+                      { name: "Derecho", href: "/carreras/derecho" },
+                      { name: "Odontología", href: "/carreras/odontologia" },
+                      { name: "Medicina", href: "/carreras/medicina" },
+                      { name: "Enfermería", href: "/carreras/enfermeria" },
+                      { name: "Gastronomía, Turismo y Hotelería", href: "/carreras/gastronomia-turismo-hoteleria" },
+                    ].map((career) => (
+                      <li>
+                        <a
+                          href={career.href}
+                          class="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-primary"
+                        >
+                          {career.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
                 <a
                   href={item.href}
-                  class={`rounded-md px-3 py-2 text-sm font-medium transition 
-                          ${isHero ? 'text-white hover:bg-gray-200 hover:text-text-light' : 'text-black hover:bg-gray-200 hover:text-primary'}`}>
+                  class={`rounded-md px-3 py-2 text-sm font-medium transition ${
+                    isHero
+                      ? "text-white hover:bg-gray-200 hover:text-text-light"
+                      : "text-black hover:bg-gray-200 hover:text-primary"
+                  }`}
+                >
                   {item.name}
                 </a>
-              </li>
-            ))
-          }
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
       <div class="flex items-center">
@@ -77,16 +118,60 @@ const { isHero } = Astro.props;
   <!-- Mobile menu, hidden by default -->
   <div class="md:hidden hidden bg-white" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
-      {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class="block rounded-md px-3 py-2 text-base font-medium text-accent-dark hover:bg-accent-lightner hover:text-text-dark"
-          >
-            {item.name}
-          </a>
-        ))
-      }
+      {navItems.map((item) => (
+        <div>
+          {item.name === "Carreras" ? (
+            <div class="flex items-center justify-between">
+              <a
+                href={item.href}
+                class="block rounded-md px-3 py-2 text-base font-medium text-accent-dark hover:bg-accent-lightner hover:text-text-dark"
+              >
+                {item.name}
+              </a>
+              <button
+                class="text-gray-600 focus:outline-none"
+                aria-label="Toggle Carreras"
+                data-toggle="mobile-carreras"
+              >
+                +
+              </button>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class="block rounded-md px-3 py-2 text-base font-medium text-accent-dark hover:bg-accent-lightner hover:text-text-dark"
+            >
+              {item.name}
+            </a>
+          )}
+          {item.name === "Carreras" && (
+            <ul
+              class="hidden ml-6 mt-2 space-y-1"
+              id="mobile-carreras"
+            >
+              {[
+                      { name: "Ingeniería de Sistemas", href: "/carreras/ingenieria-de-sistemas" },
+                      { name: "Auditoria", href: "/carreras/auditoria" },
+                      { name: "Administración de Empresas", href: "/carreras/administracion-de-empresas" },
+                      { name: "Derecho", href: "/carreras/derecho" },
+                      { name: "Odontología", href: "/carreras/odontologia" },
+                      { name: "Medicina", href: "/carreras/medicina" },
+                      { name: "Enfermería", href: "/carreras/enfermeria" },
+                      { name: "Gastronomía, Turismo y Hotelería", href: "/carreras/gastronomia-turismo-hoteleria" },
+              ].map((career) => (
+                <li>
+                  <a
+                    href={career.href}
+                    class="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-primary"
+                  >
+                    {career.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
     </div>
   </div>
 </header>
@@ -114,4 +199,21 @@ const { isHero } = Astro.props;
     // Alternar la clase hidden para mostrar/ocultar el menú
     mobileMenu.classList.toggle("hidden");
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggleButtons = document.querySelectorAll(
+    'button[data-toggle="mobile-carreras"]',
+  );
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-toggle");
+      const target = document.getElementById(targetId);
+
+      if (target) {
+        target.classList.toggle("hidden");
+      }
+    });
+  });
+});
 </script>

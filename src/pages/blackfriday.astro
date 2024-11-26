@@ -9,7 +9,7 @@ import Countdown from '../components/utils/Countdown.astro';
         <!-- Franjas superiores -->
         {Array(3).fill('').map((_, index) => (
           <div
-            class="absolute w-full text-center whitespace-nowrap text-[5vw] -mt-8 font-extrabold opacity-10"
+            class="absolute franja-texto w-full text-center whitespace-nowrap text-[12vw] md:text-[5vw] -mt-8 font-extrabold opacity-10"
             style={`top: ${index * 10}%; color: transparent; -webkit-text-stroke: 2px white;`}
           >
             BLACK FRIDAY BLACK FRIDAY BLACK FRIDAY BLACK FRIDAY
@@ -19,7 +19,7 @@ import Countdown from '../components/utils/Countdown.astro';
         <!-- Franjas inferiores -->
         {Array(3).fill('').map((_, index) => (
           <div
-            class="absolute w-full text-center whitespace-nowrap text-[5vw] font-extrabold opacity-10"
+            class="absolute w-full text-center whitespace-nowrap text-[12vw] md:text-[5vw] font-extrabold opacity-10"
             style={`bottom: ${index * 10}%; color: transparent; -webkit-text-stroke: 2px white;`}
           >
             BLACK FRIDAY BLACK FRIDAY BLACK FRIDAY BLACK FRIDAY
@@ -36,7 +36,7 @@ import Countdown from '../components/utils/Countdown.astro';
       
       <p class="text-xl mb-8 animate-fade-in">SUPER DESCUENTO</p>
       
-      <div class="bg-primary text-white p-4 rounded-lg mb-8 animate-bounce">
+      <div class="bg-gradient-to-r from-red-700 via-red-500 to-red-700 text-white p-4 rounded-lg mb-8 animate-bounce">
         <p class="text-2xl font-bold">DESCUENTO HASTA 50% - TODA TU CARRERA</p>
       </div>
       
@@ -83,6 +83,7 @@ import Countdown from '../components/utils/Countdown.astro';
 </Layout>
 
 <style>
+  
   @keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5em;
