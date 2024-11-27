@@ -9,29 +9,37 @@ const apiBaseUrl = import.meta.env.PUBLIC_API_BASE_URL;
         <h2 class="mb-6 text-4xl font-bold text-black">Contáctanos</h2>
         <form id="contact-form" class="space-y-6">
           <div>
-            <label class="block text-sm font-medium text-accent-dark">Nombre</label>
             <input 
-              type="text" 
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              required 
               class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div>
-            <label class="block text-sm font-medium text-accent-dark">Correo</label>
             <input 
-              type="email" 
+              type="email"
+              name="correo"
+              placeholder="Correo Electrónico"
+              required 
               class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div>
-            <label class="block text-sm font-medium text-accent-dark">Celular</label>
             <input 
-              type="number" 
+              type="number"
+              name="celular"
+              placeholder="Celular"
+              required 
               class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div>
-            <label class="block text-sm font-medium text-accent-dark">Mensaje</label>
-            <textarea 
+            <textarea
+              name="mensaje"
+              placeholder="Mensaje"
+              required
               class="mt-1 w-full max-w-full rounded-lg border border-gray-300 p-3 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               rows="4"
             ></textarea>
@@ -86,108 +94,36 @@ const apiBaseUrl = import.meta.env.PUBLIC_API_BASE_URL;
 </section>
 
 <script define:vars={{ apiBaseUrl }}>
-  // Referenciar el formulario
   const form = document.getElementById("contact-form");
 
   // Verificar si el formulario existe
   if (form) {
-    const toast = document.getElementById("toast");
-
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      // Validar los campos
-      const isValid = validateForm(form);
-      if (!isValid) return;
-
+      // Crear objeto FormData
       const formData = new FormData(form);
+      formData.append('procedencia', 'unior'); // Identificar procedencia
 
       try {
+        // Enviar datos a la API
         const response = await fetch(`${apiBaseUrl}/contacto`, {
           method: "POST",
           body: formData,
         });
 
         if (response.ok) {
-          // Mostrar el toast
-          toast.classList.remove("hidden");
-
-          // Ocultar el toast después de 3 segundos
-          setTimeout(() => {
-            toast.classList.add("hidden");
-          }, 3000);
-
-          form.reset();
+          alert("Tu consulta ha sido enviada correctamente.");
+          form.reset(); // Reiniciar el formulario
         } else {
-          console.error("Hubo un problema al enviar tu consulta.");
+          alert("Hubo un problema al enviar tu consulta.");
         }
       } catch (error) {
         console.error("Error al enviar el formulario:", error);
+        console.log(error)
       }
     });
   } else {
     console.error('No se encontró el formulario con el id "contact-form"');
-  }
-
-  // Función para validar el formulario
-  function validateForm(form) {
-    let isValid = true;
-    const name = form.querySelector('input[type="text"]');
-    const email = form.querySelector('input[type="email"]');
-    const phone = form.querySelector('input[type="number"]');
-    const message = form.querySelector('textarea');
-
-    // Restablecer estilos de error
-    resetValidationStyles([name, email, phone, message]);
-
-    // Validar nombre
-    if (name.value.trim() === "") {
-      showError(name, "El nombre es obligatorio");
-      isValid = false;
-    }
-
-    // Validar correo
-    if (!validateEmail(email.value)) {
-      showError(email, "Por favor, ingresa un correo válido");
-      isValid = false;
-    }
-
-    // Validar celular
-    if (!/^\d{8,15}$/.test(phone.value)) {
-      showError(phone, "Por favor, ingresa un número de celular válido");
-      isValid = false;
-    }
-
-    // Validar mensaje
-    if (message.value.trim() === "") {
-      showError(message, "El mensaje no puede estar vacío");
-      isValid = false;
-    }
-
-    return isValid;
-  }
-
-  // Mostrar un mensaje de error en un campo
-  function showError(input, message) {
-    const errorDiv = document.createElement("div");
-    errorDiv.className = "text-red-500 text-sm mt-1";
-    errorDiv.textContent = message;
-    input.classList.add("border-red-500");
-    input.parentNode.appendChild(errorDiv);
-  }
-
-  // Restablecer estilos de validación
-  function resetValidationStyles(inputs) {
-    inputs.forEach((input) => {
-      input.classList.remove("border-red-500");
-      const errorDiv = input.parentNode.querySelector(".text-red-500");
-      if (errorDiv) errorDiv.remove();
-    });
-  }
-
-  // Validar formato de correo
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
   }
 </script>

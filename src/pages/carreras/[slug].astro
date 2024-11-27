@@ -40,11 +40,12 @@ if (!career) {
               loop 
               muted 
               playsinline
+              preload="auto"
             >
               <source src={career.video} type="video/mp4" />
             </video>
-            <div class="absolute inset-0 bg-black/50"></div>
-            <div class="absolute inset-0 bg-primary/30 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
           </div>
         </div>
         <div class="relative z-10 flex h-full items-center justify-center px-4 text-center">

@@ -44,12 +44,12 @@ const { isHero } = Astro.props;
                   </a>
                   <!-- Submenú -->
                   <ul
-                    class="absolute left-0 hidden w-48 bg-white shadow-lg group-hover:block"
+                    class="absolute left-0 hidden w-72 bg-white shadow-lg group-hover:block"
                   >
                     {[
                       { name: "Ingeniería de Sistemas", href: "/carreras/ingenieria-de-sistemas" },
                       { name: "Auditoria", href: "/carreras/auditoria" },
-                      { name: "Administración de Empresas", href: "/carreras/administracion-de-empresas" },
+                      { name: "Administración de Empresas", href: "/carreras/administracion-empresas" },
                       { name: "Derecho", href: "/carreras/derecho" },
                       { name: "Odontología", href: "/carreras/odontologia" },
                       { name: "Medicina", href: "/carreras/medicina" },
@@ -59,7 +59,7 @@ const { isHero } = Astro.props;
                       <li>
                         <a
                           href={career.href}
-                          class="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-primary"
+                          class="block px-6 py-4 text-sm text-black hover:bg-gray-100 hover:text-primary"
                         >
                           {career.name}
                         </a>

@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Mapa del Sitio">
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-gray-800 mb-6">Mapa del Sitio</h1>
+    <div class="space-y-4">
+      <ul class="list-disc pl-6 space-y-2">
+        <li><a href="/" class="text-primary hover:underline">Inicio</a></li>
+        <li><a href="/sobre-unior" class="text-primary hover:underline">Sobre UNIOR</a></li>
+        <li><a href="/#carreras" class="text-primary hover:underline">Carreras</a>
+          <ul class="list-disc pl-6">
+            <li><a href="/carreras/ingenieria-de-sistemas" class="text-primary hover:underline">Ingeniería de Sistemas</a></li>
+            <li><a href="/carreras/derecho" class="text-primary hover:underline">Derecho</a></li>
+            <li><a href="/carreras/psicologia" class="text-primary hover:underline">Psicología</a></li>
+            <li><a href="/carreras/administracion-de-empresas" class="text-primary hover:underline">Administración de Empresas</a></li>
+            <li><a href="/carreras/contaduria-publica" class="text-primary hover:underline">Contaduría Pública</a></li>
+          </ul>
+        </li>
+        <li><a href="/admisiones" class="text-primary hover:underline">Admisiones</a></li>
+        <li><a href="/#noticias-eventos" class="text-primary hover:underline">Noticias y Eventos</a></li>
+        <li><a href="/contacto" class="text-primary hover:underline">Contacto</a></li>
+        <li><a href="/terminos" class="text-primary hover:underline">Términos y Condiciones</a></li>
+        <li><a href="/privacidad" class="text-primary hover:underline">Políticas de Privacidad</a></li>
+      </ul>
+    </div>
+  </main>
+</Layout>
