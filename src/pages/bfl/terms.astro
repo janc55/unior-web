@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const terms = [
+  {
+    title: "Elegibilidad",
+    content: "La Beca Futuro Líder está disponible para estudiantes de nuevo ingreso que se matriculen en cualquiera de las carreras ofrecidas por la Universidad Privada de Oruro (UNIOR). Los postulantes deben haber completado sus estudios secundarios y cumplir con los requisitos de admisión de la universidad."
+  },
+  {
+    title: "Porcentaje de Beca",
+    content: "La beca cubre el 40% del costo total de la carrera elegida durante toda la duración de los estudios, siempre que se cumplan los requisitos de mantenimiento."
+  },
+  {
+    title: "Duración",
+    content: "La beca se otorga por la duración estándar de la carrera elegida, según lo establecido en el plan de estudios oficial de la UNIOR."
+  },
+  {
+    title: "Requisitos de Mantenimiento",
+    content: `Para mantener la beca, los estudiantes deben:
+• Mantener un promedio académico mínimo de 75/100 en cada semestre.
+• Aprobar todas las asignaturas en primera instancia.
+• Mantener una conducta ejemplar y adherirse al código de ética de la universidad.
+• Participar en al menos dos actividades extracurriculares por año académico.`
+  },
+  {
+    title: "Proceso de Aplicación",
+    content: "Los interesados deben completar el formulario de solicitud en línea, proporcionar la documentación requerida y participar en una entrevista con el comité de becas de la UNIOR."
+  },
+  {
+    title: "Obligaciones del Becario",
+    content: `Los beneficiarios de la Beca Futuro Líder se comprometen a:
+    - Actuar como embajadores de la UNIOR en eventos y actividades universitarias.
+    - Participar en programas de mentoría para nuevos estudiantes.
+    - Contribuir con un mínimo de 20 horas de servicio comunitario por semestre.`
+  },
+  {
+    title: "Cancelación de la Beca",
+    content: `La UNIOR se reserva el derecho de cancelar la beca si el estudiante:
+    - No cumple con los requisitos de mantenimiento.
+    - Proporciona información falsa en su solicitud.
+    - Incurre en faltas disciplinarias graves.`
+  },
+  {
+    title: "Modificaciones",
+    content: "La Universidad Privada de Oruro se reserva el derecho de modificar estos términos y condiciones. Cualquier cambio será comunicado a los becarios con anticipación."
+  }
+];
+---
+
+<Layout title="Términos y Condiciones - Beca Futuro Líder | UNIOR">
+  <main class="min-h-screen bg-gradient-to-br from-neutral-900 via-red-800 to-red-600 text-white">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-4xl md:text-6xl font-bold text-center mb-8 animate-fade-in-down">
+        Términos y Condiciones
+      </h1>
+      <p class="text-xl md:text-2xl text-center mb-12 animate-fade-in-up">
+        Beca Futuro Líder - Universidad Privada de Oruro
+      </p>
+
+      <div class="max-w-4xl mx-auto space-y-8">
+        {terms.map((term, index) => (
+          <div class="bg-white bg-opacity-10 p-6 rounded-lg shadow-xl hover:bg-opacity-20 transition duration-300 animate-fade-in-up" style={`animation-delay: ${index * 100}ms`}>
+            <h2 class="text-2xl font-semibold mb-4">{term.title}</h2>
+            <p class="text-gray-300 whitespace-pre-line">{term.content}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/bfl" class="inline-block bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white font-bold py-3 px-6 rounded-full hover:from-orange-600 hover:to-red-600 transition duration-300 transform hover:scale-105 animate-fade-in-up" style="animation-delay: 800ms">
+          Volver a Beca Futuro Líder
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-down {
+    animation: fadeInDown 1s ease-out;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+  }
+</style>
+
+<script>
+  // Intersection Observer para animaciones de desplazamiento
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in-up');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-fade-in-up').forEach(el => observer.observe(el));
+</script>
+

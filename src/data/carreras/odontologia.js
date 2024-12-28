@@ -19,7 +19,26 @@ export const careerDetails = {
       { year: "Quinto Semestre", courses: ["Farmacología y Terapéutica I", "Oclusión", "Imagenología II", "Cirugía Bucal I", "Preventiva y Periodoncia I", "Operatoria I", "Psicología Aplicada a la Odontología"] },
       { year: "Sexto Semestre", courses: ["Farmacología y Terapéutica II", "Ortodoncia I", "Odontopediatría I", "Prótesis Removible I", "Cirugía Bucal II", "Preventiva y Periodoncia II", "Prótesis Fija I", "Operatoria II y Endodoncia I"] },
       { year: "Séptimo Semestre", courses: ["Prótesis Removible II", "Ortodoncia II y Ortopedia I", "Odontopediatría II", "Salud Pública I", "Cirugía Bucal III", "Preventiva y Periodoncia III", "Prótesis Fija II", "Operatoria III y Endodoncia II"] },
-      { year: "Octavo Semestre", courses: ["Prótesis Removible III", "Ortodoncia III y Ortopedia II", "Odontopediatría III", "Salud Pública II", "Cirugía Bucal IV e Introducción a la Implantología", "Preventiva y Periodoncia IV", "Prótesis Fija III", "Operatoria IV y Endodoncia III"] }
+      { year: "Octavo Semestre", courses: ["Prótesis Removible III", "Ortodoncia III y Ortopedia II", "Odontopediatría III", "Salud Pública II", "Cirugía Bucal IV e Introducción a la Implantología", "Preventiva y Periodoncia IV", "Prótesis Fija III", "Operatoria IV y Endodoncia III"] },
+      {
+        year: "Noveno Semestre",
+        courses: [
+          "Medicina Interna en Odontología",
+          "Odontología Legal y Forense",
+          "Clínica Integral Niño",
+          "Clínica Integral Adulto",
+          "Salud Pública III",
+          "Metodología de la Investigación",
+          "Quechua II",
+          "Optativa Clínica"
+        ]
+      },
+      {
+        year: "Internado Rotatorio",
+        courses: [
+          "Internado Rotatorio"
+        ]
+      }
   ],
     jobOpportunities: [
       "Odontólogo General",

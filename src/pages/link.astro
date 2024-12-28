@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+
+const links = [
+  { name: 'WhatsApp', url: 'https://wa.me/59170000000', icon: 'mdi:whatsapp' },
+  { name: 'Facebook', url: 'https://facebook.com/unior', icon: 'mdi:facebook' },
+  { name: 'Instagram', url: 'https://instagram.com/unior', icon: 'mdi:instagram' },
+  { name: 'YouTube', url: 'https://youtube.com/unior', icon: 'mdi:youtube' },
+  { name: 'Carreras', url: '/carreras', icon: 'mdi:school' },
+  { name: 'Admisiones', url: '/admisiones', icon: 'mdi:account-school' },
+  { name: 'Beca Futuro Líder', url: '/bfl', icon: 'mdi:school-outline' },
+  { name: 'Contacto', url: '/contacto', icon: 'mdi:contact-mail' },
+];
+
+---
+
+<Layout title="Enlaces Rápidos | Universidad Privada de Oruro">
+  <main class="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-md">
+      <div class="text-center mb-8">
+        <img src="/logo-unior.png" alt="Logo UNIOR" class="w-24 h-24 mx-auto mb-4 rounded-full border-2 border-red-600">
+        <h1 class="text-2xl font-bold mb-2">Universidad Privada de Oruro</h1>
+        <p class="text-gray-400">Formando líderes para el futuro</p>
+      </div>
+
+      <div class="space-y-4">
+        {links.map((link) => (
+          <a
+            href={link.url}
+            class="block w-full py-3 px-4 bg-gray-800 hover:bg-red-600 rounded-lg transition-colors duration-300 flex items-center justify-between group"
+            target={link.url.startsWith('http') ? '_blank' : '_self'}
+            rel={link.url.startsWith('http') ? 'noopener noreferrer' : ''}
+          >
+            <span class="flex items-center">
+              <Icon name={link.icon} class="w-6 h-6 mr-3 text-red-600 group-hover:text-white" />
+              {link.name}
+            </span>
+            <Icon name="mdi:chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-white" />
+          </a>
+        ))}
+      </div>
+
+      <footer class="mt-8 text-center text-sm text-gray-500">
+        <p>&copy; {new Date().getFullYear()} Universidad Privada de Oruro. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  main > div > * {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  main > div > *:nth-child(1) { animation-delay: 0.1s; }
+  main > div > *:nth-child(2) { animation-delay: 0.2s; }
+  main > div > *:nth-child(3) { animation-delay: 0.3s; }
+</style>

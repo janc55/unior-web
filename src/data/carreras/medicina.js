@@ -19,7 +19,41 @@ export const careerDetails = {
       { year: "Quinto Semestre", courses: ["Fisiopatología I", "Semiología I", "Farmacología y Terapéutica I", "Imagenología I", "Patología Especial I", "Inmunología"] },
       { year: "Sexto Semestre", courses: ["Fisiopatología II", "Semiología II", "Técnica Quirúrgica", "Farmacología y Terapéutica II", "Imagenología II", "Patología Especial II", "Epidemiología", "Optativa Preclínica I"] },
       { year: "Séptimo Semestre", courses: ["Ginecología y Obstetricia I", "Cardiología", "Cirugía Cabeza y Cuello", "Neumología", "Oftalmología", "Otorrinolaringología", "Traumatología y Ortopedia I", "Anestesiología I"] },
-      { year: "Octavo Semestre", courses: ["Ginecología y Obstetricia II", "Reumatología", "Cirugía de Tórax", "Nefrología", "Dermatología", "Urología"] }
+      { year: "Octavo Semestre", courses: ["Ginecología y Obstetricia II", "Reumatología", "Cirugía de Tórax", "Nefrología", "Dermatología", "Urología"] },
+      {
+        year: "Noveno Semestre",
+        courses: [
+          "Pediatría I",
+          "Medicina II - Gastroenterología",
+          "Cirugía de Abdomen y Pelvis",
+          "Medicina II - Infectología",
+          "Neurología y Neurocirugía",
+          "Medicina Legal",
+          "Administración Hospitalaria"
+        ]
+      },
+      {
+        year: "Décimo Semestre",
+        courses: [
+          "Pediatría II",
+          "Medicina Social",
+          "Medicina II - Hematología",
+          "Medicina II - Endocrinología",
+          "Psiquiatría",
+          "Salud Familiar y Comunitaria",
+          "Optativas Clínicas I"
+        ]
+      },
+      {
+        year: "Internado Rotatorio",
+        courses: [
+          "Internado Rot. de Cirugía",
+          "Internado Rot. de Pediatría",
+          "Internado Rot. de Medicina Interna",
+          "Internado Rot. de Ginecología y Obstetricia",
+          "Internado Rot. de S.S.S.R.O."
+        ]
+      }
   ],
     jobOpportunities: [
       "Médico General",
