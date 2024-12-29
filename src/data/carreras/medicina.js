@@ -66,17 +66,17 @@ export const careerDetails = {
     ],
     studentTestimonials: [
       {
-        name: "María González",
-        position: "Auditor Interno en XYZ Corp.",
-        quote: "La carrera de Auditoría me proporcionó las herramientas necesarias para analizar y mejorar los procesos internos de mi empresa. Los profesores son expertos en su campo y siempre están dispuestos a ayudar.",
-        image: "/carreras/aud.webp?height=100&width=100"
+        name: "Laura Martínez",
+        position: "Médica General en Hospital San Juan",
+        quote: "Estudiar Medicina fue una experiencia transformadora. La combinación de teoría y práctica me preparó para enfrentar los desafíos del día a día en el cuidado de los pacientes. Los docentes son altamente calificados y apasionados por la enseñanza.",
+        image: "/carreras/der.webp?height=100&width=100"
       },
       {
-        name: "Carlos Ramírez",
-        position: "Consultor de Auditoría en ABC Consulting",
-        quote: "Gracias a la formación integral en Auditoría, pude desarrollar habilidades analíticas y de gestión que han sido fundamentales en mi carrera profesional. Recomiendo esta carrera a cualquiera que quiera tener un impacto real en las organizaciones.",
-        image: "/carreras/aud.webp?height=100&width=100"
-      },
+        name: "José Pérez",
+        position: "Residente de Cirugía en Clínica Santa María",
+        quote: "La carrera de Medicina no solo me enseñó conocimientos médicos, sino también valores como la empatía y el compromiso. Estoy agradecido por la formación integral que recibí y por las oportunidades de aprendizaje práctico en hospitales.",
+        image: "/carreras/der.webp?height=100&width=100"
+      }
     ],
   };
   

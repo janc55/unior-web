@@ -32,17 +32,17 @@ export const careerDetails = {
     ],
     studentTestimonials: [
       {
-        name: "María González",
-        position: "Auditor Interno en XYZ Corp.",
-        quote: "La carrera de Auditoría me proporcionó las herramientas necesarias para analizar y mejorar los procesos internos de mi empresa. Los profesores son expertos en su campo y siempre están dispuestos a ayudar.",
-        image: "/carreras/aud.webp?height=100&width=100"
+        name: "Sofía Hernández",
+        position: "Enfermera en el Hospital General de la Ciudad",
+        quote: "La carrera de Enfermería me permitió desarrollar habilidades clínicas y un profundo sentido de empatía hacia los pacientes. Los profesores fueron una inspiración constante, y las prácticas me prepararon para cualquier desafío en el campo de la salud.",
+        image: "/carreras/adm.webp?height=100&width=100"
       },
       {
-        name: "Carlos Ramírez",
-        position: "Consultor de Auditoría en ABC Consulting",
-        quote: "Gracias a la formación integral en Auditoría, pude desarrollar habilidades analíticas y de gestión que han sido fundamentales en mi carrera profesional. Recomiendo esta carrera a cualquiera que quiera tener un impacto real en las organizaciones.",
-        image: "/carreras/aud.webp?height=100&width=100"
-      },
+        name: "Luis Fernández",
+        position: "Enfermero en la Unidad de Cuidados Intensivos de Clínica Vida",
+        quote: "Gracias a la formación en Enfermería, aprendí a trabajar bajo presión y a tomar decisiones críticas que impactan directamente en la vida de los pacientes. Estoy muy agradecido por la calidad educativa y el apoyo recibido durante mi formación.",
+        image: "/carreras/adm.webp?height=100&width=100"
+      }
     ],
   };
   

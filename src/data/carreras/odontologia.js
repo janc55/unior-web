@@ -51,17 +51,17 @@ export const careerDetails = {
     ],
     studentTestimonials: [
       {
-        name: "María González",
-        position: "Auditor Interno en XYZ Corp.",
-        quote: "La carrera de Auditoría me proporcionó las herramientas necesarias para analizar y mejorar los procesos internos de mi empresa. Los profesores son expertos en su campo y siempre están dispuestos a ayudar.",
-        image: "/carreras/aud.webp?height=100&width=100"
+        name: "Ana Rodríguez",
+        position: "Odontóloga en Clínica Dental Sonrisa Perfecta",
+        quote: "La carrera de Odontología me permitió desarrollar tanto habilidades técnicas como un enfoque humanitario hacia el cuidado dental. Los laboratorios y las prácticas clínicas fueron clave para sentirme preparada en el ámbito profesional.",
+        image: "/carreras/adm.webp?height=100&width=100"
       },
       {
-        name: "Carlos Ramírez",
-        position: "Consultor de Auditoría en ABC Consulting",
-        quote: "Gracias a la formación integral en Auditoría, pude desarrollar habilidades analíticas y de gestión que han sido fundamentales en mi carrera profesional. Recomiendo esta carrera a cualquiera que quiera tener un impacto real en las organizaciones.",
-        image: "/carreras/aud.webp?height=100&width=100"
-      },
+        name: "Miguel López",
+        position: "Especialista en Ortodoncia en DentalCare Plus",
+        quote: "Estudiar Odontología fue una de las mejores decisiones de mi vida. La formación integral y la atención personalizada de los profesores me ayudaron a alcanzar mi sueño de especializarme en Ortodoncia y hacer una diferencia en las sonrisas de mis pacientes.",
+        image: "/carreras/adm.webp?height=100&width=100"
+      }
     ],
   };
   
