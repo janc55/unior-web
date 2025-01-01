@@ -40,13 +40,13 @@ export const careerDetails = {
     studentTestimonials: [
       {
         name: "María González",
-        position: "Auditor Interno en XYZ Corp.",
+        position: "Auditor Interno en TAMYS",
         quote: "La carrera de Auditoría me proporcionó las herramientas necesarias para analizar y mejorar los procesos internos de mi empresa. Los profesores son expertos en su campo y siempre están dispuestos a ayudar.",
         image: "/carreras/aud.webp?height=100&width=100"
       },
       {
         name: "Carlos Ramírez",
-        position: "Consultor de Auditoría en ABC Consulting",
+        position: "Consultor de Auditoría en CARDIF",
         quote: "Gracias a la formación integral en Auditoría, pude desarrollar habilidades analíticas y de gestión que han sido fundamentales en mi carrera profesional. Recomiendo esta carrera a cualquiera que quiera tener un impacto real en las organizaciones.",
         image: "/carreras/aud.webp?height=100&width=100"
       },

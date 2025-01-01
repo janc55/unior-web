@@ -31,14 +31,14 @@ export const careerDetails = {
     studentTestimonials: [
       {
         name: "María González",
-        position: "Auditor Interno en XYZ Corp.",
-        quote: "La carrera de Auditoría me proporcionó las herramientas necesarias para analizar y mejorar los procesos internos de mi empresa. Los profesores son expertos en su campo y siempre están dispuestos a ayudar.",
+        position: "Abogada en Estudio Jurídico González & Asociados",
+        quote: "Estudiar Derecho en la UNIOR me permitió desarrollar habilidades analíticas y argumentativas que son fundamentales en mi trabajo diario. Los profesores son expertos en sus áreas y siempre están dispuestos a ayudar a los estudiantes a alcanzar su máximo potencial.",
         image: "/carreras/aud.webp?height=100&width=100"
       },
       {
         name: "Carlos Ramírez",
-        position: "Consultor de Auditoría en ABC Consulting",
-        quote: "Gracias a la formación integral en Auditoría, pude desarrollar habilidades analíticas y de gestión que han sido fundamentales en mi carrera profesional. Recomiendo esta carrera a cualquiera que quiera tener un impacto real en las organizaciones.",
+        position: "Asesor Legal en Empresa CARDOMAR",
+        quote: "La carrera de Derecho me brindó una formación integral en leyes y justicia, así como la oportunidad de realizar prácticas profesionales en empresas y estudios jurídicos reconocidos. Estoy muy agradecido por la calidad educativa y el apoyo recibido durante mi formación.",
         image: "/carreras/aud.webp?height=100&width=100"
       },
     ],
