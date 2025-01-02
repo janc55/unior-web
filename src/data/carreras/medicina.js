@@ -18,8 +18,8 @@ export const careerDetails = {
       { year: "Cuarto Semestre", courses: ["Fisiología Humana II", "Psicología Médica", "Ética Médica", "Bioquímica II", "Patología Clínica", "Inglés II", "Optativa Básica I"] },
       { year: "Quinto Semestre", courses: ["Fisiopatología I", "Semiología I", "Farmacología y Terapéutica I", "Imagenología I", "Patología Especial I", "Inmunología"] },
       { year: "Sexto Semestre", courses: ["Fisiopatología II", "Semiología II", "Técnica Quirúrgica", "Farmacología y Terapéutica II", "Imagenología II", "Patología Especial II", "Epidemiología", "Optativa Preclínica I"] },
-      { year: "Séptimo Semestre", courses: ["Ginecología y Obstetricia I", "Cardiología", "Cirugía Cabeza y Cuello", "Neumología", "Oftalmología", "Otorrinolaringología", "Traumatología y Ortopedia I", "Anestesiología I"] },
-      { year: "Octavo Semestre", courses: ["Ginecología y Obstetricia II", "Reumatología", "Cirugía de Tórax", "Nefrología", "Dermatología", "Urología"] },
+      { year: "Séptimo Semestre", courses: ["Ginecología y Obstetricia I", "Cardiología", "Cirugía Cabeza y Cuello", "Medicina I - Neumología", "Oftalmología", "Otorrinolaringología", "Traumatología y Ortopedia I", "Anestesiología I"] },
+      { year: "Octavo Semestre", courses: ["Ginecología y Obstetricia II", "Medicina I - Reumatología", "Cirugía de Tórax", "Medicina I - Nefrología", "Dermatología", "Urología"] },
       {
         year: "Noveno Semestre",
         courses: [

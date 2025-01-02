@@ -13,9 +13,9 @@ export const careerDetails = {
     icon: "🩹",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Biología y Genética", "Bioquímica", "Fisiología Humana I", "Microbiología", "Informática", "Pedagogía y Didáctica"] },
-      { year: "Segundo Semestre", courses: ["Anatomía Humana II","Fisiología Humana II", "Parasitología", "Fundamentos de Enfermería", "Farmacología", "Psicología General"] },
+      { year: "Segundo Semestre", courses: ["Anatomía Humana II","Fisiología Humana II", "Parasitología", "Fundamentos de Enfermería I", "Farmacología", "Psicología General"] },
       { year: "Tercer Semestre", courses: ["Enfermería Familiar y Comunitaria I", "Farmacología I", "Fundamentos de Enfermería II", "Psicología Evolutiva", "Laboratorio Clínico", "Idioma Quechua I"] },
-      { year: "Cuarto Semestre", courses: ["Enfermería Familiar y Comunitaria II", "Enfermería en Salud Mental", "Bioestadística y Demografía", "Nutrición y Dietoterapia", "Bioseguridad", "Idioma Quechua I"] },
+      { year: "Cuarto Semestre", courses: ["Enfermería Familiar y Comunitaria II", "Enfermería en Salud Mental", "Bioestadística y Demografía", "Nutrición y Dietoterapia", "Bioseguridad", "Idioma Quechua II"] },
       { year: "Quinto Semestre", courses: ["Enfermería Familiar y Comunitaria III", "Enfermería Médico Quirurgico I", "Enfermería Psiquiátrica", "Administración de servicios de Salud", "Epidemiología", "Inglés I"] },
       { year: "Sexto Semestre", courses: ["Enfermería Familiar y Comunitaria IV", "Enfermería Médico Quirurgico II", "Bioética y Ética profesional", "Metodología de la Investigación I", "Enfermería Gineco Obstétrica I", "Inglés II"] },
       { year: "Séptimo Semestre", courses: ["Enfermería Gineco Obstétrica I", "Enfermería Pediátrica I", "Enfermería Familiar y Comunitaria V", "Metodología de la Investigación II"] },

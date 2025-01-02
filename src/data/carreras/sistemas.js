@@ -18,7 +18,7 @@ export const careerDetails = {
       { year: "Tercer Semestre", courses: ["Estructura de Datos", "Ecuaciones Diferenciales", "Electricidad y Magnetismo", "Estadística I", "Quechua", "Contabilidad Básica"] },
       { year: "Cuarto Semestre", courses: ["Lenguajes de Programación", "Ingeniería de Sistemas I", "Bases de Datos I", "Estadística II", "Circuitos Electrónicos", "Sistemas Informáticos Contables"] },
       { year: "Quinto Semestre", courses: ["Investigación Operativa I", "Ingeniería de Sistemas II", "Diseño de Páginas Web I", "Bases de Datos II", "Diseño Gráfico de Interfaz", "Optativa I"] },
-      { year: "Sexto Semestre", courses: ["Auditoría de Sistemas", "Redes de Computadoras I", "Inteligencia Artificial", "Metodología de la Investigación", "Simulación de Sistemas", "Legislación Informática"] },
+      { year: "Sexto Semestre", courses: ["Investigación Operativa II", "Ingeniería de Sistemas III", "Diseño de páginas web II", "Base de datos III", "Preparación y evaluacion de proyectos", "Sistemas Operativos"] },
       { year: "Séptimo Semestre", courses: ["Ingeniería de Software", "Tecnologías Emergentes", "Simulación de Sistemas", "Legislación Informática", "Redes de Computadores I", "Optativa II"] },
       { year: "Octavo Semestre", courses: ["Metodología de la Investigación", "Auditoria de Sistemas", "Inteligencia Artificial", "Redes de computadoras II","Administración de Sistemas de Información", "Optativa III"] },
       { year: "Taller de Grado", courses: ["Taller de Grado"]}
