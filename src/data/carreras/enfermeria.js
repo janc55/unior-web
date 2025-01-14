@@ -6,7 +6,7 @@ export const careerDetails = {
     degree: "Licenciatura",
     modality: "Semestral",
     credits: 300,
-    coordinator: "Lic. Carmen López",
+    coordinator: "Lic. Gladys Cortés",
     accreditation: "R.M. Nro 0226/2019",
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/enf.mp4",

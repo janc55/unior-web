@@ -6,7 +6,7 @@ export const careerDetails = {
     degree: "Licenciatura",
     modality: "Semestral",
     credits: 400,
-    coordinator: "Dr. Juan Morales",
+    coordinator: "Dr. Crhystian Marañon",
     accreditation: "R.M. Nro 093/09",
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/med.mp4",

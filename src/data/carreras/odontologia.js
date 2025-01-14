@@ -6,7 +6,7 @@ export const careerDetails = {
     degree: "Licenciatura",
     modality: "Semestral",
     credits: 350,
-    coordinator: "Dra. Claudia Rivera",
+    coordinator: "Dra. Heidy Murillo",
     accreditation: "Acreditada a la Mercosur, Mercosur Educativo",
     image: "/image2.jpeg?height=600&width=800",
     video: "/carreras/odo.mp4",
