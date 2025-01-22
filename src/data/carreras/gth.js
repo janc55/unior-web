@@ -10,6 +10,7 @@ export const careerDetails = {
   accreditation: "R.M. Nro 814/2018",
   image: "/carreras/gth.webp?height=600&width=800",
   video: "/carreras/gth.mp4",
+  youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
   icon: "🍽️",
   curriculum: [
     { year: "Primer Semestre", courses: ["Gestión Turística", "Dirección de Empresas", "Técnicas de Aprendizaje", "Higiene y Conservación de Alimentos", "Técnicas Culinarias I", "Panadería y Pastelería"] },

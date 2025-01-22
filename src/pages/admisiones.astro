@@ -5,29 +5,29 @@ import { Icon } from 'astro-icon/components';
 
 const admissionSteps = [
   {
-    title: "Elige tu carrera",
-    description: "Explora nuestra oferta académica y encuentra la carrera que se ajuste a tus intereses y metas profesionales.",
-    icon: "mdi:book-open-page-variant"
+    title: "Solicita Información",
+    description: "Explora nuestras carreras y obtén todos los detalles y requisitos de inscripción. ¡Estamos aquí para responder todas tus dudas!",
+    icon: "mdi:email-outline"
   },
   {
-    title: "Prepara tus documentos",
-    description: "Reúne los documentos necesarios: fotocopia legalizada del título de bachiller, documento de identidad, fotografías, etc.",
-    icon: "mdi:file-document-multiple"
+    title: "Reúne tus Requisitos",
+    description: "Prepara los documentos necesarios como el Título de Bachiller, certificado de nacimiento y más. ¡Recuerda que tienes 15 días para regularizar cualquier documento faltante!",
+    icon: "mdi:file-document-outline"
   },
   {
-    title: "Completa el formulario",
-    description: "Llena el formulario de admisión en línea con tus datos personales y académicos.",
-    icon: "mdi:form-select"
-  },
-  {
-    title: "Realiza el pago",
-    description: "Efectúa el pago de la matrícula a través de nuestras opciones de pago en línea o presencial.",
+    title: "Realiza el Pago",
+    description: "Elige tu forma de pago favorita: en efectivo, mediante QR, transferencia bancaria o tarjeta. ¡Es súper flexible!",
     icon: "mdi:cash-check"
   },
   {
-    title: "Confirmación",
-    description: "Recibirás un correo de confirmación con los detalles de tu inscripción y próximos pasos.",
-    icon: "mdi:email-check"
+    title: "Presenta tus Documentos",
+    description: "Entrega tus documentos junto con el baucher de pago. Esta es la etapa oficial de inscripción.",
+    icon: "mdi:folder-account"
+  },
+  {
+    title: "Asignación de Materias",
+    description: "¡Ya casi eres parte de la comunidad! Ahora solo te queda la asignación de materias para iniciar tu semestre.",
+    icon: "mdi:calendar-check"
   }
 ];
 
@@ -51,15 +51,16 @@ const faqs = [
 ];
 ---
 
-<Layout title="Admisiones - Universidad Privada de Oruro">
-    <Header isHero={false}/>
-    <main >
 
+<Layout title="Admisiones - Universidad Privada de Oruro">
+  <Header isHero={false}/>
+  <main>
     
-      <!-- Proceso de Admisión -->
+    <!-- Proceso de Admisión -->
     <section class="py-4">
       <div class="container max-w-[1200px] mx-auto px-4">
-        <h2 class="mb-12 text-center text-3xl font-bold text-primary animate-fade-in-down">Proceso de Admisión</h2>
+        <h2 class="mb-12 text-center text-3xl font-bold text-primary animate-fade-in-down">¡Inscribirte es fácil!</h2>
+        <p class="text-center text-gray-600 mb-8">Sigue estos sencillos pasos para comenzar tu futuro en nuestra universidad. Si tienes dudas, ¡no dudes en contactarnos!</p>
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {admissionSteps.map((step, index) => (
             <div class="rounded-lg bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl animate-fade-in-up" style={`animation-delay: ${index * 100}ms`}>
@@ -74,20 +75,53 @@ const faqs = [
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Requisitos de Inscripción -->
     <section class="bg-gray-100 py-16">
       <div class="container max-w-[1200px] mx-auto px-4">
-        <div class="rounded-lg bg-white p-8 shadow-lg md:flex md:items-center md:justify-between">
-          <div class="mb-6 md:mb-0 md:w-2/3">
-            <h2 class="mb-2 text-3xl font-bold text-primary">¿Listo para comenzar tu futuro?</h2>
-            <p class="text-gray-600">Inicia tu proceso de admisión hoy mismo y sé parte de nuestra comunidad universitaria.</p>
+        <h2 class="mb-12 text-center text-3xl font-bold text-primary">Requisitos para Inscribirte</h2>
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Documentación Básica</h3>
+            <ul class="list-disc list-inside text-gray-600">
+              <li>Fotocopia legalizada del Título de Bachiller</li>
+              <li>Certificado de nacimiento original</li>
+              <li>Fotocopia de la C.I.</li>
+              <li>2 fotografías 4x4 y 2 tamaño carnet (fondo rojo)</li>
+              <li>Baucher de depósito bancario</li>
+            </ul>
           </div>
-          <div class="md:w-1/3 md:text-right">
-            <a href="#" class="inline-block rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-primary-dark">
-              Inscríbete Ahora
-            </a>
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Carpetas</h3>
+            <ul class="list-disc list-inside text-gray-600">
+              <li>Folder amarillo con acofaster (para todas las carreras)</li>
+              <li><strong>Gastronomía, Turismo y Hotelería:</strong> Folder rojo</li>
+            </ul>
+            <p class="mt-4 text-sm text-gray-600">*En caso de no contar con toda la documentación, tienes 15 días para regularizar.</p>
+          </div>
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Métodos de Pago</h3>
+            <ul class="list-disc list-inside text-gray-600">
+              <li>Depósito en BNB, N°Cta. 500-0050530 (excepto Gastronomía, Turismo y Hotelería)</li>
+              <li>Gastronomía, Turismo y Hotelería: N° Cta. 123-456789</li>
+              <li>Pago en oficina con tarjeta</li>
+              <li>Pago mediante QR o transferencia bancaria</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+              <img src="/qr-code.png" alt="QR para Pago" class="h-24 w-24"/>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA Inscripción -->
+    <section class="bg-gray-200 py-16">
+      <div class="container max-w-[1200px] mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-primary mb-6">¡Inscríbete hoy mismo!</h2>
+        <p class="text-gray-600 mb-6">No pierdas tiempo, da el primer paso hacia tu futuro. Haz clic en el botón y completa tu inscripción en línea.</p>
+        <a href="https://inscripciones.unior.edu.bo" class="inline-block rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-primary-dark">
+          Inscripción en Línea
+        </a>
       </div>
     </section>
 
@@ -112,7 +146,7 @@ const faqs = [
         <h2 class="mb-12 text-center text-3xl font-bold text-primary">¿Tienes más preguntas?</h2>
         <div class="rounded-lg bg-white p-8 shadow-lg md:flex md:items-center md:justify-between">
           <div class="mb-6 md:mb-0 md:w-2/3">
-            <p class="text-gray-600">Nuestro equipo de admisiones está aquí para ayudarte en cada paso del proceso.</p>
+            <p class="text-gray-600">Nuestro equipo de admisiones está listo para guiarte en cada paso del proceso.</p>
           </div>
           <div class="md:w-1/3 md:text-right">
             <a href="https://wa.link/bdiw3q" class="inline-flex items-center rounded-full bg-primary px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-primary-dark">

@@ -10,6 +10,7 @@ export const careerDetails = {
     accreditation: "Acreditada a la Mercosur, Mercosur Educativo",
     image: "/image2.jpeg?height=600&width=800",
     video: "/carreras/odo.mp4",
+    youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
     icon: "🦷",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Histología I", "Genética y Embriología", "Bioquímica", "Inglés I", "Quechua I"] },

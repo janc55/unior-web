@@ -10,6 +10,7 @@ export const careerDetails = {
     accreditation: "R.M. Nro 0226/2019",
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/enf.mp4",
+    youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
     icon: "🩹",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Biología y Genética", "Bioquímica", "Fisiología Humana I", "Microbiología", "Informática", "Pedagogía y Didáctica"] },

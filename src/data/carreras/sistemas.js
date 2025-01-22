@@ -11,6 +11,7 @@ export const careerDetails = {
     accreditation: "R.M. Nro 095/99",
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/sis.mp4",
+    youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
     icon: "💻",
     curriculum: [
       { year: "Primer Semestre", courses: ["Informática I", "Administración I", "Ingeniería de Sistemas en las Organizaciones", "Álgebra y Lógica Formal", "Cálculo I", "Inglés I"] },

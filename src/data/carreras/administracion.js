@@ -11,6 +11,7 @@ export const careerDetails = {
   accreditation: "R.M. Nro 095/99",
   image: "/carreras/adm.webp?height=600&width=800",
   video: "/carreras/adm.mp4",
+  youtubeId: "VsiBEUlSkjo?si=UGCrj3pjWE_VFES7",
   icon: "💼",
   curriculum: [
     { year: "Primer Semestre", courses: ["Administración I", "Contabilidad Básica", "Introducción a la Economía", "Análisis Matemático I", "Computación", "Realidad Económica Social de Bolivia", "Optativa Área Básica"] },

@@ -153,6 +153,22 @@ if (!career) {
           ))}
         </div>
       </section>
+
+      <!-- Sección de Video de YouTube -->
+      <section class="bg-neutral-50 py-16">
+        <div class="container mx-auto max-w-[1440px] px-4">
+          <h2 class="mb-8 text-center text-3xl font-bold text-accent-dark">Video Informativo</h2>
+          <div class="flex justify-center">
+            <iframe 
+              class="rounded-xl shadow-lg w-full max-w-4xl aspect-video" 
+              src={`https://www.youtube.com/embed/${career.youtubeId}`}
+              title="Video de {career.title}" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
   
       <!-- Contact Section -->
       <section class="mx-auto max-w-[1440px] py-16">
