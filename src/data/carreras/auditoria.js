@@ -11,7 +11,7 @@ export const careerDetails = {
     accreditation: "R.M. Nro 095/99",
     image: "/carreras/aud.webp?height=600&width=800",
     video: "/carreras/aud.mp4",
-    youtubeId: "X8kyBcPIkis?si=xYFW8vrX2yiWm9lc",
+    youtubeId: "X8kyBcPIkis?si=iDeuHLmw3tgBQ-DA",
     icon: "📊",
     curriculum: [
       { year: "Primer Semestre", courses: ["Administración I", "Contabilidad Básica", "Introducción a la Economía", "Análisis Matemático I", "Computación", "Optativa Área Básica"] },
@@ -52,5 +52,10 @@ export const careerDetails = {
         image: "/carreras/aud.webp?height=100&width=100"
       },
     ],
+    brochureImages: [
+      "/carreras/brochure/AUD-1.webp",
+      "/carreras/brochure/AUD-2.webp"
+    ],
+    brochurePdf: "https://drive.google.com/uc?id=1aVsINdfNQAAfTLvoMjSII7dSo2Al3vAc&export=download"
   };
   

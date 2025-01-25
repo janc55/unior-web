@@ -10,7 +10,7 @@ export const careerDetails = {
     accreditation: "R.M. Nro 095/99",
     image: "/carreras/der.webp?height=600&width=800",
     video: "/carreras/der.mp4",
-    youtubeId: "afraJA5_D-E?si=Vlf3Jh_XaBiWpmWc",
+    youtubeId: "afraJA5_D-E?si=_gAPjS4dxqU9JYlx",
     icon: "⚖️",
     curriculum: [
       { year: "Primer Año", courses: ["Economía Política", "Fundamentos de la Filosofía y Materialismo Dialéctico", "Historia del Derecho y Derecho Romano", "Introducción al Derecho", "Derecho Civil I: Personas", "Sociología General y Materialismo Histórico", "Técnicas de Investigación Social", "Criminología y DD.HH.", "Idioma Quechua", "Optativa Básica"] },
@@ -43,5 +43,10 @@ export const careerDetails = {
         image: "/carreras/aud.webp?height=100&width=100"
       },
     ],
+    brochureImages: [
+      "/carreras/brochure/DER-1.webp",
+      "/carreras/brochure/DER-2.webp"
+    ],
+    brochurePdf: "https://drive.google.com/uc?id=1mUaD9BwFKWbz4KZ94QytZQFlS1HrB82b&export=download"
   };
   

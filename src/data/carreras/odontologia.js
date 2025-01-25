@@ -10,7 +10,7 @@ export const careerDetails = {
     accreditation: "Acreditada a la Mercosur, Mercosur Educativo",
     image: "/image2.jpeg?height=600&width=800",
     video: "/carreras/odo.mp4",
-    youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
+    youtubeId: "dcUyxZnzJSg?si=gg2BfiTcvD1mu2FH",
     icon: "🦷",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Histología I", "Genética y Embriología", "Bioquímica", "Inglés I", "Quechua I"] },
@@ -64,5 +64,10 @@ export const careerDetails = {
         image: "/carreras/adm.webp?height=100&width=100"
       }
     ],
+    brochureImages: [
+      "/carreras/brochure/ODO-1.webp",
+      "/carreras/brochure/ODO-2.webp"
+    ],
+    brochurePdf: "https://drive.google.com/uc?id=1Q8zWskdmQCELygTXJTL__wde21mVo4z2&export=download"
   };
   

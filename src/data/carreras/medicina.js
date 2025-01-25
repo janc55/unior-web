@@ -10,7 +10,7 @@ export const careerDetails = {
     accreditation: "R.M. Nro 093/09",
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/med.mp4",
-    youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
+    youtubeId: "c4rw5Dhk5Eo?si=0lKQZwbI_mnH6tJI",
     icon: "🩺",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Informática", "Genética", "Histología I", "Metodología de la Investigación", "Soporte Básico de Vida", "Quechua I"] },
@@ -79,5 +79,10 @@ export const careerDetails = {
         image: "/carreras/der.webp?height=100&width=100"
       }
     ],
+    brochureImages: [
+      "/carreras/brochure/MED-1.webp",
+      "/carreras/brochure/MED-2.webp"
+    ],
+    brochurePdf: "https://drive.google.com/uc?id=1HS6BcR3BZTxo0Zu8wFM64tBQyqlb-Gov&export=download"
   };
   

@@ -10,7 +10,7 @@ export const careerDetails = {
   accreditation: "R.M. Nro 814/2018",
   image: "/carreras/gth.webp?height=600&width=800",
   video: "/carreras/gth.mp4",
-  youtubeId: "hY4K9f0RKf4?si=jmmV2TZxjrw0p4G9",
+  youtubeId: "P-2-WhLrdjI?si=NGK2a9nby1xmNXHF",
   icon: "🍽️",
   curriculum: [
     { year: "Primer Semestre", courses: ["Gestión Turística", "Dirección de Empresas", "Técnicas de Aprendizaje", "Higiene y Conservación de Alimentos", "Técnicas Culinarias I", "Panadería y Pastelería"] },
@@ -49,4 +49,9 @@ export const careerDetails = {
       quote: "La carrera de Gastronomía, Turismo y Hotelería me brindó las herramientas necesarias para emprender mi propio negocio en el sector de la gastronomía. Aprendí a gestionar un restaurante, a diseñar menús creativos y a ofrecer un servicio de calidad a mis clientes. ¡Gracias UNIOR!"
     },
   ],
+  brochureImages: [
+    "/carreras/brochure/GTH-1.webp",
+    "/carreras/brochure/GTH-2.webp"
+  ],
+  brochurePdf: "https://drive.google.com/uc?id=1gyfHtcjx77_mV4F6Porqt2z9JEpQoBt7&export=download"
 };

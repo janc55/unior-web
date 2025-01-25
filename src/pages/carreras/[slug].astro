@@ -117,6 +117,66 @@ if (!career) {
           </div>
         </div>
       </section>
+
+      <!-- Sección de Brochure -->
+      <section class="relative bg-neutral-900 py-16 text-white">
+        <div class="container mx-auto max-w-[1440px] px-4">
+          <!-- Encabezado dinámico -->
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold leading-tight text-white md:text-5xl">
+              Conoce todo sobre tu carrera
+            </h2>
+            <p class="mt-4 text-lg text-neutral-400">
+              Descarga el brochure con toda la información que necesitas para comenzar tu camino profesional.
+            </p>
+          </div>
+          
+          <!-- Contenido principal -->
+          <div class="flex flex-col items-center justify-center space-y-8 lg:flex-row lg:space-y-0 lg:space-x-12">
+            <!-- Imagen de vista previa del brochure -->
+            <div class="flex-shrink-0">
+              <img 
+                src={career.brochureImages[0]} 
+                alt={`Vista previa del brochure para ${career.title}`} 
+                class="h-48 w-36 rounded-xl shadow-md object-cover transition-transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
+              />
+            </div>
+            
+            <!-- Llamado a la acción -->
+            <div class="text-center lg:text-left">
+              <h3 class="text-3xl font-bold text-white">
+                Obtén el Brochure de {career.title}
+              </h3>
+              <p class="mt-4 text-neutral-400">
+                Conoce los beneficios, el plan de estudios, y las oportunidades laborales que tenemos para ti.
+              </p>
+              <a 
+                href={career.brochurePdf} 
+                class="mt-6 inline-flex items-center justify-center space-x-2 rounded-lg bg-primary-light px-8 py-4 text-lg font-semibold text-neutral-900 shadow-lg transition-transform hover:scale-105 hover:bg-primary-dark"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Icon name="mdi:file-download-outline" class="h-6 w-6 text-neutral-900" />
+                <span>Descargar Brochure</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+  <!-- Elementos decorativos -->
+  <div class="absolute inset-0 z-[-1]">
+    <div class="pointer-events-none absolute top-1/4 left-1/3 h-64 w-64 rounded-full bg-primary-light/10 blur-2xl"></div>
+    <div class="pointer-events-none absolute bottom-1/4 right-1/3 h-48 w-48 rounded-full bg-primary-dark/20 blur-2xl"></div>
+  </div>
+</section>
+
+
+        <!-- Elementos decorativos -->
+        <div class="absolute inset-0 z-[-1]">
+          <div class="pointer-events-none absolute top-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"></div>
+          <div class="pointer-events-none absolute bottom-0 right-1/4 h-48 w-48 rounded-full bg-white/20 blur-2xl"></div>
+        </div>
+      </section>
   
       <!-- Job Opportunities Section -->
       <section class="bg-neutral-50 py-16">
