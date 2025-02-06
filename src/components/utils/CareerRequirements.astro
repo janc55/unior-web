@@ -106,6 +106,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Elementos con type assertion para obtener el tipo correcto
       const careerSelect = document.getElementById('career-select') as HTMLSelectElement;
+      const folderText = document.getElementById('folder-text') as HTMLUListElement;
       const bankAccount = document.getElementById('bank-account');
       const qrImage = document.getElementById('qr-image') as HTMLImageElement;
       const qrModal = document.getElementById('qr-modal') as HTMLDivElement;
@@ -115,6 +116,9 @@
       careerSelect.addEventListener('change', () => {
         if (careerSelect.value === 'gastronomia') {
           bankAccount.textContent = '500-0062245';
+          folderText.innerHTML = `
+            <li>Folder rojo con acofaster</li>
+          `;
           qrImage.src = '/carreras/qr/qr-code-gastronomia.jpeg';
         } else {
           bankAccount.textContent = '500-0050530';
