@@ -1,0 +1,130 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="es" class="overflow-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carnaval de Oruro 2025 - Rol Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-red-950 overflow-hidden flex flex-col min-h-screen">
+    <main class="flex-grow">
+      <div 
+        class="relative min-h-[calc(100vh-80px)] bg-gradient-to-b from-red-900 to-red-950 flex flex-col items-center justify-center p-4 md:p-8"
+      >
+        <!-- Background Pattern -->
+        <div 
+        class="absolute inset-0 bg-[url('/fondo-carnaval.webp')] bg-cover bg-center opacity-90"
+        aria-hidden="true"
+        ></div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-4xl w-full text-center">
+          <!-- Header Logo -->
+          <div class="flex justify-center mb-8">
+            <img 
+              src="/logo-unior-white.webp" 
+              alt="Logo UNIOR" 
+              class="h-16 md:h-20"
+            />
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-yellow-500 font-playfair mb-4">
+            CARNAVAL DE ORURO
+          </h1>
+          <p class="text-xl md:text-2xl text-yellow-500 italic mb-12">
+            Carnaval del Bicentenario
+          </p>
+
+          <!-- Buttons Container -->
+          <div class="flex flex-col items-center gap-4 mb-12">
+            <!-- Ver Rol Button -->
+            <a
+              href="/rol-ingreso"
+              rel="noopener noreferrer"
+              class="bg-white text-red-950 px-8 py-4 rounded-lg text-lg md:text-xl font-bold hover:bg-gray-100 transition-colors duration-300 flex items-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              Ver Rol
+            </a>
+
+            <!-- Download Button -->
+            <a
+              href="/rol-digital.pdf"
+              download
+              class="bg-yellow-500 text-red-950 px-8 py-4 rounded-lg text-lg md:text-xl font-bold hover:bg-yellow-400 transition-colors duration-300 flex items-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              Descargar Rol Digital
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer with white background -->
+    <footer class="bg-white py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-row justify-center items-center gap-4 flex-wrap">
+          <img 
+            src="/sello-bicentenario.png" 
+            alt="Logo Bicentenario" 
+            class="h-12 md:h-16"
+          />
+          <img 
+            src="/logo-bicentenario.png" 
+            alt="Logo Somos Bicentenario" 
+            class="h-12 md:h-16"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .font-playfair {
+        font-family: 'Playfair Display', serif;
+      }
+    </style>
+  </body>
+</html>
+

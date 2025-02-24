@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { conjuntos } from '../data/carnaval/conjuntos';
+---
+
+<Layout title="Rol de Ingreso - Carnaval de Oruro 2025">
+  <main class="min-h-screen bg-gradient-to-br from-yellow-400 via-red-500 to-pink-500 p-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+      <h1 class="text-3xl md:text-4xl font-bold text-center py-6 bg-purple-600 text-white">
+        Rol de Ingreso - Carnaval de Oruro 2025
+      </h1>
+      <div class="p-4">
+        <div class="flex justify-center space-x-4 mb-6">
+          <button
+            class="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+            data-dia="Sábado"
+          >
+            Sábado
+          </button>
+          <button
+            class="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+            data-dia="Domingo"
+          >
+            Domingo
+          </button>
+        </div>
+
+        <div id="rolContainer" class="space-y-4">
+          <!-- El contenido se llenará dinámicamente con JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ conjuntosJSON: JSON.stringify(conjuntos), conjuntosDomingoJSON: JSON.stringify(conjuntos) }}>
+  const conjuntos = JSON.parse(conjuntosJSON);
+  const conjuntosDomingo = JSON.parse(conjuntosJSON);
+
+  const rolContainer = document.getElementById('rolContainer');
+  const buttons = document.querySelectorAll('button[data-dia]');
+
+  function renderRol(conjuntos) {
+    rolContainer.innerHTML = '';
+    const grupos = [...new Set(conjuntos.map(c => c.grupo))];
+
+    grupos.forEach(grupo => {
+      const grupoContainer = document.createElement('div');
+      grupoContainer.className = 'border border-gray-200 rounded-lg overflow-hidden';
+
+      const grupoHeader = document.createElement('button');
+      grupoHeader.className = 'w-full flex justify-between items-center p-4 bg-gray-100 hover:bg-gray-200 transition-colors duration-200';
+      grupoHeader.innerHTML = `
+        <span class="text-lg font-semibold">Grupo ${grupo}</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      `;
+
+      const grupoContent = document.createElement('div');
+      grupoContent.className = 'hidden p-4 bg-white';
+
+      const conjuntosGrupo = conjuntos.filter(c => c.grupo === grupo);
+      conjuntosGrupo.forEach(conjunto => {
+        const conjuntoElement = document.createElement('div');
+        conjuntoElement.className = 'mb-2 p-2 bg-gray-50 rounded';
+        conjuntoElement.innerHTML = `
+          <p class="font-semibold">${conjunto.nombre}</p>
+          <p class="text-sm text-gray-600">${conjunto.tipo_danza}</p>
+        `;
+        grupoContent.appendChild(conjuntoElement);
+      });
+
+      grupoHeader.addEventListener('click', () => {
+        grupoContent.classList.toggle('hidden');
+        grupoHeader.querySelector('svg').classList.toggle('rotate-180');
+      });
+
+      grupoContainer.appendChild(grupoHeader);
+      grupoContainer.appendChild(grupoContent);
+      rolContainer.appendChild(grupoContainer);
+    });
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('bg-purple-700'));
+      button.classList.add('bg-purple-700');
+      const dia = button.getAttribute('data-dia');
+      renderRol(dia === 'Sábado' ? conjuntos : conjuntosDomingo);
+    });
+  });
+
+  // Inicializar con el rol del sábado
+  renderRol(conjuntos);
+</script>
+
+<style>
+  /* Animaciones para el acordeón */
+  .hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  [data-dia] {
+    transition: background-color 0.3s ease;
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+</style>
+
