@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { conjuntos } from '../data/carnaval/conjuntos';
+import { conjuntosDomingo } from '../data/carnaval/conjuntosDomingo';
 ---
 
 <Layout title="Rol de Ingreso - Carnaval de Oruro 2025">
@@ -33,7 +34,7 @@ import { conjuntos } from '../data/carnaval/conjuntos';
   </main>
 </Layout>
 
-<script define:vars={{ conjuntosJSON: JSON.stringify(conjuntos), conjuntosDomingoJSON: JSON.stringify(conjuntos) }}>
+<script define:vars={{ conjuntosJSON: JSON.stringify(conjuntos), conjuntosDomingoJSON: JSON.stringify(conjuntosDomingo) }}>
   const conjuntos = JSON.parse(conjuntosJSON);
   const conjuntosDomingo = JSON.parse(conjuntosJSON);
 
