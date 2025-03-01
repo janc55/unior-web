@@ -36,7 +36,7 @@ import { conjuntosDomingo } from '../data/carnaval/conjuntosDomingo';
 
 <script define:vars={{ conjuntosJSON: JSON.stringify(conjuntos), conjuntosDomingoJSON: JSON.stringify(conjuntosDomingo) }}>
   const conjuntos = JSON.parse(conjuntosJSON);
-  const conjuntosDomingo = JSON.parse(conjuntosJSON);
+  const conjuntosDomingo = JSON.parse(conjuntosDomingoJSON);
 
   const rolContainer = document.getElementById('rolContainer');
   const buttons = document.querySelectorAll('button[data-dia]');
