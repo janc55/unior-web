@@ -2,51 +2,187 @@
 // Bento Grid Component for Featured Content
 ---
 
-<section class="bg-white py-20">
+<section class="bg-gradient-to-br from-gray-50 to-white py-20">
   <div class="mx-auto max-w-7xl px-4">
-    <h2 class="mb-12 text-center text-4xl font-bold text-black">Descubre UNIOR</h2>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Descubre UNIOR</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Mantente al día con las últimas noticias, eventos y oportunidades de nuestra universidad</p>
+    </div>
     
-    <!-- Cambiamos a 1 columna en móvil, y a 3 columnas/2 filas en pantallas medianas -->
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:grid-rows-2">
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-[200px]">
       
-      <!-- Noticias -->
-      <div class="group relative col-span-1 md:col-span-2 md:row-span-2 overflow-hidden rounded-3xl bg-primary p-8 transition-all hover:scale-[1.02]">
-        <h3 class="mb-4 text-2xl font-bold text-white">Últimas Noticias</h3>
-        <div class="space-y-4">
-          <a href="#" class="block text-white/90 hover:text-white">
-            U.E. María Quiroz secundaria logró el primer lugar en el Festival de Teatro
-          </a>
-          <a href="#" class="block text-white/90 hover:text-white">
-            La UNIOR apoya a olimpista de matemáticas
-          </a>
-          <a href="#" class="block text-white/90 hover:text-white">
-            Estudiantes de Enfermería participan en la Semana Mundial de Concientización sobre Antimicrobianos
-          </a>
-          <a href="#" class="block text-white/90 hover:text-white">
-            Clase Espejo sobre dolor torácico entre UNIOR y UCEBOL
-          </a>
-          <a href="#" class="block text-white/90 hover:text-white">
-            Revelan datos históricos sobre la Fundación de Oruro en conversatorio
+      <!-- Noticias Principales - Card Grande -->
+      <div class="group col-span-1 md:col-span-2 lg:col-span-3 row-span-2 relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#db1f26] to-[#660915] p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+        <!-- Imagen de fondo translúcida -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('noticias.png');"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 h-full flex flex-col">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+              <i class="fas fa-newspaper text-[#660915] text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white">Últimas Noticias</h3>
+          </div>
+          
+          <div class="flex-1 space-y-4 overflow-y-auto custom-scrollbar">
+            <article class="news-item group/item cursor-pointer p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 class="text-white font-semibold text-sm mb-1 group-hover/item:text-yellow-400 transition-colors">U.E. María Quiroz secundaria logró el primer lugar en el Festival de Teatro</h4>
+                  <p class="text-white/70 text-xs">Hace 2 días</p>
+                </div>
+              </div>
+            </article>
+            
+            <article class="news-item group/item cursor-pointer p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 class="text-white font-semibold text-sm mb-1 group-hover/item:text-yellow-400 transition-colors">La UNIOR apoya a olimpista de matemáticas</h4>
+                  <p class="text-white/70 text-xs">Hace 3 días</p>
+                </div>
+              </div>
+            </article>
+            
+            <article class="news-item group/item cursor-pointer p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 class="text-white font-semibold text-sm mb-1 group-hover/item:text-yellow-400 transition-colors">Estudiantes de Enfermería participan en Semana Mundial</h4>
+                  <p class="text-white/70 text-xs">Hace 5 días</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+          <a href="/noticias" class="mt-4 inline-flex items-center gap-2 text-yellow-400 hover:text-white transition-colors font-semibold">
+            Ver todas las noticias
+            <i class="fas fa-arrow-right text-sm"></i>
           </a>
         </div>
       </div>
-      
-      <!-- Eventos -->
-      <div class="group overflow-hidden rounded-3xl bg-primary-light p-8 transition-all hover:scale-[1.02]">
-        <h3 class="mb-4 text-xl font-bold text-black">Próximos Eventos</h3>
-        <ul class="space-y-2">
-          <li class="text-black/80">Acto de Colación de grado - Carrera de Gastronomía, Turismo y Hotelería</li>
-        </ul>
+
+      <!-- Eventos Próximos -->
+      <div class="group col-span-1 md:col-span-2 lg:col-span-2 row-span-1 relative overflow-hidden rounded-3xl bg-gradient-to-br from-yellow-400 to-yellow-500 p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
+        <!-- Imagen de fondo translúcida -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('eventos.png');"></div>
+        <div class="relative z-10 h-full flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+              <i class="fas fa-calendar-alt text-yellow-600 text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#660915]">Próximos Eventos</h3>
+          </div>
+          
+          <div class="flex-1 space-y-3">
+            <div class="event-item bg-white/20 backdrop-blur-sm rounded-lg p-3 border border-white/30">
+              <h4 class="font-semibold text-[#660915] text-sm mb-1">Acto de Colación de grado</h4>
+              <p class="text-[#660915]/80 text-xs mb-2">Carrera de Gastronomía, Turismo y Hotelería</p>
+              <div class="flex items-center gap-2 text-xs text-[#660915]/70">
+                <i class="fas fa-clock"></i>
+                <span>15 Enero 2025</span>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/eventos" class="mt-3 inline-flex items-center gap-2 text-[#660915] hover:text-black transition-colors font-semibold text-sm">
+            Ver calendario
+            <i class="fas fa-external-link-alt text-xs"></i>
+          </a>
+        </div>
       </div>
-      
-      <!-- Admisiones -->
-      <div class="group overflow-hidden rounded-3xl bg-black p-8 transition-all hover:scale-[1.02]">
-        <h3 class="mb-4 text-xl font-bold text-white">Proceso de Admisión</h3>
-        <a href="/admisiones" class="text-white/90 hover:text-white">
-          Conoce los requisitos →
+
+      <!-- Proceso de Admisión -->
+      <div class="group col-span-1 md:col-span-2 lg:col-span-1 row-span-1 relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-black p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
+        <div class="h-full flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-graduation-cap text-black text-lg"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Admisiones</h3>
+            <p class="text-white/70 text-sm">Inicia tu futuro profesional</p>
+          </div>
+          
+          <a href="/admisiones" class="inline-flex items-center gap-2 text-yellow-400 hover:text-white transition-colors font-semibold text-sm mt-4">
+            Conoce más
+            <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Biblioteca Virtual -->
+      <div class="group col-span-1 md:col-span-1 lg:col-span-2 row-span-1 relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500 to-purple-600 p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <i class="fas fa-book text-purple-600 text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Biblioteca Virtual</h3>
+        </div>
+        
+        <div class="space-y-3">
+          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-3 border border-white/30">
+            <h4 class="font-semibold text-white text-sm mb-1">Recursos Académicos</h4>
+            <p class="text-white/80 text-xs">Libros digitales, revistas y bases de datos</p>
+          </div>
+        </div>
+        
+        <a href="/biblioteca" class="mt-4 inline-flex items-center gap-2 text-white hover:text-purple-200 transition-colors font-semibold text-sm">
+          Acceder ahora
+          <i class="fas fa-external-link-alt text-xs"></i>
         </a>
       </div>
-      
+
+      <!-- Vida Universitaria -->
+      <div class="group col-span-1 md:col-span-2 lg:col-span-1 row-span-1 relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500 to-green-600 p-6 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
+        <div class="h-full flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-users text-green-600 text-lg"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Vida Universitaria</h3>
+            <p class="text-white/80 text-sm">Actividades y clubes estudiantiles</p>
+          </div>
+          
+          <a href="/vida-universitaria" class="inline-flex items-center gap-2 text-white hover:text-green-200 transition-colors font-semibold text-sm mt-4">
+            Explorar
+            <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Hacer clickeables los items de noticias
+    document.querySelectorAll('.news-item').forEach(item => {
+      item.addEventListener('click', function() {
+        // Aquí puedes agregar la lógica para abrir la noticia completa
+        console.log('Noticia clickeada:', this.querySelector('h4').textContent);
+      });
+    });
+  });
+</script>
