@@ -25,6 +25,7 @@ export default {
 			  },
 			  fontFamily: {
 				bebas: ['"Bebas Neue"', 'sans-serif'], // Definimos la fuente personalizada
+				sans: ['Sofia Sans', 'sans-serif'],
 			  },
 		},
 	},
