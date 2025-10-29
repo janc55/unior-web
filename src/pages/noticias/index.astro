@@ -1,0 +1,43 @@
+---
+import Header from "../../components/Header.astro";
+import PreFooter from "../../components/PreFooter.astro";
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
+
+let articles = [];
+
+try {
+  const res = await fetch('http://localhost:1337/api/articles');
+  if (res.ok) {
+    const data = await res.json();
+    articles = data.data || [];
+    console.log('Articles loaded:', articles);
+  } else {
+    console.error('Error fetching articles:', res.status);
+  }
+} catch (error) {
+  console.error('Fetch failed:', error);
+}
+---
+
+<Layout title="Universidad Privada de Oruro">
+  <Header isHero={false}/>
+  <h1>Artículos</h1>
+
+  {articles.length > 0 ? (
+    <ul>
+      {articles.map((article) => (
+        <li>
+          <h2>{article.title}</h2>
+          <p>{article.description}</p>
+          <small>Slug: {article.slug}</small>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>No hay artículos disponibles</p>
+  )}
+  
+  <PreFooter/>
+  <Footer/>
+</Layout>

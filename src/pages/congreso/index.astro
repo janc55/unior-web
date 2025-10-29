@@ -1,0 +1,387 @@
+---
+// src/pages/congreso.astro
+import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layout base; si no, crea uno simple
+---
+
+<Layout title="I Congreso Nacional de Gastronomía y Alta Cocina">
+  <html lang="es">
+    <head>
+      <meta charset="utf-8" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Sofia+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+      
+      <style>
+        :root {
+          /* Colores de Alta Cocina Andina: Burdeos, Cobre/Dorado, Antracita */
+          --primary-color: #5d1a1f; /* Burdeos Oscuro / Vino Tinto */
+          --secondary-color: #8a2a30; /* Burdeos Medio */
+          --accent-color: #c9a37e; /* Cobre Quemado / Dorado Mate */
+          --text-dark: #222222; /* Antracita Profundo */
+          --text-light: #555555;
+          --bg-light: #f5f5f5; /* Un blanco roto suave */
+        }
+        body {
+          font-family: 'Sofia Sans', sans-serif;
+          color: var(--text-dark);
+        }
+        h1, h2, h3 {
+          font-family: 'Exo 2', sans-serif;
+        }
+        
+        /* Efecto Sutil para el fondo del Hero (Parallax con fixed) */
+        .hero-bg {
+          background-image: url('/fondo-andino-textura.jpg'); /* Sugiere una imagen de textura sutil */
+          background-size: cover;
+          background-position: center;
+          position: fixed; /* Opcional: Para un parallax simple */
+          top: 0; left: 0; right: 0; bottom: 0;
+          z-index: -1;
+        }
+        
+        /* Estilo para el círculo del logo con un toque andino */
+        .logo-circle {
+          background: var(--accent-color);
+          box-shadow: 0 0 0 10px rgba(201, 163, 126, 0.5); /* Sombra suave para destacar */
+          /* Patrón andino sutil en el borde (solo si se implementa un SVG real) */
+        }
+      </style>
+    </head>
+    
+    <body class="bg-white text-[var(--text-dark)] antialiased">
+      <section class="relative bg-[var(--primary-color)] min-h-[60vh] md:min-h-[80vh] flex items-center text-white overflow-hidden" style="background-color: var(--primary-color);">
+        <div class="absolute inset-0 opacity-20 bg-repeat" style='background-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 60\" width=\"60\" height=\"60\"><rect width=\"60\" height=\"60\" fill=\"none\"/><path d=\"M 0 0 L 30 30 M 30 0 L 0 30\" stroke=\"%23c9a37e\" stroke-width=\"0.5\" opacity=\"0.4\"/></svg>");'></div>
+        
+        <div class="container mx-auto px-6 py-24 text-center relative z-10">
+          <div class="logo-circle w-40 h-40 mx-auto mb-8 rounded-full flex items-center justify-center shadow-2xl transition duration-500 hover:scale-[1.05]">
+            <img src="/logo-congreso.svg" alt="Logo Congreso" class="w-28 h-28" />
+          </div>
+          
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-4 uppercase tracking-wider leading-tight text-shadow-lg">
+            I Congreso Nacional de <br class="hidden md:inline"/>Gastronomía y Alta Cocina
+          </h1>
+          <p class="text-2xl md:text-3xl mb-8 italic font-light text-[var(--accent-color)]">
+            "Oruro: Sabores con Altura y Tradición"
+          </p>
+          
+          <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-12">
+            <p class="text-2xl font-semibold">14 y 15 de Noviembre de 2025</p>
+            <span class="hidden md:inline text-4xl font-light">|</span>
+            <p class="text-xl font-light">Casa de la Cultura, Oruro, Bolivia</p>
+          </div>
+          
+          <a href="#inscripcion" class="bg-[var(--accent-color)] text-[var(--primary-color)] px-10 py-4 rounded-full font-bold text-xl uppercase shadow-xl hover:bg-opacity-80 transition duration-300 transform hover:-translate-y-1 inline-block border-2 border-[var(--accent-color)]">
+            Asegura tu cupo Ahora
+          </a>
+        </div>
+      </section>
+
+      <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-center mb-16 text-[var(--secondary-color)] relative before:block before:w-16 before:h-1 before:bg-[var(--accent-color)] before:mx-auto before:mb-4">
+            Misión: <b>Fusión de Sabores y Saberes</b> 
+          </h2>
+          <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center text-lg leading-relaxed">
+            <div>
+              <p class="mb-4">El I Congreso es la plataforma académica líder para la profesionalización de la gastronomía boliviana. Nuestro enfoque central es la "Gastronomía de Altura", una filosofía que integra la riqueza ancestral andina con la <b>innovación científica y tecnológica</b>.</p>
+              <p class="mb-4 font-semibold text-[var(--secondary-color)]">Un evento clave organizado por UNIOR - Carrera de Gastronomía, Turismo y Hotelería.</p>
+              <p>Reunimos a la vanguardia: <b>Chefs Estrellas, Ph.D. Investigadores, Académicos y Emprendedores</b> que están redefiniendo la cocina en Bolivia y el mundo.</p>
+            </div>
+            <div class="relative min-h-[300px] bg-[var(--bg-light)] rounded-xl shadow-xl overflow-hidden" 
+                style="
+                    background-image: url('/congreso/image1.webp');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                ">
+                <blockquote class="p-8 italic text-xl text-center text-white bg-black/60 border-l-4 border-[var(--accent-color)] h-full flex items-center">
+                    "Elevando los ingredientes de la Tierra al plato de la Alta Cocina."
+                </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-[var(--bg-light)]">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-center mb-16 text-[var(--secondary-color)]">
+            🔬 Ejes Temáticos Centrales
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300 border-b-4 border-[var(--accent-color)]">
+              <span class="text-4xl mb-4 inline-block text-[var(--secondary-color)]">🌱</span>
+              <h3 class="text-xl font-extrabold mb-3 text-[var(--primary-color)]">Ciencia y Sostenibilidad Alimentaria Andina</h3>
+              <p class="text-sm text-[var(--text-light)]">Prácticas de cultivo, biotecnología y el futuro sostenible de los superalimentos nativos.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300 border-b-4 border-[var(--accent-color)]">
+              <span class="text-4xl mb-4 inline-block text-[var(--secondary-color)]">🦙</span>
+              <h3 class="text-xl font-extrabold mb-3 text-[var(--primary-color)]">Innovación Culinaria y Camélidos Andinos</h3>
+              <p class="text-sm text-[var(--text-light)]">Técnicas de alta cocina aplicadas a la carne de llama, alpaca y otros productos únicos de altura.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300 border-b-4 border-[var(--accent-color)]">
+              <span class="text-4xl mb-4 inline-block text-[var(--secondary-color)]">📈</span>
+              <h3 class="text-xl font-extrabold mb-3 text-[var(--primary-color)]">Gestión, Tecnología y Modelos de Negocio</h3>
+              <p class="text-sm text-[var(--text-light)]">Digitalización, rentabilidad, y las herramientas de gestión para restaurantes de clase mundial.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300 border-b-4 border-[var(--accent-color)]">
+              <span class="text-4xl mb-4 inline-block text-[var(--secondary-color)]">🏺</span>
+              <h3 class="text-xl font-extrabold mb-3 text-[var(--primary-color)]">Patrimonio y Antropología Culinaria</h3>
+              <p class="text-sm text-[var(--text-light)]">El valor histórico y cultural de la cocina boliviana, desde las técnicas hasta los rituales ancestrales.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-center mb-16 text-[var(--secondary-color)]">
+            Programa y Agenda
+          </h2>
+          <div class="max-w-4xl mx-auto space-y-12">
+            
+            <div class="relative border-l-4 border-[var(--accent-color)] pl-6 md:pl-12">
+              <div class="absolute w-4 h-4 bg-[var(--secondary-color)] rounded-full -left-2 top-0 transform -translate-x-1/2"></div>
+              <h3 class="text-3xl font-extrabold mb-6 text-[var(--secondary-color)] bg-white inline-block pr-4">Día 1 - Viernes 14 de Noviembre</h3>
+              <div class="space-y-6 text-lg">
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">08:00 - 09:00</span>
+                  <span class="font-medium">Registro y Acreditación de Participantes</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">09:00 - 09:30</span>
+                  <span class="font-medium">Ceremonia de Inauguración y Palabras de Bienvenida</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">09:30 - 10:30</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 1: Ph.D. Dennis Ricaldi (Bolivia)</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">11:00 - 12:30</span>
+                  <span class="font-medium">Mesas Redondas Simultáneas: Foco en Ejes Temáticos</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">14:00 - 16:00</span>
+                  <span class="font-medium">Talleres Prácticos (Cocina de Altura y Gestión de Costos)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+                <span class="text-2xl font-extrabold text-[var(--accent-color)] border-b-2 border-dotted border-[var(--accent-color)] pb-1">DÍA 2</span>
+            </div>
+
+            <div class="relative border-l-4 border-[var(--accent-color)] pl-6 md:pl-12">
+              <div class="absolute w-4 h-4 bg-[var(--secondary-color)] rounded-full -left-2 top-0 transform -translate-x-1/2"></div>
+              <h3 class="text-3xl font-extrabold mb-6 text-[var(--secondary-color)] bg-white inline-block pr-4">Día 2 - Sábado 15 de Noviembre</h3>
+              <div class="space-y-6 text-lg">
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">09:00 - 10:00</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 5: Ph.D. Magda Choquevillca (Argentina)</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">10:30 - 12:00</span>
+                  <span class="font-medium">Panel de Chefs Nacionales (Historias de Éxito y Desafíos)</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">14:00 - 16:00</span>
+                  <span class="font-medium">Clausura, Entrega de Certificados y Sesión de Networking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-[var(--bg-light)]">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-center mb-16 text-[var(--secondary-color)]">
+            🌟 Conoce a nuestros Expositores Internacionales y Nacionales
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[var(--accent-color)]">
+                <img src="/congreso/magada-choque.webp" alt="Ph.D. Magda Choquevillca" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-xl font-extrabold text-[var(--primary-color)]">Ph.D. Magda Choque Vilca</h3>
+              <p class="text-sm font-semibold text-[var(--secondary-color)] mb-2">Investigadora Gastronómica</p>
+              <p class="text-xs text-[var(--text-light)] italic">Argentina - Ponente Internacional</p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[var(--accent-color)]">
+                <img src="/congreso/dennis-ricaldi.webp" alt="Ph.D. Dennis Ricaldi" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-xl font-extrabold text-[var(--primary-color)]">Ph.D. Dennis Ricaldi</h3>
+              <p class="text-sm font-semibold text-[var(--secondary-color)] mb-2">Biotecnología Alimentaria</p>
+              <p class="text-xs text-[var(--text-light)] italic">Argentina/Bolivia - Internacional</p>
+            </div>
+
+            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[var(--accent-color)]">
+                <img src="/congreso/kenzo-hirose.webp" alt="Chef Kenzo Hirose" class="w-full h-full object-cover" /> 
+              </div>
+              <h3 class="text-xl font-extrabold text-[var(--primary-color)]">Chef Kenzo Hirose</h3>
+              <p class="text-sm font-semibold text-[var(--secondary-color)] mb-2">Chef Principal, Gustu</p>
+              <p class="text-xs text-[var(--text-light)] italic">La Paz - Nacional</p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.03] transition duration-300">
+              <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-[var(--accent-color)]">
+                <img src="/congreso/fernando-catalan.webp" alt="Chef Fernando Catalan" class="w-full h-full object-cover" />
+              </div>
+              <h3 class="text-xl font-extrabold text-[var(--primary-color)]">Chef Fernando Catalan</h3>
+              <p class="text-sm font-semibold text-[var(--secondary-color)] mb-2">Docente UDI</p>
+              <p class="text-xs text-[var(--text-light)] italic">Cochabamba - Nacional</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-center mb-16 text-[var(--secondary-color)]">
+            ✅ ¿Por qué Debes Asistir?
+          </h2>
+          <ul class="max-w-4xl mx-auto space-y-6 text-xl grid md:grid-cols-2 gap-x-12">
+            <li class="flex items-start bg-[var(--bg-light)] p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200">
+                <span class="text-2xl text-[var(--accent-color)] mr-3 font-bold">1.</span> 
+                <b>Certificación de Alto Valor Curricular:</b> Recibe un certificado de 80 horas académicas.
+            </li>
+            <li class="flex items-start bg-[var(--bg-light)] p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200">
+                <span class="text-2xl text-[var(--accent-color)] mr-3 font-bold">2.</span> 
+                <b>Masterclasses Exclusivas:</b> Aprende directamente de Chefs y Ph.D. de talla internacional.   
+            </li>
+            <li class="flex items-start bg-[var(--bg-light)] p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200">
+                <span class="text-2xl text-[var(--accent-color)] mr-3 font-bold">3.</span> 
+               <b>Networking Estratégico:</b> Conecta con líderes de la industria gastronómica boliviana.
+            </li>
+            <li class="flex items-start bg-[var(--bg-light)] p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200">
+                <span class="text-2xl text-[var(--accent-color)] mr-3 font-bold">4.</span> 
+               <b>Actualización e Innovación:</b> Descubre las últimas tendencias en cocina de altura y sostenibilidad.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="inscripcion" class="py-24 bg-[var(--secondary-color)] text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);"></div>
+    
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-5xl font-extrabold mb-4 text-[var(--accent-color)] uppercase tracking-wide">
+                Asegura tu Lugar Exclusivo
+            </h2>
+            <p class="text-2xl mb-12 font-light">Elige el plan que mejor se adapte a tu perfil.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                
+                <div class="bg-white text-[var(--text-dark)] p-8 rounded-2xl shadow-2xl transition duration-300 transform hover:scale-[1.05] border-t-8 border-[var(--primary-color)]">
+                    <h3 class="text-3xl font-extrabold mb-2 text-[var(--primary-color)]">
+                        Ticket Estudiante
+                    </h3>
+                    <p class="text-sm font-light text-[var(--text-light)] mb-4 italic">
+                        (Válido con Matrícula Vigente)
+                    </p>
+                    <div class="border-t border-b py-4 mb-4 border-[var(--bg-light)]">
+                        <p class="text-5xl font-extrabold text-[var(--primary-color)]">
+                            300 <span class="text-2xl font-semibold">Bs.</span>
+                        </p>
+                    </div>
+                    <ul class="text-left text-sm space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Acceso a 2 días de conferencias</li>
+                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Certificado de 80 Horas</li>
+                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Materiales y Coffee Breaks</li>
+                    </ul>
+                    <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción Estudiante Congreso Gastronomía" class="w-full bg-[var(--primary-color)] text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-[var(--secondary-color)] transition duration-300 shadow-md">
+                        Inscribirme
+                    </a>
+                </div>
+    
+                <div class="bg-gradient-to-br from-[var(--accent-color)] to-[#b58c67] text-[var(--primary-color)] p-8 rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] transform scale-[1.08] border-8 border-white flex flex-col justify-between">
+                    <p class="text-sm font-bold uppercase tracking-widest bg-[var(--primary-color)] text-white py-1 rounded-full mb-3 inline-block px-4 self-center">
+                        OFERTA PRE-INSCRIPCIÓN
+                    </p>
+                    <h3 class="text-3xl font-extrabold mb-2 uppercase">
+                        Ticket General
+                    </h3>
+                    <p class="text-sm font-semibold mb-4 italic">
+                        (Precio Válido hasta el 31 de Octubre)
+                    </p>
+                    <div class="border-t-2 border-b-2 py-4 mb-4 border-[var(--primary-color)] flex-grow flex flex-col justify-center">
+                        <p class="text-3xl font-extrabold line-through text-gray-700">
+                            400 Bs.
+                        </p>
+                        <p class="text-6xl font-extrabold mt-1">
+                            350 <span class="text-3xl font-semibold">Bs.</span>
+                        </p>
+                    </div>
+                    <ul class="text-left text-sm space-y-2 mb-6 text-[var(--primary-color)]">
+                        <li class="flex items-center"><span class="text-lg mr-2">⭐</span> Ahorro de 50 Bs.</li>
+                        <li class="flex items-center"><span class="text-lg mr-2">⭐</span> Acceso VIP a sesiones de Networking</li>
+                        <li class="flex items-center"><span class="text-lg mr-2">⭐</span> Todos los beneficios del Ticket Estudiante</li>
+                    </ul>
+                    <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción General PRE-VENTA Congreso Gastronomía" class="w-full bg-[var(--primary-color)] text-white px-4 py-3 rounded-full font-extrabold text-lg uppercase hover:bg-[var(--primary-color)] hover:bg-opacity-90 transition duration-300 shadow-xl transform hover:-translate-y-0.5 mt-auto">
+                        ¡Paga solo 350 Bs.!
+                    </a>
+                </div>
+    
+                <div class="bg-white text-[var(--text-dark)] p-8 rounded-2xl shadow-2xl transition duration-300 hover:scale-[1.05] border-t-8 border-gray-400 opacity-80">
+                    <h3 class="text-3xl font-extrabold mb-2 text-gray-600">
+                        Ticket Regular
+                    </h3>
+                    <p class="text-sm font-light text-[var(--text-light)] mb-4 italic">
+                        (Precio después del 31 de Octubre)
+                    </p>
+                    <div class="border-t border-b py-4 mb-4 border-[var(--bg-light)]">
+                        <p class="text-5xl font-extrabold text-gray-600">
+                            400 <span class="text-2xl font-semibold">Bs.</span>
+                        </p>
+                    </div>
+                    <ul class="text-left text-sm space-y-2 mb-6">
+                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Acceso a 2 días de conferencias</li>
+                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Certificado de 80 Horas</li>
+                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Materiales y Coffee Breaks</li>
+                    </ul>
+                    <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción Regular Congreso Gastronomía" class="w-full bg-gray-500 text-white px-6 py-3 rounded-full font-bold text-lg cursor-not-allowed opacity-70">
+                        Pagar 400 Bs.
+                    </a>
+                </div>
+    
+            </div>
+            
+            <p class="text-xl mb-6 font-semibold text-[var(--accent-color)]">
+                ¿Dudas o Requieres Factura? Contáctanos a nuestro correo o WhatsApp:
+            </p>
+            <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción General PRE-VENTA Congreso Gastronomía" class="bg-[var(--accent-color)] text-[var(--primary-color)] px-12 py-5 rounded-full font-extrabold text-xl uppercase shadow-2xl hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 inline-block border-2 border-white">
+                ✉️ Inscríbete por Email
+            </a>
+            
+            <p class="mt-8 text-sm opacity-70">
+                El Comité Científico de UNIOR se encarga de la acreditación y registro. Por favor, realiza la pre-inscripción antes del 31 de Octubre para acceder al precio especial.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-[var(--primary-color)] text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-extrabold mb-8">Información de Contacto y Organizador</h2>
+          
+          <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-12 mb-8 text-lg font-light">
+            <p>📧 Email: <a href="mailto:comitecientificounior@gmail.com" class="underline hover:text-[var(--accent-color)] transition">comitecientificounior@gmail.com</a></p>
+            <p>📞 Cel: <a href="https://wa.me/59167229060" class="underline hover:text-[var(--accent-color)] transition" target="_blank">67229060</a></p>
+            <p>👤 Coordinador: Lic. Sergio Marcos Bilbao</p>
+          </div>
+          
+          <p class="mb-10 text-lg">Web UNIOR: <a href="https://www.unior.edu.bo" class="underline font-semibold hover:text-[var(--accent-color)] transition" target="_blank">www.unior.edu.bo</a></p>
+          
+          <div class="flex justify-center items-center space-x-4">
+            <img src="/logo-unior.png" alt="UNIOR" class="h-10 filter grayscale opacity-70 hover:opacity-100 transition duration-300" />
+            <p class="text-sm opacity-80">Organizado por: UNIOR - Carrera de Gastronomía</p>
+          </div>
+          <p class="mt-8 text-xs opacity-50">&copy; 2025 I Congreso Nacional de Gastronomía y Alta Cocina.</p>
+        </div>
+      </footer>
+      
+      <div class="bg-[var(--primary-color)] text-white/70 py-4">
+          <div class="container mx-auto px-6 text-center text-xs">
+              Desarrollado por NettiDev
+          </div>
+      </div>
+    </body>
+  </html>
+</Layout>
