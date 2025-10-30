@@ -1,0 +1,125 @@
+---
+// src/components/PopupCongreso.astro
+
+// Define las fechas de inicio y fin para mostrar el popup
+// Puedes cambiarlas fácilmente para controlar la "temporada"
+const fechaInicio = new Date('2025-10-15T00:00:00'); // Ejemplo: 15 de Octubre de 2025
+const fechaFin = new Date('2025-11-01T23:59:59');   // Ejemplo: 1 de Noviembre de 2025
+
+const hoy = new Date();
+
+// Lógica para determinar si el popup debe mostrarse
+const mostrarPopup = hoy >= fechaInicio && hoy <= fechaFin;
+
+// Si no se debe mostrar, el componente no renderiza nada
+if (!mostrarPopup) {
+  return null;
+}
+---
+
+<div id="popup-congreso" class="popup-overlay">
+  <div class="popup-content flex-column"> 
+    <img src="/congreso/logo-congreso.png" alt="Logo Congreso Gastronomía UNIOR" class="logo" />
+    <p class="popup-text">Aprovecha la pre-inscripción con descuento hasta el 12 de noviembre. ¡No te pierdas el evento más importante del año!</p>
+    <a href="/congreso" class="popup-button">Más Información Aquí</a>
+    <button id="cerrar-popup" class="cerrar-button">✖</button>
+  </div>
+</div>
+
+<style>
+  /* --- Estilos CSS para el popup (ajustados para espaciado y centrado) --- */
+  
+  /* 1. Contenedor principal del popup */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  /* 2. Contenido del popup (se usa Flexbox para alinear y espaciar) */
+  .popup-content {
+    background: linear-gradient(135deg, #faf0e6 0%, #f5f5dc 100%);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    
+    /* Propiedades de Flexbox para apilar y centrar */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos hijos */
+  }
+
+  /* 3. Estilo del Logo */
+  .logo {
+    width: 200px; /* Mantener tu tamaño original (w-52 en Tailwind es ~208px) */
+    height: auto;
+    margin-bottom: 20px; /* Aumenta el espacio debajo del logo */
+    /* El 'align-items: center' del padre (.popup-content) lo centrará automáticamente */
+  }
+
+  /* 4. Estilo del Texto Promocional */
+  .popup-text {
+    margin-bottom: 25px; /* Aumenta el espacio antes del botón */
+    line-height: 1.5;
+    color: #333;
+  }
+
+  /* 5. Estilo del Botón de Cerrar */
+  .cerrar-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+  }
+
+  /* 6. Estilo del Botón de Acción (Más Información) */
+  .popup-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5d1a1f; /* Color institucional de la UNIOR */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .popup-button:hover {
+    background-color: #8a2a30;
+  }
+</style>
+
+<script>
+  // Script para manejar el cierre del popup
+  const popup = document.getElementById('popup-congreso');
+  const cerrarBtn = document.getElementById('cerrar-popup');
+
+  if (cerrarBtn && popup) {
+    // Manejo de la sesión para evitar mostrarlo de nuevo
+    if (sessionStorage.getItem('congresoPopupCerrado') === 'true') {
+        popup.style.display = 'none';
+        return; // Detiene la ejecución si ya se cerró
+    }
+    
+    // Evento de clic para cerrar y guardar la preferencia
+    cerrarBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+      sessionStorage.setItem('congresoPopupCerrado', 'true');
+    });
+  }
+</script>
