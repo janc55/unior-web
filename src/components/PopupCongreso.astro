@@ -1,17 +1,13 @@
 ---
 // src/components/PopupCongreso.astro
-
-// Define las fechas de inicio y fin para mostrar el popup
-// Puedes cambiarlas fácilmente para controlar la "temporada"
-const fechaInicio = new Date('2025-10-15T00:00:00'); // Ejemplo: 15 de Octubre de 2025
-const fechaFin = new Date('2025-11-01T23:59:59');   // Ejemplo: 1 de Noviembre de 2025
-
+// ... (El código de frontmatter permanece igual) ...
+const fechaInicio = new Date('2025-10-15T00:00:00');
+const fechaFin = new Date('2025-11-01T23:59:59');
 const hoy = new Date();
 
-// Lógica para determinar si el popup debe mostrarse
 const mostrarPopup = hoy >= fechaInicio && hoy <= fechaFin;
 
-// Si no se debe mostrar, el componente no renderiza nada
+// Esta lógica del lado del servidor no causa el error.
 if (!mostrarPopup) {
   return null;
 }
@@ -105,21 +101,25 @@ if (!mostrarPopup) {
 </style>
 
 <script>
-  // Script para manejar el cierre del popup
-  const popup = document.getElementById('popup-congreso');
-  const cerrarBtn = document.getElementById('cerrar-popup');
-
-  if (cerrarBtn && popup) {
-    // Manejo de la sesión para evitar mostrarlo de nuevo
-    if (sessionStorage.getItem('congresoPopupCerrado') === 'true') {
-        popup.style.display = 'none';
-        return; // Detiene la ejecución si ya se cerró
-    }
-    
-    // Evento de clic para cerrar y guardar la preferencia
-    cerrarBtn.addEventListener('click', () => {
+    // Script para manejar el cierre y la visibilidad del popup en el cliente
+    const popup = document.getElementById('popup-congreso');
+    const cerrarBtn = document.getElementById('cerrar-popup');
+  
+    // 1. Comprobación de si el popup ya fue cerrado en esta sesión
+    const cerradoEnSesion = sessionStorage.getItem('congresoPopupCerrado') === 'true';
+  
+    if (popup && cerradoEnSesion) {
+      // Si ya fue cerrado, ocultamos el popup inmediatamente.
       popup.style.display = 'none';
-      sessionStorage.setItem('congresoPopupCerrado', 'true');
-    });
-  }
-</script>
+    } else if (cerrarBtn && popup) {
+      // 2. Si no ha sido cerrado, configuramos el listener para cerrarlo.
+      cerrarBtn.addEventListener('click', () => {
+        // Oculta el popup
+        popup.style.display = 'none';
+  
+        // Guardar en LocalStorage para no mostrarlo de nuevo
+        sessionStorage.setItem('congresoPopupCerrado', 'true');
+      });
+    }
+    // Si no se encuentra el 'popup' o 'cerrarBtn', el script no hace nada más.
+  </script>
