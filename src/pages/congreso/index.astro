@@ -9,7 +9,7 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
       <meta charset="utf-8" />
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Sofia+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Sofia+Sans:wght@300;400;500;700&family=Sofia&display=swap" rel="stylesheet">
       
       <style>
         :root {
@@ -27,6 +27,10 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
         }
         h1, h2, h3 {
           font-family: 'Exo 2', sans-serif;
+        }
+        .font-sofia-decorative {
+          font-family: 'Sofia', cursive;
+          font-weight: 400; /* Sofia generalmente tiene un solo peso */
         }
         
         /* Efecto Sutil para el fondo del Hero (Parallax con fixed) */
@@ -70,7 +74,7 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
           </div>
                     
           <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-12">
-            <p class="text-2xl md:text-3xl font-semibold font-sans" style="color: #95323b;">14 y 15 de Noviembre de 2025</p>
+            <p class="text-2xl md:text-3xl font-semibold font-sofia" style="color: #95323b;">14 y 15 de Noviembre de 2025</p>
             
             <!-- SVG decorativo como divisor vertical, referenciado externamente y escalado pequeño -->
             <img src="/congreso/forma1.svg" 
@@ -179,12 +183,32 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
                   <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 1: Ph.D. Dennis Ricaldi (Bolivia)</span>
                 </div>
                 <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
-                  <span class="font-bold text-[var(--primary-color)]">11:00 - 12:30</span>
-                  <span class="font-medium">Mesas Redondas Simultáneas: Foco en Ejes Temáticos</span>
+                  <span class="font-bold text-[var(--primary-color)]">10:30 - 10:45</span>
+                  <span class="font-medium">Coffee Break y Networking Académico</span>
                 </div>
                 <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
-                  <span class="font-bold text-[var(--primary-color)]">14:00 - 16:00</span>
-                  <span class="font-medium">Talleres Prácticos (Cocina de Altura y Gestión de Costos)</span>
+                  <span class="font-bold text-[var(--primary-color)]">11:30 - 12:30</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 2: Chef Gabriel Torrez</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">12:30 - 14:30</span>
+                  <span class="font-medium">Ruta Gastronómica Street Food I - Almuerzo Libre</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">14:30 - 15:30</span>
+                  <span class="font-medium">Ponencia Estudiantil 1: Gerardo Aguilar</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">15:30 - 16:15</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 3: Chef Jaime Barbas</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">16:15 - 16:30</span>
+                  <span class="font-medium">Coffee Break y Networking</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">16:30 - 17:30</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 4: Chef Kenzo Hirose</span>
                 </div>
               </div>
             </div>
@@ -199,15 +223,39 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
               <div class="space-y-6 text-lg">
                 <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
                   <span class="font-bold text-[var(--primary-color)]">09:00 - 10:00</span>
-                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 5: Ph.D. Magda Choquevillca (Argentina)</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 5: Ph.D. Magda Choque Vilca (Argentina)</span>
                 </div>
                 <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
-                  <span class="font-bold text-[var(--primary-color)]">10:30 - 12:00</span>
-                  <span class="font-medium">Panel de Chefs Nacionales (Historias de Éxito y Desafíos)</span>
+                  <span class="font-bold text-[var(--primary-color)]">10:00 - 10:45</span>
+                  <span class="font-medium">Ponencia Estudiantil 2: Lic. Yanira Challapa</span>
                 </div>
                 <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
-                  <span class="font-bold text-[var(--primary-color)]">14:00 - 16:00</span>
-                  <span class="font-medium">Clausura, Entrega de Certificados y Sesión de Networking</span>
+                  <span class="font-bold text-[var(--primary-color)]">10:45 - 11:00</span>
+                  <span class="font-medium">Coffee Break y Networking</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">11:00 - 12:00</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 6: Chef Fernando Catalán</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">12:00 - 13:00</span>
+                  <span class="font-medium">Ruta Gastronómica Street Food II</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">14:00 - 15:00</span>
+                  <span class="font-medium">Ponencia Estudiantil 3:</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">15:00 - 16:00</span>
+                  <span class="font-medium">Ponencia Magistral 7: Ing. Trigidia Jiménez</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">16:00 - 17:00</span>
+                  <span class="font-bold text-[var(--secondary-color)]">Ponencia Magistral 8: Chef Juan Pablo Gumiel</span>
+                </div>
+                <div class="p-4 bg-[var(--bg-light)] rounded-lg shadow-md hover:shadow-lg transition duration-200 flex justify-between">
+                  <span class="font-bold text-[var(--primary-color)]">17:00 - 18:00</span>
+                  <span class="font-medium">ACTO DE CLAUSURA - Entrega de Certificados</span>
                 </div>
               </div>
             </div>
@@ -432,104 +480,148 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
           </div>
         </div>
       </section>
-      <section id="inscripcion" class="py-24 text-white relative overflow-hidden" 
-      style="background: linear-gradient(90deg, var(--secondary-color) 0%, #752018 100%);">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);"></div>
+      <section id="inscripcion" class="py-24 text-white relative overflow-hidden"
+        style="background: linear-gradient(90deg, var(--secondary-color) 0%, #752018 100%);">
         
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);"></div>
+
         <div class="container mx-auto px-6 text-center relative z-10">
             <h2 class="text-5xl font-extrabold mb-4 text-[var(--accent-color)] uppercase tracking-wide">
                 Asegura tu Lugar Exclusivo
             </h2>
-            <p class="text-2xl mb-12 font-light">Elige el plan que mejor se adapte a tu perfil.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-                
-                <div class="bg-white text-[var(--text-dark)] p-8 rounded-2xl shadow-2xl transition duration-300 transform hover:scale-[1.05] border-t-8 border-[var(--primary-color)]">
-                    <h3 class="text-3xl font-extrabold mb-2 text-[var(--primary-color)]">
+
+            <p class="text-2xl mb-12 font-light">
+                Elige el plan que mejor se adapte a tu perfil y aprovecha el descuento por <strong>Pre-inscripción</strong> <em>(válido hasta el 12 de noviembre)</em>.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                <!-- PLAN GENERAL -->
+                <div class="bg-gradient-to-br from-[var(--accent-color)] to-[#b58c67] text-[var(--primary-color)] p-6 rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] border-4 border-white flex flex-col justify-between transition duration-500 hover:scale-[1.02] hover:shadow-[0_25px_30px_-5px_rgba(0,0,0,0.4)]">
+                    
+                    <div class="mb-4">
+                        <p class="text-xs font-bold uppercase tracking-widest bg-[var(--primary-color)] text-white py-1 rounded-full inline-block px-3 shadow-md">
+                            Precio Especial Limitado
+                        </p>
+                    </div>
+
+                    <h3 class="text-3xl font-extrabold mb-4 uppercase text-[var(--primary-color)]">
+                        Profesionales y Público General
+                    </h3>
+
+                    <div class="border-t-2 border-b-2 py-6 mb-6 border-[var(--primary-color)] flex-grow flex flex-col justify-center">
+                        <p class="text-xl font-semibold mb-2 text-gray-700">
+                            Precio Regular: <span class="line-through">400 Bs.</span>
+                        </p>
+                        <p class="text-6xl font-black mt-2 leading-tight">
+                            350<span class="text-4xl font-semibold"> Bs.</span>
+                        </p>
+                        <p class="text-xs font-medium text-gray-600 mt-3 uppercase tracking-wide">
+                            Pre-inscripción (hasta 12 de noviembre)
+                        </p>
+                    </div>
+
+                    <ul class="text-left text-sm space-y-3 mb-6 text-[var(--primary-color)] font-medium">
+                        <li class="border-l-4 border-[var(--primary-color)] pl-4 py-1">Acceso completo a 2 días de conferencias y exposiciones</li>
+                        <li class="border-l-4 border-[var(--primary-color)] pl-4 py-1"><strong>Certificado de 80 Horas</strong> con valor curricular</li>
+                        <li class="border-l-4 border-[var(--primary-color)] pl-4 py-1">Materiales, Coffee Breaks y Sesiones de Networking exclusivas</li>
+                    </ul>
+
+                    <a href="https://wa.me/59174148884?text=Hola,%20me%20gustaria%20inscribirme%20al%20Congreso%20Nacional%20de%20Gastronom%C3%ADa%20y%20Alta%20Cocina"
+                        class="w-full bg-[var(--primary-color)] text-white px-6 py-4 rounded-full font-extrabold text-base uppercase tracking-wide hover:bg-opacity-90 transition duration-300 shadow-lg transform hover:-translate-y-1 mt-auto inline-block">
+                        Inscribirme Ahora
+                    </a>
+                </div>
+
+                <!-- PLAN ESTUDIANTE -->
+                <div class="bg-white text-[var(--text-dark)] p-6 rounded-2xl shadow-2xl transition duration-500 hover:scale-[1.02] hover:shadow-[0_25px_30px_-5px_rgba(0,0,0,0.2)] border-4 border-[var(--accent-color)]">
+                    
+                    <div class="mb-4">
+                        <p class="text-xs font-bold uppercase tracking-widest bg-[var(--accent-color)] text-[var(--primary-color)] py-1 rounded-full inline-block px-3 shadow-md">
+                            Descuento Estudiantil
+                        </p>
+                    </div>
+
+                    <h3 class="text-3xl font-extrabold mb-4 text-[var(--primary-color)] uppercase">
                         Ticket Estudiante
                     </h3>
-                    <p class="text-sm font-light text-[var(--text-light)] mb-4 italic">
-                        (Válido con Matrícula Vigente)
+
+                    <p class="text-xs font-light text-gray-600 mb-4 italic">
+                        Válido con matrícula vigente. Presentar carnet al evento.
                     </p>
-                    <div class="border-t border-b py-4 mb-4 border-[var(--bg-light)]">
-                        <p class="text-5xl font-extrabold text-[var(--primary-color)]">
-                            300 <span class="text-2xl font-semibold">Bs.</span>
+
+                    <div class="border-t-2 border-b-2 py-6 mb-6 border-[var(--accent-color)] flex-grow flex flex-col justify-center">
+                        <p class="text-xl font-semibold mb-2 text-gray-700">
+                            Precio Regular: <span class="line-through">350 Bs.</span>
+                        </p>
+                        <p class="text-6xl font-black mt-2 leading-tight text-[var(--accent-color)]">
+                            300<span class="text-4xl font-semibold"> Bs.</span>
+                        </p>
+                        <p class="text-xs font-medium text-gray-500 mt-3 uppercase tracking-wide">
+                            Pre-inscripción (hasta 12 de noviembre)
                         </p>
                     </div>
-                    <ul class="text-left text-sm space-y-2 mb-6">
-                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Acceso a 2 días de conferencias</li>
-                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Certificado de 80 Horas</li>
-                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Materiales y Coffee Breaks</li>
+
+                    <ul class="text-left text-sm space-y-3 mb-6 font-medium">
+                        <li class="border-l-4 border-[var(--accent-color)] pl-4 py-1 text-[var(--accent-color)]">Acceso completo a 2 días de conferencias</li>
+                        <li class="border-l-4 border-[var(--accent-color)] pl-4 py-1 text-[var(--accent-color)]">Certificado de 80 Horas con valor curricular</li>
+                        <li class="border-l-4 border-[var(--accent-color)] pl-4 py-1 text-[var(--accent-color)]">Materiales y Coffee Breaks incluidos</li>
                     </ul>
-                    <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción Estudiante Congreso Gastronomía" class="w-full bg-[var(--primary-color)] text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-[var(--secondary-color)] transition duration-300 shadow-md">
-                        Inscribirme
+
+                    <a href="https://wa.me/59174148884?text=Hola,%20me%20gustaria%20inscribirme%20al%20Congreso%20Nacional%20de%20Gastronom%C3%ADa%20y%20Alta%20Cocina"
+                        class="w-full bg-[var(--primary-color)] text-white px-6 py-4 rounded-full font-extrabold text-base uppercase tracking-wide hover:bg-[var(--secondary-color)] transition duration-300 shadow-lg transform hover:-translate-y-1 mt-auto inline-block">
+                        Inscribirme Ahora
                     </a>
                 </div>
-        
-                <div class="bg-gradient-to-br from-[var(--accent-color)] to-[#b58c67] text-[var(--primary-color)] p-8 rounded-2xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] transform scale-[1.08] border-8 border-white flex flex-col justify-between">
-                    <p class="text-sm font-bold uppercase tracking-widest bg-[var(--primary-color)] text-white py-1 rounded-full mb-3 inline-block px-4 self-center">
-                        OFERTA PRE-INSCRIPCIÓN
-                    </p>
-                    <h3 class="text-3xl font-extrabold mb-2 uppercase">
-                        Ticket General
-                    </h3>
-                    <p class="text-sm font-semibold mb-4 italic">
-                        (Precio Válido hasta el 31 de Octubre)
-                    </p>
-                    <div class="border-t-2 border-b-2 py-4 mb-4 border-[var(--primary-color)] flex-grow flex flex-col justify-center">
-                        <p class="text-3xl font-extrabold line-through text-gray-700">
-                            400 Bs.
-                        </p>
-                        <p class="text-6xl font-extrabold mt-1">
-                            350 <span class="text-3xl font-semibold">Bs.</span>
-                        </p>
-                    </div>
-                    <ul class="text-left text-sm space-y-2 mb-6 text-[var(--primary-color)]">
-                        <li class="flex items-center"><span class="text-lg mr-2">⭐</span> Ahorro de 50 Bs.</li>
-                        <li class="flex items-center"><span class="text-lg mr-2">⭐</span> Acceso VIP a sesiones de Networking</li>
-                        <li class="flex items-center"><span class="text-lg mr-2">⭐</span> Todos los beneficios del Ticket Estudiante</li>
-                    </ul>
-                    <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción General PRE-VENTA Congreso Gastronomía" class="w-full bg-[var(--primary-color)] text-white px-4 py-3 rounded-full font-extrabold text-lg uppercase hover:bg-[var(--primary-color)] hover:bg-opacity-90 transition duration-300 shadow-xl transform hover:-translate-y-0.5 mt-auto">
-                        ¡Paga solo 350 Bs.!
-                    </a>
-                </div>
-        
-                <div class="bg-white text-[var(--text-dark)] p-8 rounded-2xl shadow-2xl transition duration-300 hover:scale-[1.05] border-t-8 border-gray-400 opacity-80">
-                    <h3 class="text-3xl font-extrabold mb-2 text-gray-600">
-                        Ticket Regular
-                    </h3>
-                    <p class="text-sm font-light text-[var(--text-light)] mb-4 italic">
-                        (Precio después del 31 de Octubre)
-                    </p>
-                    <div class="border-t border-b py-4 mb-4 border-[var(--bg-light)]">
-                        <p class="text-5xl font-extrabold text-gray-600">
-                            400 <span class="text-2xl font-semibold">Bs.</span>
-                        </p>
-                    </div>
-                    <ul class="text-left text-sm space-y-2 mb-6">
-                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Acceso a 2 días de conferencias</li>
-                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Certificado de 80 Horas</li>
-                        <li class="flex items-center"><span class="text-green-600 mr-2">✓</span> Materiales y Coffee Breaks</li>
-                    </ul>
-                    <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción Regular Congreso Gastronomía" class="w-full bg-gray-500 text-white px-6 py-3 rounded-full font-bold text-lg cursor-not-allowed opacity-70">
-                        Pagar 400 Bs.
-                    </a>
-                </div>
-        
             </div>
-            
-            <p class="text-xl mb-6 font-semibold text-[var(--accent-color)]">
-                ¿Dudas? Contáctanos a nuestro correo o WhatsApp:
-            </p>
-            <a href="mailto:comitecientificounior@gmail.com?subject=Inscripción General PRE-VENTA Congreso Gastronomía" class="bg-[var(--accent-color)] text-[var(--primary-color)] px-12 py-5 rounded-full font-extrabold text-xl uppercase shadow-2xl hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 inline-block border-2 border-white">
-                ✉️ Inscríbete por Email
-            </a>
-            
-            <p class="mt-8 text-sm opacity-70">
-                El Comité Científico de UNIOR se encarga de la acreditación y registro. Por favor, realiza la pre-inscripción antes del 31 de Octubre para acceder al precio especial.
+
+            <h3 class="text-4xl font-extrabold mt-12 mb-6 text-white uppercase tracking-wider">
+                Proceso de Inscripción
+            </h3>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 text-left">
+              <div class="p-6 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20">
+                  <p class="text-2xl font-bold mb-2 text-[var(--accent-color)]">1. Contacto Inicial</p>
+                  <p class="text-sm leading-relaxed">
+                      Envía un mensaje de <strong>WhatsApp</strong> a uno de nuestros <strong>Asesores de Venta</strong> indicando tu categoría de inscripción:
+                  </p>
+                  <ul class="text-sm leading-relaxed mt-2 list-disc ml-5">
+                      <li><strong>Estudiante</strong></li>
+                      <li><strong>Profesionales/Público General</strong></li>
+                  </ul>
+              </div>
+          
+              <div class="p-6 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20">
+                  <p class="text-2xl font-bold mb-2 text-[var(--accent-color)]">2. Realiza el Pago</p>
+                  <p class="text-sm leading-relaxed">
+                      El Asesor te proporcionará de inmediato el número de cuenta y/o código QR para que puedas realizar el depósito por el monto de <strong>Pre-inscripción</strong> correspondiente.
+                  </p>
+              </div>
+          
+              <div class="p-6 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20">
+                  <p class="text-2xl font-bold mb-2 text-[var(--accent-color)]">3. Confirmación</p>
+                  <p class="text-sm leading-relaxed">
+                      Envía la <strong>foto de tu comprobante de pago</strong> al Asesor de Venta para recibir tu confirmación oficial de inscripción y asegurar tu lugar en el evento.
+                  </p>
+              </div>
+          </div>
+
+            <div class="mt-12">
+                <p class="text-xl mb-6 font-semibold text-[var(--accent-color)]">
+                    ¿Dudas? Contáctanos directamente:
+                </p>
+                <a href="https://wa.me/59174148884?text=Hola,%20me%20gustaria%20m%C3%A1s%20infomraci%C3%B3n%20del%20Congreso%20Nacional%20de%20Gastronom%C3%ADa%20y%20Alta%20Cocina" target="_blank"
+                    class="bg-[var(--primary-color)] text-white px-8 py-4 rounded-full font-extrabold text-lg uppercase shadow-2xl hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 inline-block border-2 border-white">
+                    WhatsApp
+                </a>
+            </div>
+
+            <p class="mt-8 text-sm opacity-70 leading-relaxed">
+                El Comité Científico de UNIOR se encarga de la acreditación y registro. El precio de <strong>Pre-inscripción</strong> es válido hasta el <strong>12 de noviembre</strong>. Posterior a esta fecha, se aplicará el precio regular sin descuentos.
             </p>
         </div>
     </section>
+
 
     <footer class="py-16 bg-[var(--primary-color)] text-white">
       <div class="container mx-auto px-6">
@@ -542,7 +634,7 @@ import Layout from "../../layouts/Layout.astro"; // Asumiendo que tienes un layo
                 <a href="mailto:comitecientificounior@gmail.com" class="hover:text-[var(--accent-color)] transition duration-300 block">comitecientificounior@gmail.com</a>
               </li>
               <li>
-                <a href="https://wa.me/59167229060" class="hover:text-[var(--accent-color)] transition duration-300 block" target="_blank">+591 67229060</a>
+                <a href="https://wa.me/59174148884" class="hover:text-[var(--accent-color)] transition duration-300 block" target="_blank">+ 591 74148884</a>
               </li>
             </ul>
           </div>
