@@ -8,8 +8,6 @@ const navItems = [
   { name: "Contacto", href: "/#contacto" },
 ];
 
-import "@fontsource/bebas-neue";
-
 const { isHero } = Astro.props;
 ---
 
@@ -44,7 +42,7 @@ const { isHero } = Astro.props;
                   </a>
                   <!-- Submenú -->
                   <ul
-                    class="absolute left-0 hidden w-72 bg-white shadow-lg group-hover:block"
+                    class="absolute left-0 hidden w-80 bg-white shadow-lg group-hover:block z-10 rounded-md overflow-hidden"
                   >
                     {[
                       { name: "Ingeniería de Sistemas", href: "/carreras/ingenieria-de-sistemas" },
@@ -55,13 +53,27 @@ const { isHero } = Astro.props;
                       { name: "Medicina", href: "/carreras/medicina" },
                       { name: "Enfermería", href: "/carreras/enfermeria" },
                       { name: "Gastronomía, Turismo y Hotelería", href: "/carreras/gastronomia-turismo-hoteleria" },
+                      { 
+                        name: "Prótesis Dental", 
+                        href: "/carreras/protesis-dental",
+                        isNew: true 
+                      },
                     ].map((career) => (
-                      <li>
+                      <li class="relative">
                         <a
                           href={career.href}
-                          class="block px-6 py-4 text-sm text-black hover:bg-gray-100 hover:text-primary"
+                          class={`block px-6 py-4 text-sm transition-all relative ${
+                            career.isNew 
+                              ? "bg-gradient-to-r from-pruple-50 to-blue-50 text-purple-700 font-semibold border-l-4 border-purple-500 hover:bg-purple-100 hover:text-purple-800" 
+                              : "text-black hover:bg-gray-100 hover:text-primary"
+                          }`}
                         >
                           {career.name}
+                          {career.isNew && (
+                            <span class="ml-2 px-2 py-1 text-xs bg-purple-500 text-white rounded-full animate-pulse">
+                              ¡NUEVA!
+                            </span>
+                          )}
                         </a>
                       </li>
                     ))}
@@ -145,30 +157,41 @@ const { isHero } = Astro.props;
             </a>
           )}
           {item.name === "Carreras" && (
-            <ul
-              class="hidden ml-6 mt-2 space-y-1"
-              id="mobile-carreras"
-            >
-              {[
-                      { name: "Ingeniería de Sistemas", href: "/carreras/ingenieria-de-sistemas" },
-                      { name: "Auditoria", href: "/carreras/auditoria" },
-                      { name: "Administración de Empresas", href: "/carreras/administracion-de-empresas" },
-                      { name: "Derecho", href: "/carreras/derecho" },
-                      { name: "Odontología", href: "/carreras/odontologia" },
-                      { name: "Medicina", href: "/carreras/medicina" },
-                      { name: "Enfermería", href: "/carreras/enfermeria" },
-                      { name: "Gastronomía, Turismo y Hotelería", href: "/carreras/gastronomia-turismo-hoteleria" },
-              ].map((career) => (
-                <li>
-                  <a
-                    href={career.href}
-                    class="block px-4 py-2 text-sm text-black hover:bg-gray-100 hover:text-primary"
-                  >
-                    {career.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <ul class="hidden ml-6 mt-2 space-y-1" id="mobile-carreras">
+            {[
+              { name: "Ingeniería de Sistemas", href: "/carreras/ingenieria-de-sistemas" },
+              { name: "Auditoria", href: "/carreras/auditoria" },
+              { name: "Administración de Empresas", href: "/carreras/administracion-de-empresas" },
+              { name: "Derecho", href: "/carreras/derecho" },
+              { name: "Odontología", href: "/carreras/odontologia" },
+              { name: "Medicina", href: "/carreras/medicina" },
+              { name: "Enfermería", href: "/carreras/enfermeria" },
+              { name: "Gastronomía, Turismo y Hotelería", href: "/carreras/gastronomia-turismo-hoteleria" },
+              { 
+                name: "Prótesis Dental", 
+                href: "/carreras/protesis-dental",
+                isNew: true 
+              },
+            ].map((career) => (
+              <li class="relative">
+                <a
+                  href={career.href}
+                  class={`block px-4 py-3 text-sm transition-all relative rounded-md ${
+                    career.isNew 
+                      ? "bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 font-semibold border-l-4 border-purple-500 hover:bg-purple-100 hover:text-purple-800 ml-2" 
+                      : "text-black hover:bg-gray-100 hover:text-primary"
+                  }`}
+                >
+                  {career.name}
+                  {career.isNew && (
+                    <span class="ml-2 px-2 py-1 text-xs bg-purple-500 text-white rounded-full animate-pulse">
+                      ¡NUEVA!
+                    </span>
+                  )}
+                </a>
+              </li>
+            ))}
+</ul>
           )}
         </div>
       ))}

@@ -7,6 +7,7 @@ import { careerDetails as odontologia } from './odontologia.js';
 import { careerDetails as medicina } from './medicina.js';
 import { careerDetails as enfermeria } from './enfermeria.js';
 import { careerDetails as gth } from './gth.js';
+import { careerDetails as protesis } from './protesis.js';
 // Importa las demás carreras aquí
 
 export const careers = [
@@ -17,6 +18,8 @@ export const careers = [
   odontologia,
   medicina,
   enfermeria,
-  gth
+  gth,
+  protesis
+
   // Añade las demás carreras aquí
 ];

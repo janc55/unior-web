@@ -25,6 +25,14 @@ if (!career) {
   // Puedes redirigir o mostrar una página 404 personalizada
   throw new Error(`Carrera con slug '${slug}' no encontrada.`);
 }
+
+// Aseguramos valores por defecto por si alguna carrera no los tiene
+const primaryColor   = career.primaryColor   || "#2563eb";   // azul por defecto
+const secondaryColor = career.secondaryColor || "#1e40af";   // azul más oscuro
+const hasVideo       = !!career.video;
+const heroImage      = career.image || career.heroImage || "/fallback-hero.jpg"; // ajusta la ruta fallback
+
+
 ---
 
 <Layout title={`${career.title} - Universidad Privada de Oruro`}>
@@ -34,30 +42,51 @@ if (!career) {
     <section class="relative h-screen overflow-hidden">
       <div class="absolute inset-0 z-0">
         <div class="relative h-full w-full">
-          <video
-            class="h-full w-full object-cover"
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="auto"
-          >
-            <source src={career.video} type="video/mp4" />
-          </video>
+
+          <!-- VIDEO o IMAGEN de fondo -->
+          {hasVideo ? (
+            <video
+              class="h-full w-full object-cover"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src={career.video} type="video/mp4" />
+            </video>
+          ) : (
+            <div
+              class="h-full w-full bg-cover bg-center"
+              style={`background-image: url(${heroImage})`}
+            ></div>
+          )}
+
+          <!-- Overlay negro sutil (siempre presente) -->
           <div class="absolute inset-0 bg-black/30"></div>
-          <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+
+          <!-- Overlay de color personalizado -->
+          {hasVideo ? (
+            <!-- En video: overlay muy sutil como tenías antes -->
+            <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+          ) : (
+            <!-- En imagen: gradiente fuerte con los colores de la carrera -->
+            <div
+              class="absolute inset-0 opacity-15"
+              style={`background: linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`}
+            ></div>
+          )}
+
         </div>
       </div>
-      <div
-        class="relative z-10 flex h-full items-center justify-center px-4 text-center"
-      >
-        <div>
-          <h1
-            class="mb-4 text-5xl text-neutral-100 font-bold leading-tight md:text-6xl"
-          >
+
+      <!-- Texto del hero -->
+      <div class="relative z-10 flex h-full items-center justify-center px- incer-4 text-center">
+        <div class="max-w-4xl">
+          <h1 class="mb-4 text-5xl font-bold leading-tight text-neutral-100 md:text-6xl lg:text-7xl">
             {career.title}
           </h1>
-          <p class="mx-auto max-w-2xl text-xl text-gray-300">
+          <p class="mx-auto max-w-2xl text-xl text-gray-200 md:text-2xl">
             {career.description}
           </p>
         </div>
@@ -133,7 +162,7 @@ if (!career) {
               href="/admisiones"
               class="inline-block rounded-full bg-white px-6 py-3 font-semibold text-primary transition-all hover:bg-gray-200"
             >
-              Postula Ahora
+              Inscríbete Ahora
             </a>
           </div>
         </div>
@@ -267,53 +296,107 @@ if (!career) {
     </div>
   </section>
 
-  <!-- Testimonial Section -->
-  <section class="bg-neutral-50 py-16">
+ <!-- Testimonial Section - Versión inteligente para carreras nuevas (UNIOR) -->
+  <section class="bg-gray-100 py-20">
     <div class="container mx-auto max-w-[1440px] px-4">
-      <h2 class="mb-8 text-center text-3xl font-bold text-accent-dark">
-        Lo que dicen nuestros estudiantes
-      </h2>
-      {
-        career.studentTestimonials.map((testimonial) => (
-          <div class="mx-auto mt-2 max-w-3xl rounded-xl bg-neutral-50 p-8 shadow-lg">
-            <blockquote class="mb-4 text-lg italic">
-              {testimonial.quote}
-            </blockquote>
-            <div class="flex items-center">
-              <img
-                src={testimonial.image}
-                alt="Foto de estudiante"
-                class="mr-4 h-12 w-12 rounded-full"
-              />
-              <div>
-                <p class="font-semibold">{testimonial.name}</p>
-                <p class="text-sm text-gray-400">{testimonial.position}</p>
+      {/* Título dinámico según si hay o no testimonios */}
+      {career.studentTestimonials && career.studentTestimonials.length > 0 ? (
+        <h2 class="mb-12 text-center text-4xl md:text-5xl font-bold text-[#660915]">
+          Lo que dicen nuestros estudiantes
+        </h2>
+      ) : (
+        <h2 class="mb-12 text-center text-4xl md:text-5xl font-bold text-[#660915]">
+          ¡Sé el primero en contar tu experiencia!
+        </h2>
+      )}
+
+      {/* Caso 1: Hay testimonios → los mostramos con estilo UNIOR */}
+      {career.studentTestimonials && career.studentTestimonials.length > 0 ? (
+        <div class="space-y-10">
+          {career.studentTestimonials.map((testimonial) => (
+            <div class="mx-auto max-w-4xl rounded-2xl bg-white p-8 md:p-10 shadow-xl border border-gray-200">
+              <blockquote class="mb-8 text-xl md:text-2xl italic text-gray-700 leading-relaxed">
+                "{testimonial.quote}"
+              </blockquote>
+              <div class="flex items-center">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  class="h-16 w-16 rounded-full object-cover ring-4 ring-[#FBBF24]/30"
+                  loading="lazy"
+                />
+                <div class="ml-5">
+                  <p class="text-lg font-bold text-[#660915]">{testimonial.name}</p>
+                  <p class="text-gray-600">{testimonial.position}</p>
+                </div>
               </div>
             </div>
+          ))}
+        </div>
+      ) : (
+        /* Caso 2: Aún no hay testimonios → mensaje motivador + CTA */
+        <div class="mx-auto max-w-4xl text-center">
+          {/* Icono grande de comillas */}
+          <div class="mb-10 inline-block rounded-full bg-[#660915]/5 p-10">
+            <i class="fas fa-quote-left text-8xl text-[#660915]/20"></i>
           </div>
-        ))
-      }
+
+          <p class="mb-6 text-2xl md:text-3xl font-medium text-gray-800 leading-relaxed">
+            La carrera de <span class="font-bold text-[#660915]">Técnico Superior en Prótesis Dental</span> es tan nueva que{" "}
+            <span class="block mt-2 text-[#FBBF24]">¡aún no tenemos testimonios!</span>
+          </p>
+
+          <p class="mb-10 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Pero eso significa que <strong>tú puedes ser el pionero/a</strong> y el primero en compartir cómo esta innovadora carrera está cambiando tu vida y la de tus futuros pacientes.
+          </p>
+
+          {/* Botón estilo UNIOR */}
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/admisiones"
+              class="inline-flex items-center justify-center rounded-full bg-[#660915] px-10 py-5 text-lg font-bold text-white transition hover:bg-[#8B1A2A] hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <i class="fas fa-user-graduate mr-3"></i>
+              Inscribirme ahora
+            </a>
+            <a
+              href="/contacto"
+              class="inline-flex items-center justify-center rounded-full border-3 border-[#FBBF24] bg-transparent px-10 py-5 text-lg font-bold text-[#660915] transition hover:bg-[#FBBF24] hover:text-[#660915]"
+            >
+              <i class="fas fa-envelope mr-3"></i>
+              Quiero ser el primer testimonio
+            </a>
+          </div>
+
+          <p class="mt-10 text-sm text-gray-500">
+            ¡Los primeros egresados siempre dejan huella en la historia de la UNIOR! ✨
+          </p>
+        </div>
+      )}
     </div>
   </section>
 
-  <!-- Sección de Video de YouTube -->
-  <section class="bg-neutral-50 py-16">
-    <div class="container mx-auto max-w-[1440px] px-4">
-      <h2 class="mb-8 text-center text-3xl font-bold text-accent-dark">
-        Video Informativo
-      </h2>
-      <div class="flex justify-center">
-        <iframe
-          class="rounded-xl shadow-lg w-full max-w-4xl aspect-video"
-          src={`https://www.youtube.com/embed/${career.youtubeId}`}
-          title="Video de {career.title}"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        >
-        </iframe>
+ <!-- Sección de Video de YouTube - Solo se muestra si existe youtubeId -->
+  {career.youtubeId && (
+    <section class="bg-gray-100 py-20">
+      <div class="container mx-auto max-w-[1440px] px-4">
+        <h2 class="mb-12 text-center text-4xl md:text-5xl font-bold text-[#660915]">
+          Video Informativo de la Carrera
+        </h2>
+
+        <div class="flex justify-center">
+          <iframe
+            class="rounded-2xl shadow-2xl w-full max-w-5xl aspect-video border-8 border-white"
+            src={`https://www.youtube.com/embed/${career.youtubeId}`}
+            title={`Video informativo de ${career.title}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Contact Section -->
   <section class="mx-auto max-w-[1440px] py-16">

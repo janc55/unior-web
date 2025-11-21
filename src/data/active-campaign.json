@@ -1,0 +1,15 @@
+{
+    "activa": true,
+    "tipo": "protesis-dental",
+    "fechaInicio": "2025-11-01",
+    "fechaFin": "2025-12-20",
+    "heroTitulo": "¡Nueva Carrera! Técnico Superior en Prótesis Dental",
+    "heroSubtitulo": "Inscripciones abiertas 2025",
+    "heroImagen": "/images/hero-protesis.jpg",
+    "popup": {
+      "mostrar": false,
+      "titulo": "Congreso de Gastronomía 2025",
+      "contenido": "¡Ya está disponible el programa completo!",
+      "link": "/congreso-gastronomia"
+    }
+  }
