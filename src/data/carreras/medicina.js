@@ -11,6 +11,8 @@ export const careerDetails = {
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/med.mp4",
     youtubeId: "c4rw5Dhk5Eo?si=0lKQZwbI_mnH6tJI",
+    colorFrom: "#00608D",
+    colorTo: "#EA8E00",
     icon: "🩺",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Informática", "Genética", "Histología I", "Metodología de la Investigación", "Soporte Básico de Vida", "Quechua I"] },

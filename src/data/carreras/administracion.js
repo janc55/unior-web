@@ -12,6 +12,8 @@ export const careerDetails = {
   image: "/carreras/adm.webp?height=600&width=800",
   video: "/carreras/adm.mp4",
   youtubeId: "VsiBEUlSkjo?si=YaEYtyLGk0mqvJwz",
+  colorFrom: "#EA8E00",
+  colorTo: "#8A00FF",
   icon: "💼",
   curriculum: [
     { year: "Primer Semestre", courses: ["Administración I", "Contabilidad Básica", "Introducción a la Economía", "Análisis Matemático I", "Computación", "Realidad Económica Social de Bolivia", "Optativa Área Básica"] },

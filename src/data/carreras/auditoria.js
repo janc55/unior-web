@@ -12,6 +12,8 @@ export const careerDetails = {
     image: "/carreras/aud.webp?height=600&width=800",
     video: "/carreras/aud.mp4",
     youtubeId: "X8kyBcPIkis?si=iDeuHLmw3tgBQ-DA",
+    colorFrom: "#6DA040",
+    colorTo: "#73287A",
     icon: "📊",
     curriculum: [
       { year: "Primer Semestre", courses: ["Administración I", "Contabilidad Básica", "Introducción a la Economía", "Análisis Matemático I", "Computación", "Optativa Área Básica"] },

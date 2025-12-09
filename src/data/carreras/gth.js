@@ -11,6 +11,8 @@ export const careerDetails = {
   image: "/carreras/gth.webp?height=600&width=800",
   video: "/carreras/gth.mp4",
   youtubeId: "P-2-WhLrdjI?si=NGK2a9nby1xmNXHF",
+  colorFrom: "#E95C2F",
+  colorTo: "#6DA040",
   icon: "🍽️",
   curriculum: [
     { year: "Primer Semestre", courses: ["Gestión Turística", "Dirección de Empresas", "Técnicas de Aprendizaje", "Higiene y Conservación de Alimentos", "Técnicas Culinarias I", "Panadería y Pastelería"] },

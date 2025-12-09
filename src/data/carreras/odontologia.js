@@ -11,6 +11,8 @@ export const careerDetails = {
     image: "/image2.jpeg?height=600&width=800",
     video: "/carreras/odo.mp4",
     youtubeId: "dcUyxZnzJSg?si=gg2BfiTcvD1mu2FH",
+    colorFrom: "#43B1AB",
+    colorTo: "#F3BF00",
     icon: "🦷",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Histología I", "Genética y Embriología", "Bioquímica", "Inglés I", "Quechua I"] },

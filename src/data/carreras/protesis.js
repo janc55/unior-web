@@ -11,6 +11,8 @@ export const careerDetails = {
     image: "/carreras/image-protesis.webp?height=600&width=800",
     primaryColor: "#632086",
     secondaryColor: "#c41e3a",// Si existe, sino dejar vacío
+    colorFrom: "#8A00FF",
+    colorTo: "#FF4EDD",
     youtubeId: "", // Completar si hay video oficial
     icon: "🦷",
     curriculum: [

@@ -12,6 +12,8 @@ export const careerDetails = {
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/sis.mp4",
     youtubeId: "YxA_EaRo-tw?si=DhzL3hLqENv0HKFc",
+    colorFrom: "#73287A",
+    colorTo: "#BB101C",
     icon: "💻",
     curriculum: [
       { year: "Primer Semestre", courses: ["Informática I", "Administración I", "Ingeniería de Sistemas en las Organizaciones", "Álgebra y Lógica Formal", "Cálculo I", "Inglés I"] },

@@ -11,6 +11,8 @@ export const careerDetails = {
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/enf.mp4",
     youtubeId: "-7OGJUyxt1w?si=y296HOwrJuCG4IHu",
+    colorFrom: "#F3BF00",
+    colorTo: "#00608D",
     icon: "🩹",
     curriculum: [
       { year: "Primer Semestre", courses: ["Anatomía Humana I", "Biología y Genética", "Bioquímica", "Fisiología Humana I", "Microbiología", "Informática", "Pedagogía y Didáctica"] },
