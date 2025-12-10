@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Universidad Privada de Oruro
 
 ```sh
 npm create astro@latest -- --template basics
