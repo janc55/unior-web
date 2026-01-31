@@ -7,7 +7,7 @@ export const careerDetails = {
     degree: "Licenciatura",
     modality: "Presencial y Semipresencial",
     credits: 300,
-    coordinator: "Lic. Alisabel Durán",
+    coordinator: "Ing. Rocío Carrasco",
     accreditation: "R.M. Nro 095/99",
     image: "/carreras/aud.webp?height=600&width=800",
     video: "/carreras/aud.mp4",

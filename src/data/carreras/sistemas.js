@@ -7,7 +7,7 @@ export const careerDetails = {
     degree: "Licenciatura",
     modality: "Presencial",
     credits: 300,
-    coordinator: "Lic. Simón Negretti",
+    coordinator: "Ing. Rocío Carrasco",
     accreditation: "R.M. Nro 095/99",
     image: "/placeholder.svg?height=600&width=800",
     video: "/carreras/sis.mp4",
