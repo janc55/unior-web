@@ -1,0 +1,438 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+// Eventos del calendario
+const eventos = [
+  {
+    id: 1,
+    title: "Sesión de honor - Fundación de Oruro",
+    date: new Date(2025, 1, 10), // 10 de febrero 2025
+    time: "10:00",
+    location: "Auditorio Principal",
+    category: "Ceremonia",
+    description: "Sesión de honor en homenaje a la Fundación de Oruro"
+  },
+  {
+    id: 2,
+    title: "Carnaval de Oruro",
+    date: new Date(2025, 1, 14), // 14 de febrero 2025
+    endDate: new Date(2025, 1, 15), // 15 de febrero 2025
+    time: "Todo el día",
+    location: "Oruro",
+    category: "Cultural",
+    description: "Celebración del Carnaval de Oruro, Patrimonio de la Humanidad"
+  },
+  {
+    id: 3,
+    title: "Inicio de clases estudiantes nuevos",
+    date: new Date(2025, 2, 2), // 2 de marzo 2025
+    time: "08:00",
+    location: "Campus Universitario",
+    category: "Académico",
+    description: "Bienvenida e inicio del semestre para estudiantes de nuevo ingreso"
+  }
+];
+
+// Función para obtener el nombre del mes
+function getMonthName(month: number): string {
+  const months = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+  ];
+  return months[month];
+}
+
+// Función para obtener el nombre del día
+function getDayName(day: number): string {
+  const days = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+  return days[day];
+}
+
+// Obtener el mes y año actual
+const today = new Date();
+let currentMonth = today.getMonth();
+let currentYear = today.getFullYear();
+
+// Función para obtener los días del mes
+function getDaysInMonth(month: number, year: number): number {
+  return new Date(year, month + 1, 0).getDate();
+}
+
+// Función para obtener el primer día de la semana del mes
+function getFirstDayOfMonth(month: number, year: number): number {
+  return new Date(year, month, 1).getDay();
+}
+
+// Eventos del mes actual
+function getEventsForMonth(month: number, year: number) {
+  return eventos.filter(event => {
+    const eventDate = event.date;
+    return eventDate.getMonth() === month && eventDate.getFullYear() === year;
+  });
+}
+
+// Función para generar los días del calendario
+function generateCalendarDays(month: number, year: number) {
+  const today = new Date();
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrevMonth = new Date(year, month, 0).getDate();
+  const calendarDays = [];
+  
+  // Días del mes anterior
+  for (let i = firstDay - 1; i >= 0; i--) {
+    const day = daysInPrevMonth - i;
+    calendarDays.push({ day, isOtherMonth: true, isToday: false, hasEvent: false });
+  }
+  
+  // Días del mes actual
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = new Date(year, month, day);
+    const isToday = date.toDateString() === today.toDateString();
+    const hasEvent = eventos.some(event => {
+      const eventDate = event.date;
+      return eventDate.getDate() === day && 
+             eventDate.getMonth() === month && 
+             eventDate.getFullYear() === year;
+    });
+    calendarDays.push({ day, isOtherMonth: false, isToday, hasEvent });
+  }
+  
+  // Días del mes siguiente para completar la cuadrícula
+  const totalCells = calendarDays.length;
+  const remainingCells = 42 - totalCells; // 6 semanas * 7 días
+  for (let day = 1; day <= remainingCells; day++) {
+    calendarDays.push({ day, isOtherMonth: true, isToday: false, hasEvent: false });
+  }
+  
+  return calendarDays;
+}
+
+// Generar días del calendario inicial
+const calendarDays = generateCalendarDays(currentMonth, currentYear);
+---
+
+<Layout title="Eventos - Universidad Privada de Oruro">
+  <Header isHero={false} />
+  
+  <main class="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-[#db1f26] to-[#660915] py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Calendario de Eventos</h1>
+          <p class="text-xl text-white/90 max-w-2xl mx-auto">
+            Mantente informado sobre los próximos eventos, actividades y celebraciones de nuestra universidad
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendario y Lista de Eventos -->
+    <section class="py-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-3">
+          
+          <!-- Calendario -->
+          <div class="lg:col-span-2">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <!-- Header del Calendario -->
+              <div class="bg-gradient-to-r from-[#db1f26] to-[#660915] p-6">
+                <div class="flex items-center justify-between">
+                  <button 
+                    id="prevMonth" 
+                    class="text-white hover:text-yellow-400 transition-colors p-2 rounded-lg hover:bg-white/10"
+                  >
+                    <i class="fas fa-chevron-left text-xl"></i>
+                  </button>
+                  <h2 id="currentMonthYear" class="text-2xl font-bold text-white">
+                    {getMonthName(currentMonth)} {currentYear}
+                  </h2>
+                  <button 
+                    id="nextMonth" 
+                    class="text-white hover:text-yellow-400 transition-colors p-2 rounded-lg hover:bg-white/10"
+                  >
+                    <i class="fas fa-chevron-right text-xl"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Días de la semana -->
+              <div class="grid grid-cols-7 gap-1 p-4 bg-gray-50">
+                {["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"].map(day => (
+                  <div class="text-center text-sm font-semibold text-gray-600 py-2">
+                    {day}
+                  </div>
+                ))}
+              </div>
+
+              <!-- Días del mes -->
+              <div id="calendarDays" class="grid grid-cols-7 gap-1 p-4">
+                {calendarDays.map(({ day, isOtherMonth, isToday, hasEvent }) => {
+                  let classList = 'calendar-day';
+                  if (isOtherMonth) classList += ' other-month text-gray-300';
+                  if (isToday) classList += ' today';
+                  if (hasEvent) classList += ' has-event';
+                  
+                  return (
+                    <div class={classList}>
+                      {day}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <!-- Lista de Próximos Eventos -->
+          <div class="lg:col-span-1">
+            <div class="bg-white rounded-2xl shadow-xl p-6 sticky top-4">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <i class="fas fa-calendar-check text-[#db1f26]"></i>
+                Próximos Eventos
+              </h3>
+              
+              <div class="space-y-4 max-h-[600px] overflow-y-auto custom-scrollbar-events">
+                {eventos
+                  .sort((a, b) => a.date.getTime() - b.date.getTime())
+                  .map(event => {
+                    const isMultiDay = event.endDate !== undefined;
+                    const eventDay = event.date.getDate();
+                    const eventMonth = getMonthName(event.date.getMonth());
+                    const eventYear = event.date.getFullYear();
+                    
+                    return (
+                      <div class="border-l-4 border-[#db1f26] bg-gray-50 rounded-r-lg p-4 hover:shadow-md transition-shadow">
+                        <div class="flex items-start justify-between mb-2">
+                          <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900 mb-1">{event.title}</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600 mb-1">
+                              <i class="fas fa-calendar-alt text-[#db1f26]"></i>
+                              <span>
+                                {eventDay} {eventMonth} {eventYear}
+                                {isMultiDay && ` - ${event.endDate.getDate()} ${getMonthName(event.endDate.getMonth())}`}
+                              </span>
+                            </div>
+                            {event.time && (
+                              <div class="flex items-center gap-2 text-sm text-gray-600 mb-1">
+                                <i class="fas fa-clock text-[#db1f26]"></i>
+                                <span>{event.time}</span>
+                              </div>
+                            )}
+                            {event.location && (
+                              <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-map-marker-alt text-[#db1f26]"></i>
+                                <span>{event.location}</span>
+                              </div>
+                            )}
+                          </div>
+                          <span class="px-2 py-1 text-xs font-semibold rounded-full bg-[#db1f26]/10 text-[#660915]">
+                            {event.category}
+                          </span>
+                        </div>
+                        {event.description && (
+                          <p class="text-sm text-gray-500 mt-2">{event.description}</p>
+                        )}
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Categorías -->
+    <section class="py-12 bg-gray-100">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Categorías de Eventos</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-[#db1f26]/10 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-graduation-cap text-[#db1f26] text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Académico</h3>
+            <p class="text-gray-600">Conferencias, seminarios, talleres y actividades académicas</p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-theater-masks text-yellow-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Cultural</h3>
+            <p class="text-gray-600">Eventos culturales, festivales y celebraciones tradicionales</p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mb-4">
+              <i class="fas fa-handshake text-blue-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Ceremonia</h3>
+            <p class="text-gray-600">Actos protocolares, graduaciones y eventos oficiales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+    /* Fuerza al contenedor a mantener siempre el diseño de grid */
+    #calendarDays {
+      display: grid !important;
+      grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+      gap: 0.25rem !important;
+      padding: 1rem !important;
+    }
+  
+    .calendar-day {
+      aspect-ratio: 1 !important; 
+      width: 100% !important;
+      min-width: 0 !important;
+      min-height: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 1.1rem;
+      font-weight: 500;
+      box-sizing: border-box;
+    }
+  
+    .calendar-day:hover {
+      background-color: rgba(219, 31, 38, 0.1) !important;
+    }
+  
+    .calendar-day.today {
+      background-color: #db1f26 !important;
+      color: white !important;
+      font-weight: bold;
+    }
+  
+    .calendar-day.has-event {
+      background-color: rgba(219, 31, 38, 0.15) !important;
+      font-weight: 600;
+    }
+  
+    .calendar-day.has-event.today {
+      background-color: #660915 !important;
+      color: white !important;
+    }
+  
+    .calendar-day.other-month {
+      color: #d1d5db !important; /* gray-300 */
+    }
+  
+    /* Estilos para la lista de eventos */
+    .custom-scrollbar-events::-webkit-scrollbar { 
+      width: 6px; 
+    }
+    .custom-scrollbar-events::-webkit-scrollbar-track { 
+      background: rgba(0, 0, 0, 0.05); 
+      border-radius: 3px;
+    }
+    .custom-scrollbar-events::-webkit-scrollbar-thumb { 
+      background: rgba(219, 31, 38, 0.3); 
+      border-radius: 3px; 
+    }
+    .custom-scrollbar-events::-webkit-scrollbar-thumb:hover {
+      background: rgba(219, 31, 38, 0.5);
+    }
+  </style>
+
+<script>
+  (function() {
+    const today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
+
+    const eventos = [
+      { id: 1, date: new Date(2025, 1, 10) },
+      { id: 2, date: new Date(2025, 1, 14) },
+      { id: 3, date: new Date(2025, 2, 2) }
+    ];
+
+    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+    function renderCalendar() {
+      const container = document.getElementById('calendarDays');
+      const title = document.getElementById('currentMonthYear');
+      if (!container || !title) return;
+
+      // Asegurar que el contenedor mantenga sus clases de Tailwind
+      container.className = 'grid grid-cols-7 gap-1 p-4';
+
+      // Actualizar título
+      title.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+      
+      // Limpiar contenido
+      container.innerHTML = '';
+
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      const daysInPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+      // Días del mes anterior
+      for (let i = firstDay - 1; i >= 0; i--) {
+        const day = daysInPrevMonth - i;
+        const div = document.createElement('div');
+        div.className = 'calendar-day other-month text-gray-300';
+        div.textContent = String(day);
+        container.appendChild(div);
+      }
+
+      // Días del mes actual
+      for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(currentYear, currentMonth, day);
+        const isToday = date.toDateString() === today.toDateString();
+        const hasEvent = eventos.some(e => 
+          e.date.getDate() === day && 
+          e.date.getMonth() === currentMonth && 
+          e.date.getFullYear() === currentYear
+        );
+
+        const div = document.createElement('div');
+        let classes = 'calendar-day';
+        if (isToday) classes += ' today';
+        if (hasEvent) classes += ' has-event';
+        div.className = classes;
+        div.textContent = String(day);
+        container.appendChild(div);
+      }
+
+      // Días del mes siguiente
+      const totalCells = container.children.length;
+      const remainingCells = 42 - totalCells;
+      for (let day = 1; day <= remainingCells; day++) {
+        const div = document.createElement('div');
+        div.className = 'calendar-day other-month text-gray-300';
+        div.textContent = String(day);
+        container.appendChild(div);
+      }
+      
+      // Forzar reflow para asegurar que los estilos se apliquen
+      void container.offsetHeight;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('prevMonth')?.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        renderCalendar();
+      });
+
+      document.getElementById('nextMonth')?.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        renderCalendar();
+      });
+    });
+  })();
+</script>
