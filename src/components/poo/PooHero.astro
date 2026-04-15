@@ -1,0 +1,153 @@
+---
+/* === COMPONENTE: PooHero === */
+---
+
+<section
+    id="hero"
+    class="relative bg-poo-black-deep min-h-[85vh] flex items-center justify-center overflow-hidden"
+>
+    <!-- Background radial glow -->
+    <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(61,10,20,0.15)_0%,_transparent_70%)]"
+    >
+    </div>
+
+    <!-- Gold particles effect -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="poo-particles"></div>
+    </div>
+
+    <div
+        class="relative z-10 flex flex-col items-center text-center px-4 py-16 max-w-2xl mx-auto"
+    >
+        <!-- Logo -->
+        <img
+            src="/assets/poo/logo-poo.png"
+            alt="Logo Premio Orgullo Orureño 2026"
+            class="w-64 sm:w-80 md:w-[420px] drop-shadow-[0_0_24px_rgba(197,168,76,0.35)] mb-8 animate-fade-in"
+        />
+
+        <!-- Decorative line -->
+        <div class="w-16 h-px bg-poo-gold-mid mb-4"></div>
+
+        <!-- Subtitle -->
+        <span
+            class="font-cormorant font-semibold text-base sm:text-lg tracking-[0.4em] text-poo-gold-mid uppercase mb-4"
+        >
+            Convocatoria
+        </span>
+
+        <!-- Divider -->
+        <div class="w-16 h-px bg-poo-gold-mid mb-6"></div>
+
+        <!-- Tagline -->
+        <p
+            class="font-cormorant font-light text-lg sm:text-xl text-poo-text-muted mb-10 max-w-[520px] leading-relaxed"
+        >
+            Reconociendo la excelencia y el orgullo del departamento de Oruro
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <a
+                href="/assets/poo/convocatoria-poo.pdf"
+                download
+                class="inline-flex items-center gap-2 bg-gradient-to-br from-poo-gold-light via-poo-gold-mid to-poo-gold-dark text-poo-black-deep font-inter font-medium text-sm px-8 py-3.5 rounded-sm hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(197,168,76,0.3)] transition-all duration-200"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    ></path>
+                </svg>
+                Descargar Convocatoria PDF
+            </a>
+            <a
+                href="#convocatoria"
+                class="inline-flex items-center gap-2 border border-poo-gold-mid text-poo-gold-light font-inter font-medium text-sm px-8 py-3.5 rounded-sm hover:bg-poo-gold-mid/10 transition-all duration-200"
+            >
+                Ver Requisitos
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes float-particle {
+        0%,
+        100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.6;
+        }
+        90% {
+            opacity: 0.6;
+        }
+        50% {
+            transform: translateY(-100vh) translateX(20px);
+        }
+    }
+
+    .poo-particles {
+        position: absolute;
+        inset: 0;
+    }
+
+    .poo-particles::before,
+    .poo-particles::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(197, 168, 76, 0.4);
+        border-radius: 50%;
+        animation: float-particle 12s infinite ease-in-out;
+    }
+
+    .poo-particles::before {
+        left: 20%;
+        top: 80%;
+        animation-delay: 0s;
+    }
+
+    .poo-particles::after {
+        left: 70%;
+        top: 90%;
+        animation-delay: 4s;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .poo-particles::before,
+        .poo-particles::after {
+            animation: none;
+        }
+        .animate-fade-in {
+            animation: none;
+        }
+    }
+</style>

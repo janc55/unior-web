@@ -1,0 +1,58 @@
+---
+/* === COMPONENTE: PooGalardonados (Fase 3) === */
+
+interface Props {
+  visible: boolean;
+}
+
+const { visible } = Astro.props;
+
+// Array editable de galardonados — se llenará cuando se active la Fase 3
+const GALARDONADOS: { nombre: string; categoria: string; descripcion: string; iniciales: string }[] = [
+  // Ejemplo:
+  // { nombre: 'Nombre del Galardonado', categoria: 'Educación', descripcion: 'Descripción breve...', iniciales: 'NG' },
+];
+---
+
+{visible && (
+  <section id="galardonados" class="bg-poo-black-rich py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <!-- Section title -->
+      <div class="flex items-center justify-center gap-4 mb-12 sm:mb-16">
+        <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+        <h2 class="font-playfair text-2xl sm:text-3xl font-bold text-poo-gold-light text-center">
+          Galardonados 2026
+        </h2>
+        <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+      </div>
+
+      {GALARDONADOS.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {GALARDONADOS.map(g => (
+            <div class="bg-poo-black-card border border-poo-gold-mid/30 rounded-sm p-8 text-center hover:shadow-[0_0_24px_rgba(197,168,76,0.15)] transition-all duration-300 relative">
+              <!-- Medal icon -->
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-poo-gold-mid drop-shadow-[0_0_8px_rgba(197,168,76,0.5)]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <!-- Avatar -->
+              <div class="w-20 h-20 rounded-full bg-gradient-to-br from-poo-gold-light via-poo-gold-mid to-poo-gold-dark flex items-center justify-center mx-auto mb-4 mt-2 shadow-[0_0_16px_rgba(197,168,76,0.3)]">
+                <span class="font-playfair text-2xl font-bold text-poo-black-deep">{g.iniciales}</span>
+              </div>
+              <h3 class="font-playfair text-xl text-poo-gold-light font-bold mb-1">{g.nombre}</h3>
+              <span class="inline-block font-inter text-[0.65rem] tracking-wider uppercase bg-poo-gold-mid/20 text-poo-gold-mid px-3 py-1 rounded-sm mb-3">
+                {g.categoria}
+              </span>
+              <p class="font-inter text-xs text-poo-text-muted leading-relaxed">{g.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="text-center font-cormorant text-poo-text-muted text-lg italic">
+          Los galardonados serán anunciados próximamente.
+        </p>
+      )}
+    </div>
+  </section>
+)}

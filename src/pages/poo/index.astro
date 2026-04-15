@@ -1,0 +1,160 @@
+---
+/* === PAGE: Premio Orgullo Orureño 2026 === */
+/* Fase activa: 1 = Convocatoria | 2 = Postulados | 3 = Galardonados */
+const activePhase = 1;
+
+import Layout from "../../layouts/Layout.astro";
+import PooHeader from "../../components/poo/PooHeader.astro";
+import PooHero from "../../components/poo/PooHero.astro";
+import PooCountdown from "../../components/poo/PooCountdown.astro";
+import PooConvocatoria from "../../components/poo/PooConvocatoria.astro";
+import PooCronograma from "../../components/poo/PooCronograma.astro";
+import PooPostulados from "../../components/poo/PooPostulados.astro";
+import PooGalardonados from "../../components/poo/PooGalardonados.astro";
+import PooFooter from "../../components/poo/PooFooter.astro";
+---
+
+<Layout title="Premio Orgullo Orureño 2026 — XXIII Versión | UNIOR">
+    <div class="bg-poo-black-deep min-h-screen">
+        <PooHeader />
+        <PooHero />
+        <PooCountdown />
+
+        {/* Fase 1: Convocatoria */}
+        {activePhase >= 1 && <PooConvocatoria />}
+
+        <PooCronograma />
+
+        {/* Fase 2: Postulados */}
+        <PooPostulados visible={activePhase >= 2} />
+
+        {/* Fase 3: Galardonados */}
+        <PooGalardonados visible={activePhase >= 3} />
+
+        <PooFooter />
+    </div>
+</Layout>
+
+<style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;700;900&display=swap");
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* === Scroll Reveal Animations === */
+    .poo-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+            opacity 0.7s ease-out,
+            transform 0.7s ease-out;
+    }
+
+    .poo-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Staggered children animation */
+    .poo-reveal-child {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+            opacity 0.5s ease-out,
+            transform 0.5s ease-out;
+    }
+
+    .poo-reveal-child.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Slide from left */
+    .poo-reveal-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition:
+            opacity 0.7s ease-out,
+            transform 0.7s ease-out;
+    }
+
+    .poo-reveal-left.revealed {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Slide from right */
+    .poo-reveal-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition:
+            opacity 0.7s ease-out,
+            transform 0.7s ease-out;
+    }
+
+    .poo-reveal-right.revealed {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Scale up */
+    .poo-reveal-scale {
+        opacity: 0;
+        transform: scale(0.9);
+        transition:
+            opacity 0.7s ease-out,
+            transform 0.7s ease-out;
+    }
+
+    .poo-reveal-scale.revealed {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .poo-reveal,
+        .poo-reveal-child,
+        .poo-reveal-left,
+        .poo-reveal-right,
+        .poo-reveal-scale {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+</style>
+
+<script is:inline>
+    /* === Scroll Reveal with IntersectionObserver === */
+    document.addEventListener("DOMContentLoaded", () => {
+        const revealElements = document.querySelectorAll(
+            ".poo-reveal, .poo-reveal-left, .poo-reveal-right, .poo-reveal-scale",
+        );
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("revealed");
+
+                        // Staggered children
+                        const children =
+                            entry.target.querySelectorAll(".poo-reveal-child");
+                        children.forEach((child, i) => {
+                            setTimeout(() => {
+                                child.classList.add("revealed");
+                            }, 120 * i);
+                        });
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+    });
+</script>

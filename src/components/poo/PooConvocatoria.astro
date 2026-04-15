@@ -1,0 +1,96 @@
+---
+/* === COMPONENTE: PooConvocatoria (Fase 1) === */
+
+const requisitos = [
+    {
+        num: "01",
+        texto: "Cualquier institución u organización orureña legalmente establecida puede postular a ciudadanos, instituciones u organizaciones mediante carta dirigida a Rectorado. Máximo tres postulaciones por proponente.",
+    },
+    {
+        num: "02",
+        texto: "Se puede postular a empresas públicas y privadas, instituciones productivas, culturales, científicas y educativas, así como a ciudadanos que hayan contribuido al desarrollo del departamento. Adjuntar documentación de respaldo en fotocopias.",
+    },
+    {
+        num: "03",
+        texto: "Las postulaciones serán evaluadas por un Jurado Calificador conformado por cinco representantes de instituciones locales, elegidos mediante sorteo público, conforme al Reglamento específico del Premio.",
+    },
+    {
+        num: "04",
+        texto: "Las postulaciones deben incluir Hoja de Vida documentada y entregarse en secretaría de la UNIOR, calle Junín N.º 348 esq. Potosí, hasta el martes 12 de mayo de 2026.",
+    },
+    {
+        num: "05",
+        texto: "El sorteo del Jurado Calificador se realizará el martes 5 de mayo. La reunión del Jurado tendrá lugar el miércoles 13 de mayo de 2026.",
+    },
+    {
+        num: "06",
+        texto: "Los galardonados recibirán la Resolución y Presea en Solemne Acto Público el viernes 29 de mayo de 2026 a horas 18:00.",
+    },
+];
+---
+
+<section id="convocatoria" class="bg-poo-black-deep py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <!-- Section title -->
+        <div
+            class="poo-reveal flex items-center justify-center gap-4 mb-12 sm:mb-16"
+        >
+            <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+            <h2
+                class="font-playfair text-2xl sm:text-3xl font-bold text-poo-gold-light text-center"
+            >
+                Convocatoria Oficial
+            </h2>
+            <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+        </div>
+
+        <!-- Two-column layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+            <!-- Left column: Introduction text -->
+            <div
+                class="poo-reveal-left font-inter text-sm sm:text-base text-poo-text-muted leading-relaxed"
+            >
+                <p>
+                    <span
+                        class="float-left font-playfair text-5xl sm:text-6xl text-poo-gold-mid leading-[0.85] mr-3 mt-1"
+                        >L</span
+                    >a Universidad Privada de Oruro (UNIOR) y la Fundación
+                    Sebastián Pagador convocan a todas las instituciones y
+                    organizaciones del departamento a presentar postulaciones
+                    para la
+                    <strong class="text-poo-gold-light">XXIII Versión</strong> del
+                    <strong class="text-poo-gold-light"
+                        >"Premio Orgullo Orureño" 2026</strong
+                    >, distinción registrada bajo Resolución Administrativa N.º
+                    9110/2024 del Servicio Nacional de Propiedad Intelectual
+                    (SENAPI).
+                </p>
+                <p class="mt-6">
+                    Este reconocimiento busca destacar a las personalidades,
+                    instituciones y organizaciones que han contribuido
+                    significativamente al desarrollo social, cultural, económico
+                    y científico del departamento de Oruro, fortaleciendo la
+                    identidad y el orgullo de nuestra región.
+                </p>
+            </div>
+
+            <!-- Right column: Requirement cards -->
+            <div class="poo-reveal-right flex flex-col gap-4">
+                {
+                    requisitos.map((r) => (
+                        <div class="poo-reveal-child bg-poo-black-card border-l-[3px] border-poo-wine-mid p-4 sm:p-5 rounded-r-sm group hover:border-poo-gold-mid transition-colors duration-300">
+                            <div class="flex gap-4">
+                                <span class="font-playfair text-xl sm:text-2xl text-poo-gold-mid font-bold shrink-0 leading-tight">
+                                    {r.num}
+                                </span>
+                                <p class="font-inter text-xs sm:text-sm text-poo-text-muted leading-relaxed">
+                                    {r.texto}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

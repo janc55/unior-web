@@ -1,0 +1,52 @@
+---
+/* === COMPONENTE: PooPostulados (Fase 2 y 3) === */
+
+interface Props {
+  visible: boolean;
+}
+
+const { visible } = Astro.props;
+
+// Array editable de postulados — se llenará cuando se active la Fase 2
+const POSTULADOS: { nombre: string; categoria: string; descripcion: string; iniciales: string }[] = [
+  // Ejemplo:
+  // { nombre: 'Nombre del Postulado', categoria: 'Cultura', descripcion: 'Descripción breve...', iniciales: 'NP' },
+];
+---
+
+{visible && (
+  <section id="postulados" class="bg-poo-black-deep py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <!-- Section title -->
+      <div class="flex items-center justify-center gap-4 mb-12 sm:mb-16">
+        <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+        <h2 class="font-playfair text-2xl sm:text-3xl font-bold text-poo-gold-light text-center">
+          Personalidades e Instituciones Postuladas
+        </h2>
+        <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+      </div>
+
+      {POSTULADOS.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {POSTULADOS.map(p => (
+            <div class="bg-poo-black-card border border-poo-gold-dark/20 rounded-sm p-6 hover:border-poo-gold-mid/40 transition-colors duration-300">
+              <!-- Avatar placeholder -->
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-poo-gold-light via-poo-gold-mid to-poo-gold-dark flex items-center justify-center mb-4">
+                <span class="font-playfair text-lg font-bold text-poo-black-deep">{p.iniciales}</span>
+              </div>
+              <h3 class="font-playfair text-lg text-poo-gold-light font-bold mb-1">{p.nombre}</h3>
+              <span class="inline-block font-inter text-[0.65rem] tracking-wider uppercase bg-poo-gold-mid/20 text-poo-gold-mid px-2 py-0.5 rounded-sm mb-3">
+                {p.categoria}
+              </span>
+              <p class="font-inter text-xs text-poo-text-muted leading-relaxed">{p.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="text-center font-cormorant text-poo-text-muted text-lg italic">
+          Los postulados serán publicados próximamente.
+        </p>
+      )}
+    </div>
+  </section>
+)}

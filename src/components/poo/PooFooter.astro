@@ -1,0 +1,114 @@
+---
+/* === COMPONENTE: PooFooter === */
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+    class="bg-poo-black-deep border-t border-poo-gold-dark/30 py-12 poo-reveal"
+>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <!-- Logos row -->
+        <div class="flex justify-center items-center gap-8 mb-10">
+            <img
+                src="/assets/poo/unior_gala.webp"
+                alt="UNIOR"
+                class="h-14 sm:h-16 w-auto object-contain"
+            />
+            <div class="h-10 w-px bg-poo-gold-dark/40"></div>
+            <img
+                src="/assets/poo/fsp_gala.webp"
+                alt="Fundación Sebastián Pagador"
+                class="h-14 sm:h-16 w-auto object-contain"
+            />
+        </div>
+
+        <!-- Organizers label -->
+        <p
+            class="text-center font-cormorant text-sm text-poo-text-muted tracking-widest uppercase mb-8"
+        >
+            Organizadores del Premio Orgullo Orureño
+        </p>
+
+        <!-- Three columns -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
+        >
+            <!-- UNIOR -->
+            <div>
+                <h3
+                    class="font-playfair text-lg text-poo-gold-mid font-bold mb-3"
+                >
+                    UNIOR
+                </h3>
+                <p
+                    class="font-inter text-xs text-poo-text-muted leading-relaxed"
+                >
+                    Universidad Privada de Oruro
+                </p>
+                <a
+                    href="https://www.unior.edu.bo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-inter text-xs text-poo-text-muted hover:text-poo-gold-light transition-colors inline-block mt-2"
+                >
+                    www.unior.edu.bo
+                </a>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3
+                    class="font-playfair text-lg text-poo-gold-mid font-bold mb-3"
+                >
+                    Contacto
+                </h3>
+                <p
+                    class="font-inter text-xs text-poo-text-muted leading-relaxed"
+                >
+                    Dirección de Interacción Social y Relaciones Públicas
+                </p>
+                <p class="font-inter text-xs text-poo-text-muted mt-1">
+                    Tel. 52-73780
+                </p>
+                <p class="font-inter text-xs text-poo-text-muted mt-1">
+                    Calle Junín N.º 348 esq. Potosí, Oruro — Bolivia
+                </p>
+            </div>
+
+            <!-- Fundación -->
+            <div>
+                <h3
+                    class="font-playfair text-lg text-poo-gold-mid font-bold mb-3"
+                >
+                    Fundación Sebastián Pagador
+                </h3>
+                <p
+                    class="font-inter text-xs text-poo-text-muted leading-relaxed"
+                >
+                    Co-organizadores del Premio Orgullo Orureño desde su primera
+                    versión, junto a la Universidad Privada de Oruro.
+                </p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-10 pt-6 border-t border-poo-gold-dark/20 text-center">
+            <p class="font-inter text-xs text-poo-text-muted">
+                &copy; {currentYear} Universidad Privada de Oruro. Todos los derechos
+                reservados.
+            </p>
+            <p class="font-inter text-[0.6rem] text-poo-text-muted/60 mt-2">
+                Premio Orgullo Orureño — Registro SENAPI N.º 9110/2024
+            </p>
+            <p class="font-inter text-[0.6rem] text-poo-text-muted/40 mt-3">
+                Desarrollado por <a
+                    href="https://nettidev.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-poo-gold-dark hover:text-poo-gold-mid transition-colors"
+                    >NettiDev</a
+                >
+            </p>
+        </div>
+    </div>
+</footer>
