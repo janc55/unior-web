@@ -1,16 +1,15 @@
 ---
 /* === PAGE: Premio Orgullo Orureño 2026 === */
 /* Fase activa: 1 = Convocatoria | 2 = Postulados | 3 = Galardonados */
-const activePhase = 1;
+const activePhase = 3;
 
 import Layout from "../../layouts/Layout.astro";
 import PooHeader from "../../components/poo/PooHeader.astro";
 import PooHero from "../../components/poo/PooHero.astro";
 import PooCountdown from "../../components/poo/PooCountdown.astro";
-import PooConvocatoria from "../../components/poo/PooConvocatoria.astro";
 import PooCronograma from "../../components/poo/PooCronograma.astro";
-import PooPostulados from "../../components/poo/PooPostulados.astro";
 import PooGalardonados from "../../components/poo/PooGalardonados.astro";
+import PooVideos from "../../components/poo/PooVideos.astro";
 import PooFooter from "../../components/poo/PooFooter.astro";
 ---
 
@@ -20,16 +19,13 @@ import PooFooter from "../../components/poo/PooFooter.astro";
         <PooHero />
         <PooCountdown />
 
-        {/* Fase 1: Convocatoria */}
-        {activePhase >= 1 && <PooConvocatoria />}
-
         <PooCronograma />
-
-        {/* Fase 2: Postulados */}
-        <PooPostulados visible={activePhase >= 2} />
 
         {/* Fase 3: Galardonados */}
         <PooGalardonados visible={activePhase >= 3} />
+
+        {/* Exgalardonados - Videos */}
+        <PooVideos />
 
         <PooFooter />
     </div>

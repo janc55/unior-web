@@ -2,11 +2,11 @@
 /* === COMPONENTE: PooCronograma === */
 
 const eventos = [
-  { fecha: 'Abril 2026', titulo: 'Apertura de Postulaciones', descripcion: 'Se abre el periodo de recepción de postulaciones.', destacado: false, icono: 'calendar' },
-  { fecha: '5 de Mayo', titulo: 'Sorteo del Jurado Calificador', descripcion: 'Sorteo público para la conformación del Jurado.', destacado: false, icono: 'shuffle' },
-  { fecha: '12 de Mayo', titulo: 'Cierre de Postulaciones', descripcion: 'Fecha límite para la entrega de postulaciones.', destacado: true, icono: 'lock' },
-  { fecha: '13 de Mayo', titulo: 'Reunión del Jurado', descripcion: 'Evaluación de las postulaciones por el Jurado Calificador.', destacado: false, icono: 'users' },
-  { fecha: '29 de Mayo, 18:00', titulo: 'Solemne Acto de Premiación', descripcion: 'Entrega de Resoluciones y Preseas a los galardonados.', destacado: true, icono: 'star' },
+  { fecha: 'Abril 2026', titulo: 'Apertura de Postulaciones', descripcion: 'Se abre el periodo de recepción de postulaciones.', completado: true, icono: 'calendar' },
+  { fecha: '5 de Mayo', titulo: 'Sorteo del Jurado Calificador', descripcion: 'Sorteo público para la conformación del Jurado.', completado: true, icono: 'shuffle' },
+  { fecha: '12 de Mayo', titulo: 'Cierre de Postulaciones', descripcion: 'Fecha límite para la entrega de postulaciones.', completado: true, icono: 'lock' },
+  { fecha: '13 de Mayo', titulo: 'Reunión del Jurado', descripcion: 'Evaluación de las postulaciones por el Jurado Calificador.', completado: true, icono: 'users' },
+  { fecha: '29 de Mayo, 18:00', titulo: 'Solemne Acto de Premiación', descripcion: 'Entrega de Resoluciones y Preseas a los galardonados en el Hotel Edén.', destacado: true, completado: false, icono: 'star' },
 ];
 ---
 
@@ -32,11 +32,18 @@ const eventos = [
           <div class={`absolute left-4 sm:left-1/2 w-6 h-6 rounded-full border-2 -translate-x-1/2 z-10 flex items-center justify-center
             ${evento.destacado
               ? 'bg-poo-gold-mid border-poo-gold-light shadow-[0_0_12px_rgba(197,168,76,0.4)]'
-              : 'bg-poo-black-card border-poo-wine-mid'
+              : evento.completado
+                ? 'bg-poo-gold-dark/50 border-poo-gold-dark'
+                : 'bg-poo-black-card border-poo-wine-mid'
             }`}>
             {evento.destacado && (
               <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-poo-black-deep" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            )}
+            {evento.completado && !evento.destacado && (
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-poo-black-deep" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
               </svg>
             )}
           </div>
@@ -44,14 +51,14 @@ const eventos = [
           <!-- Content card -->
           <div class={`ml-12 sm:ml-0 sm:w-[45%] ${i % 2 === 0 ? 'sm:pr-8 sm:text-right' : 'sm:pl-8 sm:text-left'}`}>
             <span class={`font-cormorant text-sm tracking-wider uppercase block mb-1
-              ${evento.destacado ? 'text-poo-gold-mid font-semibold' : 'text-poo-text-muted'}`}>
+              ${evento.destacado ? 'text-poo-gold-mid font-semibold' : evento.completado ? 'text-poo-text-muted/60' : 'text-poo-text-muted'}`}>
               {evento.fecha}
             </span>
             <h3 class={`font-playfair text-lg font-bold mb-1
-              ${evento.destacado ? 'text-poo-gold-light' : 'text-poo-gold-light/80'}`}>
+              ${evento.destacado ? 'text-poo-gold-light' : evento.completado ? 'text-poo-gold-light/50 line-through' : 'text-poo-gold-light/80'}`}>
               {evento.titulo}
             </h3>
-            <p class="font-inter text-xs text-poo-text-muted leading-relaxed">
+            <p class={`font-inter text-xs leading-relaxed ${evento.completado ? 'text-poo-text-muted/50' : 'text-poo-text-muted'}`}>
               {evento.descripcion}
             </p>
           </div>

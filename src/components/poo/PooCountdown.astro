@@ -9,23 +9,28 @@
     <div class="mx-auto max-w-4xl px-4 text-center">
         <!-- Label -->
         <p class="font-cormorant text-poo-text-muted text-base sm:text-lg mb-2">
-            Postulaciones hasta el
+            Gala de Premiación el
         </p>
         <h2
-            class="font-playfair text-poo-gold-light text-2xl sm:text-4xl font-bold mb-10"
+            class="font-playfair text-poo-gold-light text-2xl sm:text-4xl font-bold mb-4"
         >
-            12 de Mayo de 2026
+            29 de Mayo de 2026
         </h2>
+
+        <!-- Event location -->
+        <p class="font-cormorant text-poo-text-muted text-base sm:text-lg mb-10">
+            18:00 horas — Hotel Edén, Oruro
+        </p>
 
         <!-- Countdown blocks (AlpineJS) -->
         <div
             x-data="pooCountdown()"
             x-init="start()"
-            class="flex flex-wrap justify-center gap-3 sm:gap-4"
+            class="flex flex-wrap justify-center gap-2 sm:gap-4"
         >
             <!-- Days -->
             <div
-                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-5 py-4 sm:px-8 sm:py-6 min-w-[80px]"
+                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-3 py-3 sm:px-8 sm:py-6 min-w-[60px] sm:min-w-[80px]"
             >
                 <span
                     x-text="days"
@@ -45,7 +50,7 @@
 
             <!-- Hours -->
             <div
-                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-5 py-4 sm:px-8 sm:py-6 min-w-[80px]"
+                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-3 py-3 sm:px-8 sm:py-6 min-w-[60px] sm:min-w-[80px]"
             >
                 <span
                     x-text="hours"
@@ -65,7 +70,7 @@
 
             <!-- Minutes -->
             <div
-                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-5 py-4 sm:px-8 sm:py-6 min-w-[80px]"
+                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-3 py-3 sm:px-8 sm:py-6 min-w-[60px] sm:min-w-[80px]"
             >
                 <span
                     x-text="minutes"
@@ -85,7 +90,7 @@
 
             <!-- Seconds -->
             <div
-                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-5 py-4 sm:px-8 sm:py-6 min-w-[80px]"
+                class="bg-poo-black-card border border-poo-gold-dark/30 rounded px-3 py-3 sm:px-8 sm:py-6 min-w-[60px] sm:min-w-[80px]"
             >
                 <span
                     x-text="seconds"
@@ -101,7 +106,7 @@
             <!-- Expired message -->
             <div x-show="expired" x-cloak class="w-full mt-6">
                 <p class="font-cormorant text-xl text-poo-gold-mid italic">
-                    Período de postulación cerrado
+                    ¡La Gala de Premiación ha comenzado!
                 </p>
             </div>
         </div>
@@ -118,8 +123,8 @@
             expired: false,
             interval: null,
 
-            // Target: May 12, 2026, 23:59:59 Bolivia time (UTC-4)
-            target: new Date("2026-05-12T23:59:59-04:00").getTime(),
+            // Target: May 29, 2026, 18:00:00 Bolivia time (UTC-4)
+            target: new Date("2026-05-29T18:00:00-04:00").getTime(),
 
             start() {
                 this.update();

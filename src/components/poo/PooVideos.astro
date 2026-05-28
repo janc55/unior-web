@@ -1,0 +1,82 @@
+---
+/* === COMPONENTE: PooVideos (Exgalardonados) === */
+
+const videos = [
+  {
+    id: 'gXeS_7CRJLk',
+    titulo: 'Prof. Vito Chambi',
+  },
+  {
+    id: 'U9bf_cXNViQ',
+    titulo: 'Daril Muñoz',
+  },
+  {
+    id: 'IQHKpUWK3gQ',
+    titulo: 'Caravana Deportiva',
+  },
+  {
+    id: 'zHV23fSYg5Q',
+    titulo: 'Morenada Central',
+  },
+  {
+    id: '53qcTy49qcw',
+    titulo: 'Florería Mazuelo',
+  },
+  {
+    id: 'PmX-zTy2l5Q',
+    titulo: 'Prof. Oscar Elías Siles',
+  },
+  {
+    id: 'LP2ZtGeqoVE',
+    titulo: 'Mónica Siles',
+  },
+];
+---
+
+<section id="exgalardonados" class="bg-poo-black-deep py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <!-- Section title -->
+    <div class="poo-reveal flex items-center justify-center gap-4 mb-12 sm:mb-16">
+      <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+      <h2 class="font-playfair text-2xl sm:text-3xl font-bold text-poo-gold-light text-center">
+        Exgalardonados
+      </h2>
+      <div class="h-px w-12 sm:w-20 bg-poo-gold-dark"></div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="poo-reveal text-center font-cormorant text-poo-text-muted text-lg sm:text-xl mb-12 max-w-2xl mx-auto">
+      Conoce a los ganadores del Premio Orgullo Orureño en ediciones anteriores
+    </p>
+
+    <!-- Videos grid - 2 columns -->
+    <div class="poo-reveal grid grid-cols-1 md:grid-cols-2 gap-8">
+      {videos.map((video) => (
+        <div class="poo-reveal-child group">
+          <div class="bg-poo-black-card border border-poo-gold-dark/30 rounded-sm overflow-hidden hover:border-poo-gold-mid/50 transition-all duration-300 hover:shadow-[0_0_24px_rgba(197,168,76,0.15)]">
+            <!-- Video embed -->
+            <div class="relative w-full aspect-video bg-poo-black-rich">
+              <iframe
+                src={`https://www.youtube.com/embed/${video.id}`}
+                title={video.titulo}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full border-0"
+              ></iframe>
+            </div>
+
+            <!-- Video title -->
+            <div class="p-4 sm:p-5">
+              <h3 class="font-playfair text-lg text-poo-gold-light font-bold group-hover:text-poo-gold-mid transition-colors duration-300">
+                {video.titulo}
+              </h3>
+              <span class="inline-block font-inter text-[0.6rem] tracking-wider uppercase text-poo-text-muted mt-1">
+                Galardonado
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
